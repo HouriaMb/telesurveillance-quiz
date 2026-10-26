@@ -2,6 +2,8 @@
 
 Application web installable (PWA) pour réviser la télésurveillance cardiaque et rénale, le parcours insuffisance cardiaque, PRADO, le PRS Grand Est, les CPTS/MSP/DAC.
 
+- **Dossiers** : ensembles de questions prêts à l'emploi (IC, IR, télésurveillance, textes & réglementation, chiffres clés, Grand Est, Moselle, CPTS Cœur de Moselle, urgences par CPTS…) et dossiers personnels créés à partir de vos filtres
+- **Filtres croisés** : pathologie (IC, IR, diabète, cardiovasculaire, organisation des soins) × territoire (France > région > département > CPTS) × type de contenu (chiffres clés, textes & réglementation, clinique, traitements, parcours, éducation du patient)
 - **Quiz sur un sujet** : tapez « CPTS Cœur de Moselle », « mortalité », « NT-proBNP »… ou choisissez un document importé : l'application rassemble toutes les questions qui en parlent
 - **6 autres modes** : quiz libre, révision espacée (méthode Leitner), contre la montre, points faibles, cartes recto/verso, cas cliniques pas à pas
 - **Bibliothèque** : recherche, ajout, modification, suppression de questions ; import JSON ou CSV (Excel) ; export
@@ -68,6 +70,7 @@ Remplacez `data/questions.json` dans le dépôt GitHub (*Add file → Upload fil
 - `type` : `qcm` · `vf` (choix `["Vrai","Faux"]`) · `carte` (champ `reponse` au lieu de `choix`) · `cas` (champs `contexte` + `etapes` : liste de `{question, choix, bonnes, explication}`)
 - `bonnes` : positions des bonnes réponses, en commençant à 0 (plusieurs possibles)
 - `niveau` : 1 facile, 2 moyen, 3 expert
+- facultatif : `patho` (`["IC"]`, `["IR"]`, `["Transversal"]`…), `nature` (`chiffres`, `reglementation`, `clinique`, `traitement`, `parcours`, `education`), `zone` (`{"region": "Grand Est", "dept": "Moselle", "cpts": "Cœur de Moselle"}`), `tags`
 
 ---
 *Outil personnel de formation. Les contenus proviennent des documents cités en source et ne remplacent pas les recommandations officielles en vigueur.*

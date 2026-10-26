@@ -10,7 +10,7 @@ export function uid(prefix = 'u') {
 }
 
 function emptyState() {
-  return { v: 1, progress: {}, custom: {}, hidden: {}, history: [], resources: {}, updatedAt: 0 };
+  return { v: 1, progress: {}, custom: {}, hidden: {}, history: [], resources: {}, dossiers: {}, updatedAt: 0 };
 }
 
 export const store = {
@@ -109,6 +109,16 @@ export const store = {
   },
   resetProgress() { this.state.progress = {}; this.state.history = []; this.save(); },
 
+  get pathos() { return this.base.pathos || [{ id: 'IC', nom: 'Insuffisance cardiaque' }, { id: 'IR', nom: 'Insuffisance rénale' }, { id: 'Transversal', nom: 'Organisation des soins' }]; },
+  get natures() { return this.base.natures || []; },
+  // ---------- dossiers (filtres enregistrés) ----------
+  get dossiers() {
+    const mine = Object.values(this.state.dossiers || {}).filter(d => !d.deleted).map(d => ({ ...d, perso: true }));
+    return [...(this.base.dossiers || []), ...mine];
+  },
+  upsertDossier(d) { d.updatedAt = Date.now(); (this.state.dossiers ||= {})[d.id] = d; this.save(); },
+  deleteDossier(id) { (this.state.dossiers ||= {})[id] = { id, deleted: true, updatedAt: Date.now() }; this.save(); },
+
   // ---------- ressources ----------
   upsertResource(r) { r.updatedAt = Date.now(); this.state.resources[r.id] = r; this.save(); },
   deleteResource(id) { this.state.resources[id] = { id, deleted: true, updatedAt: Date.now() }; this.save(); },
@@ -128,6 +138,8 @@ export function mergeStates(a, b) {
     out.hidden[id] = pick(a.hidden[id], b.hidden[id], 't');
   for (const id of new Set([...Object.keys(a.resources), ...Object.keys(b.resources)]))
     out.resources[id] = pick(a.resources[id], b.resources[id], 'updatedAt');
+  for (const id of new Set([...Object.keys(a.dossiers || {}), ...Object.keys(b.dossiers || {})]))
+    out.dossiers[id] = pick((a.dossiers || {})[id], (b.dossiers || {})[id], 'updatedAt');
   const hist = new Map();
   for (const h of [...a.history, ...b.history]) hist.set(h.id, h);
   out.history = [...hist.values()].sort((x, y) => x.date - y.date).slice(-500);

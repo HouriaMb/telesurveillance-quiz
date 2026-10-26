@@ -5,11 +5,11 @@ const TYPES = { qcm: 'qcm', vf: 'vf', 'vrai/faux': 'vf', 'vrai-faux': 'vf', cart
 const slug = s => 't-' + s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 30);
 
 export function csvTemplate() {
-  const head = ['theme', 'type', 'niveau', 'question', 'choix1', 'choix2', 'choix3', 'choix4', 'choix5', 'bonnes', 'explication', 'reponse', 'source'];
+  const head = ['theme', 'type', 'niveau', 'question', 'choix1', 'choix2', 'choix3', 'choix4', 'choix5', 'bonnes', 'explication', 'reponse', 'source', 'pathologie', 'contenu', 'region', 'departement', 'cpts'];
   const rows = [
-    ['PRADO insuffisance cardiaque', 'qcm', '1', 'Dans quel délai a lieu la 1re consultation chez le médecin traitant avec Prado ?', '48 heures', '7 jours', '1 mois', '3 mois', '', '2', 'Le conseiller organise la consultation dans les 7 jours suivant la sortie.', '', 'prado'],
-    ['IC – Signes d\'alerte (EPOF/EPON)', 'vf', '1', 'Une prise de 2 kg en 3 jours doit faire appeler le médecin.', 'Vrai', 'Faux', '', '', '', '1', 'Seuil d\'alerte du carnet Prado.', '', ''],
-    ['Mon nouveau thème', 'carte', '1', 'Que signifie EPON ?', '', '', '', '', '', '', '', 'Exercice, Pesée, Observance, Nutrition', ''],
+    ['PRADO insuffisance cardiaque', 'qcm', '1', 'Dans quel délai a lieu la 1re consultation chez le médecin traitant avec Prado ?', '48 heures', '7 jours', '1 mois', '3 mois', '', '2', 'Le conseiller organise la consultation dans les 7 jours suivant la sortie.', '', 'prado', 'IC', 'parcours', '', '', ''],
+    ['IC – Signes d\'alerte (EPOF/EPON)', 'vf', '1', 'Une prise de 2 kg en 3 jours doit faire appeler le médecin.', 'Vrai', 'Faux', '', '', '', '1', 'Seuil d\'alerte du carnet Prado.', '', '', 'IC', 'clinique', '', '', ''],
+    ['Mon nouveau thème', 'carte', '1', 'Que signifie EPON ?', '', '', '', '', '', '', '', 'Exercice, Pesée, Observance, Nutrition', '', 'IC', 'education', 'Grand Est', 'Moselle', 'Cœur de Moselle'],
   ];
   const cell = v => /[;"\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
   return [head, ...rows].map(r => r.map(cell).join(';')).join('\r\n');
@@ -71,7 +71,10 @@ export function parseImport(text, filename, store) {
         const choix = head.map((h, k) => /^choix\d+$/.test(h) ? (r[k] || '').trim() : null).filter(c => c);
         const raw = { theme: themeFor(g('theme')), type: g('type'), niveau: g('niveau'), question: g('question'), choix,
           bonnes: g('bonnes').split(/[,\s/]+/).filter(Boolean).map(x => parseInt(x, 10) - 1),
-          explication: g('explication'), reponse: g('reponse'), source: g('source') };
+          explication: g('explication'), reponse: g('reponse'), source: g('source'),
+          patho: g('pathologie') ? g('pathologie').split(/[,/+]+/).map(x => x.trim()).filter(Boolean).map(x => ({ ic: 'IC', ir: 'IR', irc: 'IR' }[x.toLowerCase()] || x)) : undefined,
+          nature: g('contenu') || undefined,
+          zone: g('region') || g('cpts') ? Object.fromEntries(Object.entries({ region: g('region') || 'Grand Est', dept: g('departement'), cpts: g('cpts') }).filter(([, v]) => v)) : undefined };
         if ((TYPES[raw.type.toLowerCase()] || 'qcm') === 'vf') {
           const b = g('bonnes').toLowerCase(); raw.bonnes = [b.startsWith('f') || b === '2' ? 1 : 0];
         }

@@ -1,8 +1,9 @@
 import { store, uid, mergeStates } from './store.js';
 import { syncNow, scheduleSync, syncStatus, onSyncStatus, syncConfigured, testToken } from './sync.js';
 import { parseImport, csvTemplate } from './io.js';
+import { matchFilter, renderFilterPanel, describeFilter, normalizeFilter, isEmpty, emptyFilter, zoneTree, zoneLabel, NATIONAL } from './filters.js';
 
-const APP_VERSION = '1.2.0';
+const APP_VERSION = '1.4.0';
 const $ = (s, el = document) => el.querySelector(s);
 const view = () => $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -57,7 +58,7 @@ let session = null; // session de quiz en cours
 let lastResult = null;
 const routes = {
   '': renderHome, 'config': renderConfig, 'session': renderSession, 'resultats': renderResults,
-  'biblio': renderBiblio, 'sujet': renderTopic, 'edit': renderEditor, 'progres': renderProgress, 'ressources': renderResources, 'reglages': renderSettings,
+  'biblio': renderBiblio, 'sujet': renderTopic, 'dossier': renderDossier, 'edit': renderEditor, 'progres': renderProgress, 'ressources': renderResources, 'reglages': renderSettings,
 };
 function go(hash) { if (location.hash === '#/' + hash) render(); else location.hash = '#/' + hash; }
 function render() {
@@ -97,6 +98,12 @@ function renderHome() {
       <button class="btn" data-start="revision">${icon('play')} ${due ? 'Commencer ma révision' : 'Découvrir de nouvelles questions'}</button>
     </section>
     <div class="section">
+      <div class="section-title"><h2>Mes dossiers</h2><button class="btn ghost sm" id="newD">+ Créer</button></div>
+      <div class="dossiers">${store.dossiers.map(d => { const qs = dossierQuestions(d); return `
+        <button class="dossier" data-d="${esc(d.id)}" style="--c:${esc(d.couleur || '#0f5e63')}"><b>${esc(d.nom)}</b><span>${esc(d.desc || describeFilter(d.filtre))}</span>
+          <span class="dmeta"><span>${qs.length} q.</span><span>${pct(store.mastery(qs))}</span></span><span class="bar"><i style="width:${store.mastery(qs) * 100}%;background:var(--c)"></i></span></button>`; }).join('')}</div>
+    </div>
+    <div class="section">
       <div class="section-title"><h2>S'entraîner</h2></div>
       <div class="modes">
         ${Object.entries(MODES).filter(([k]) => k !== 'revision').map(([k, mo]) => `
@@ -117,6 +124,8 @@ function renderHome() {
       <p class="tiny" style="margin-top:8px">La maîtrise augmente à chaque bonne réponse et redescend en cas d'erreur (répétition espacée).</p>
     </div>`;
   view().querySelector('[data-start]').onclick = () => startSession('revision', {});
+  view().querySelectorAll('[data-d]').forEach(b => b.onclick = () => go('dossier/' + encodeURIComponent(b.dataset.d)));
+  $('#newD').onclick = () => saveDossierPrompt({});
   view().querySelectorAll('[data-mode]').forEach(b => b.onclick = () => {
     const mo = b.dataset.mode;
     if (mo === 'faibles') return startSession('faibles', {});
@@ -133,35 +142,111 @@ function renderConfig(mode = 'quiz', themeId) {
   const all = store.allQuestions();
   const typesFor = { quiz: ['qcm', 'vf', 'cas', 'carte'], chrono: ['qcm', 'vf'], cartes: ['carte', 'qcm', 'vf'], cas: ['cas'] }[mode] || ['qcm', 'vf'];
   const defTypes = { quiz: ['qcm', 'vf', 'cas'], chrono: ['qcm', 'vf'], cartes: ['carte', 'qcm', 'vf'], cas: ['cas'] }[mode];
+  const dossier = themeId && themeId.startsWith('@') ? store.dossiers.find(d => d.id === themeId.slice(1)) : null;
   const cfg = {
-    themes: new Set(themeId ? [themeId] : store.themes.map(t => t.id)),
+    themes: new Set(themeId && !dossier ? [themeId] : store.themes.map(t => t.id)),
     types: new Set(defTypes), n: mode === 'chrono' ? 15 : mode === 'cas' ? 0 : 10, niveau: 0,
+    f: normalizeFilter(dossier ? dossier.filtre : {}),
   };
+  let open = !isEmpty(cfg.f);
   const draw = () => {
     const pool = filterPool(all, cfg);
     view().innerHTML = `
       <button class="btn ghost sm" onclick="history.back()">← Retour</button>
       <h1 style="margin-top:6px">${mo.nom}</h1>
-      <p class="muted">${mo.desc}</p>
+      <p class="muted">${dossier ? 'Dossier « ' + esc(dossier.nom) + ' »' : mo.desc}</p>
       <div class="card stack">
         <div><div class="section-title"><h3>Thèmes</h3><button class="btn ghost sm" id="allT">${cfg.themes.size === store.themes.length ? 'Aucun' : 'Tous'}</button></div>
           <div class="chips">${store.themes.filter(t => all.some(q => q.theme === t.id)).map(t => `<button class="chip" data-t="${esc(t.id)}" aria-pressed="${cfg.themes.has(t.id)}"><span class="d" style="background:${esc(t.couleur)}"></span>${esc(t.nom)}</button>`).join('')}</div></div>
+        <div class="fbox"><button class="fbox-head" id="ftoggle" aria-expanded="${open}"><span><b>Filtres</b> <span class="tiny">pathologie · territoire · type de contenu</span><br><span class="small muted">${esc(describeFilter(cfg.f))}</span></span><span>${open ? '▴' : '▾'}</span></button>
+          <div id="fpanel" class="${open ? '' : 'hidden'}"></div></div>
         ${typesFor.length > 1 ? `<div><h3>Formats</h3><div class="chips">${typesFor.map(t => `<button class="chip" data-ty="${t}" aria-pressed="${cfg.types.has(t)}">${TYPE_LABEL[t]}</button>`).join('')}</div></div>` : ''}
         ${mode !== 'chrono' ? `<div><h3>Nombre de questions</h3><div class="seg">${[5, 10, 20, 30, 0].map(n => `<button data-n="${n}" aria-pressed="${cfg.n === n}">${n || 'Toutes'}</button>`).join('')}</div></div>` : ''}
         <div><h3>Difficulté</h3><div class="seg">${[[0, 'Toutes'], [1, 'Facile'], [2, 'Moyen'], [3, 'Expert']].map(([v, l]) => `<button data-lv="${v}" aria-pressed="${cfg.niveau === v}">${l}</button>`).join('')}</div></div>
+        ${!isEmpty(cfg.f) && !dossier ? `<button class="btn secondary sm" id="saveD">☆ Enregistrer ces filtres comme dossier</button>` : ''}
       </div>
       <div class="sticky-actions"><button class="btn block" id="go" ${pool.length ? '' : 'disabled'}>${icon('play')} Lancer (${Math.min(pool.length, cfg.n || pool.length)} question${pool.length > 1 ? 's' : ''})</button></div>`;
+    if (open) renderFilterPanel($('#fpanel'), cfg.f, draw);
+    $('#ftoggle').onclick = () => { open = !open; draw(); };
     view().querySelectorAll('[data-t]').forEach(b => b.onclick = () => { const id = b.dataset.t; cfg.themes.has(id) ? cfg.themes.delete(id) : cfg.themes.add(id); draw(); });
     view().querySelectorAll('[data-ty]').forEach(b => b.onclick = () => { const id = b.dataset.ty; cfg.types.has(id) ? cfg.types.delete(id) : cfg.types.add(id); draw(); });
     view().querySelectorAll('[data-n]').forEach(b => b.onclick = () => { cfg.n = +b.dataset.n; draw(); });
     view().querySelectorAll('[data-lv]').forEach(b => b.onclick = () => { cfg.niveau = +b.dataset.lv; draw(); });
     $('#allT').onclick = () => { cfg.themes = cfg.themes.size === store.themes.length ? new Set() : new Set(store.themes.map(t => t.id)); draw(); };
+    const sd = $('#saveD'); if (sd) sd.onclick = () => saveDossierPrompt(cfg.f);
     $('#go').onclick = () => startSession(mode, cfg);
   };
   draw();
 }
 function filterPool(all, cfg) {
-  return all.filter(q => cfg.themes.has(q.theme) && cfg.types.has(q.type) && (!cfg.niveau || (q.niveau || 1) === cfg.niveau));
+  return all.filter(q => cfg.themes.has(q.theme) && cfg.types.has(q.type) && (!cfg.niveau || (q.niveau || 1) === cfg.niveau) && matchFilter(q, cfg.f));
+}
+
+// =============== DOSSIERS ===============
+function saveDossierPrompt(f, existing) {
+  sheet(existing ? 'Modifier le dossier' : 'Nouveau dossier', `
+    <p class="small muted">Un dossier regroupe les questions qui répondent à vos filtres. Il se met à jour tout seul quand de nouvelles questions arrivent, et il est synchronisé sur vos appareils.</p>
+    <label class="field"><span>Nom du dossier</span><input class="input" id="dn" value="${esc(existing ? existing.nom : describeFilter(f).slice(0, 60))}"></label>
+    <label class="field"><span>Description (facultatif)</span><input class="input" id="dd" value="${esc(existing ? existing.desc || '' : '')}"></label>
+    <div class="field"><span>Filtres</span><div id="dfp"></div></div>
+    <button class="btn block" id="ds">Enregistrer</button>`, (el, close) => {
+    const filt = normalizeFilter(f);
+    renderFilterPanel(el.querySelector('#dfp'), filt, null, { themes: true });
+    el.querySelector('#ds').onclick = () => {
+      const nom = el.querySelector('#dn').value.trim(); if (!nom) return toast('Donnez un nom au dossier.');
+      if (isEmpty(filt)) return toast('Choisissez au moins un filtre.');
+      store.upsertDossier({ id: existing ? existing.id : uid('d'), nom, desc: el.querySelector('#dd').value.trim(), couleur: existing?.couleur || '#0f5e63', filtre: filt });
+      scheduleSync(); close(); toast('Dossier enregistré'); existing ? render() : go('');
+    };
+  });
+}
+function dossierQuestions(d) { const f = normalizeFilter(d.filtre); return store.allQuestions().filter(q => (!f.themes.length || f.themes.includes(q.theme)) && matchFilter(q, f)); }
+function renderDossier(id) {
+  const d = store.dossiers.find(x => x.id === id); if (!d) return go('');
+  const qs = dossierQuestions(d);
+  const seen = qs.filter(q => store.prog(q.id).s);
+  const weak = store.weakQuestions().filter(q => qs.some(x => x.id === q.id));
+  const due = store.dueQuestions().filter(q => qs.some(x => x.id === q.id));
+  const byTheme = store.themes.map(t => ({ t, n: qs.filter(q => q.theme === t.id).length })).filter(x => x.n);
+  view().innerHTML = `
+    <button class="btn ghost sm" onclick="location.hash='#/'">← Accueil</button>
+    <div class="hero" style="margin-top:8px;background:linear-gradient(135deg, ${esc(d.couleur || '#0f5e63')} 0%, color-mix(in srgb, ${esc(d.couleur || '#0f5e63')} 65%, #000) 100%)">
+      <p class="small" style="margin:0">Dossier${d.perso ? ' personnel' : ''}</p><h1>${esc(d.nom)}</h1><p class="small">${esc(d.desc || describeFilter(d.filtre))}</p>
+      <div class="hero-stats"><div><b>${qs.length}</b><span>questions</span></div><div><b>${seen.length}</b><span>vues</span></div><div><b>${pct(store.mastery(qs))}</b><span>maîtrise</span></div></div>
+    </div>
+    <div class="modes" style="margin-top:14px">
+      <button class="mode" data-go="quiz"><span class="ico">${icon('quiz')}</span><b>Quiz</b><span>10 questions au hasard</span></button>
+      <button class="mode" data-go="due"><span class="ico">${icon('cal')}</span><b>Révision</b><span>${due.length} à revoir aujourd'hui</span></button>
+      <button class="mode" data-go="weak"><span class="ico">${icon('target')}</span><b>Points faibles</b><span>${weak.length} question(s)</span></button>
+      <button class="mode" data-go="cards"><span class="ico">${icon('cards')}</span><b>Cartes</b><span>Tout le dossier en recto/verso</span></button>
+      <button class="mode" data-go="all"><span class="ico">${icon('play')}</span><b>Tout le dossier</b><span>${qs.length} questions</span></button>
+      <button class="mode" data-go="config"><span class="ico">${icon('gear')}</span><b>Personnaliser</b><span>Formats, nombre, difficulté</span></button>
+    </div>
+    <div class="section"><h2>Contenu</h2><div class="card" style="padding:4px 14px">${byTheme.map(x => `<div class="theme-row" data-th="${esc(x.t.id)}"><span class="sw" style="background:${esc(x.t.couleur)}"></span><div class="grow"><div class="name">${esc(x.t.nom)}</div></div><span class="pct">${x.n}</span></div>`).join('') || '<p class="empty">Aucune question ne correspond encore.</p>'}</div></div>
+    ${d.perso ? `<div class="btn-row" style="margin-top:14px"><button class="btn secondary" id="dEdit">Modifier</button><button class="btn danger" id="dDel">Supprimer le dossier</button></div>` : ''}`;
+  const ids = arr => arr.map(q => q.id);
+  view().querySelectorAll('[data-go]').forEach(b => b.onclick = () => {
+    const k = b.dataset.go;
+    const topic = d.nom;
+    if (k === 'quiz') startSession('sujet', { ids: ids(balanced(qs.filter(q => q.type !== 'carte'), 10)), topic });
+    else if (k === 'all') startSession('sujet', { ids: ids(shuffle(qs)), topic });
+    else if (k === 'due') due.length ? startSession('sujet', { ids: ids(due), topic }) : toast('Rien à revoir aujourd’hui dans ce dossier.');
+    else if (k === 'weak') weak.length ? startSession('sujet', { ids: ids(weak.slice(0, 15)), topic }) : toast('Pas de point faible dans ce dossier.');
+    else if (k === 'cards') startSession('sujet', { ids: ids(shuffle(qs)), topic, cards: true });
+    else go('config/quiz/@' + d.id);
+  });
+  view().querySelectorAll('[data-th]').forEach(r => r.onclick = () => { biblioState.theme = r.dataset.th; biblioState.f = normalizeFilter(d.filtre); go('biblio'); });
+  const de = $('#dEdit'); if (de) de.onclick = () => saveDossierPrompt(d.filtre, d);
+  const dd = $('#dDel'); if (dd) dd.onclick = () => { if (confirmBox('Supprimer ce dossier ? (Les questions ne sont pas supprimées.)')) { store.deleteDossier(d.id); scheduleSync(); go(''); } };
+}
+
+// Tirage équilibré : alterne les thèmes pour qu'un thème très fourni (ex. RPU) n'écrase pas les autres
+function balanced(list, n) {
+  const groups = new Map();
+  for (const q of shuffle(list)) { if (!groups.has(q.theme)) groups.set(q.theme, []); groups.get(q.theme).push(q); }
+  const gs = shuffle([...groups.values()]); const out = [];
+  while (out.length < n && gs.some(g => g.length)) for (const g of gs) { if (g.length && out.length < n) out.push(g.shift()); }
+  return shuffle(out);
 }
 
 // =============== SESSION ===============
@@ -170,22 +255,21 @@ function startSession(mode, cfg) {
   let items = [];
   if (mode === 'revision') {
     const due = store.dueQuestions().sort((a, b) => store.prog(a.id).d - store.prog(b.id).d).slice(0, 20);
-    const fresh = shuffle(store.newQuestions().filter(q => q.type !== 'carte')).slice(0, Math.max(0, 10 - due.length));
+    const fresh = balanced(store.newQuestions().filter(q => q.type !== 'carte'), Math.max(0, 10 - due.length));
     items = [...due, ...fresh];
-    if (!items.length) items = shuffle(all.filter(q => q.type !== 'carte')).slice(0, 10);
+    if (!items.length) items = balanced(all.filter(q => q.type !== 'carte'), 10);
   } else if (mode === 'faibles') {
     items = store.weakQuestions().slice(0, 15);
     if (!items.length) { toast('Pas encore de points faibles : entraînez-vous d’abord !'); return; }
   } else if (mode === 'erreurs' || mode === 'sujet') {
     items = cfg.ids.map(id => store.question(id)).filter(Boolean);
   } else {
-    items = shuffle(filterPool(all, cfg));
-    if (cfg.n) items = items.slice(0, cfg.n);
+    items = cfg.n ? balanced(filterPool(all, cfg), cfg.n) : shuffle(filterPool(all, cfg));
   }
   if (!items.length) { toast('Aucune question ne correspond.'); return; }
   session = {
     id: uid('s'), mode, items, i: 0, step: 0, results: [], start: Date.now(), answered: false,
-    limit: mode === 'chrono' ? 180 : 0, cardMode: mode === 'cartes', topic: cfg.topic,
+    limit: mode === 'chrono' ? 180 : 0, cardMode: mode === 'cartes' || !!cfg.cards, topic: cfg.topic,
   };
   go('session');
 }
@@ -412,7 +496,7 @@ export function searchTopic(query, pool = store.allQuestions()) {
 const topicState = { query: '', source: '', types: new Set(['qcm', 'vf', 'cas', 'carte']), n: 0 };
 function renderTopic() {
   const all = store.allQuestions();
-  const SUGG = ['CPTS Cœur de Moselle', 'Newcard', 'Télésurveillance rénale', 'Éligibilité', 'Urgences RPU', 'Mortalité', 'Mortalité Grand Est', 'PRADO', 'NT-proBNP', 'NYHA', 'Télésurveillance', 'Dialyse', 'Sel', 'Vaccination', 'DAC', 'Textes de loi'];
+  const SUGG = ['CPTS Cœur de Moselle', 'Newcard', 'Télésurveillance rénale', 'Éligibilité', 'Urgences RPU', 'CCMU', 'Moselle', 'Mortalité', 'Mortalité Grand Est', 'PRADO', 'NT-proBNP', 'NYHA', 'Télésurveillance', 'Dialyse', 'Sel', 'Vaccination', 'DAC', 'Textes de loi'];
   const counts = new Map(); all.forEach(q => counts.set(q.source, (counts.get(q.source) || 0) + 1));
   const draw = (keepFocus) => {
     let pool = topicState.source ? all.filter(q => q.source === topicState.source) : all;
@@ -459,18 +543,21 @@ function renderTopic() {
 }
 
 // =============== BIBLIOTHÈQUE ===============
-const biblioState = { q: '', theme: '', type: '', origine: '' };
+const biblioState = { q: '', theme: '', type: '', origine: '', f: emptyFilter() };
 function renderBiblio() {
   const all = store.allQuestions();
   const draw = () => {
     const term = biblioState.q.toLowerCase();
     const list = all.filter(q => (!biblioState.theme || q.theme === biblioState.theme) && (!biblioState.type || q.type === biblioState.type)
       && (!biblioState.origine || (biblioState.origine === 'perso' ? q.origine !== 'base' : q.origine === 'base'))
+      && matchFilter(q, biblioState.f)
       && (!term || JSON.stringify([q.question, q.choix, q.explication, q.reponse, q.contexte]).toLowerCase().includes(term)));
+    $('#fsum').innerHTML = isEmpty(biblioState.f) ? '' : `<div class="ftags"><span class="badge brand">Filtres : ${esc(describeFilter(biblioState.f))}</span><button class="btn ghost sm" id="fclr">Effacer</button></div>`;
+    const fc = $('#fclr'); if (fc) fc.onclick = () => { biblioState.f = emptyFilter(); draw(); };
     $('#list').innerHTML = list.length ? list.map(q => {
       const th = store.theme(q.theme); const p = store.prog(q.id);
       return `<div class="qrow" data-id="${esc(q.id)}"><span class="sw" style="background:${esc(th.couleur)}"></span><div style="flex:1;min-width:0"><div class="t">${esc(q.question)}</div>
-        <div class="m"><span class="badge">${TYPE_LABEL[q.type]}</span>${q.origine !== 'base' ? `<span class="badge brand">${esc(q.origine)}</span>` : ''}<span class="tiny">${p.s ? `vue ${p.s}× · ${Math.round(p.c / p.s * 100)} % réussite · boîte ${p.b}/5` : 'jamais vue'}</span></div></div></div>`;
+        <div class="m"><span class="badge">${TYPE_LABEL[q.type]}</span>${q.origine !== 'base' ? `<span class="badge brand">${esc(q.origine)}</span>` : ''}${q.zone && q.zone.region ? `<span class="badge">${esc(zoneLabel(q.zone))}</span>` : ''}<span class="tiny">${p.s ? `vue ${p.s}× · ${Math.round(p.c / p.s * 100)} % réussite · boîte ${p.b}/5` : 'jamais vue'}</span></div></div></div>`;
     }).join('') : '<p class="empty">Aucune question trouvée.</p>';
     $('#count').textContent = `${list.length} / ${all.length}`;
     view().querySelectorAll('.qrow').forEach(r => r.onclick = () => showQuestion(r.dataset.id));
@@ -485,7 +572,10 @@ function renderBiblio() {
       <select class="input" id="fty" style="flex:0 1 140px"><option value="">Tous formats</option>${Object.entries(TYPE_LABEL).map(([k, v]) => `<option value="${k}" ${biblioState.type === k ? 'selected' : ''}>${v}</option>`).join('')}</select>
       <select class="input" id="for" style="flex:0 1 150px"><option value="">Toutes origines</option><option value="base" ${biblioState.origine === 'base' ? 'selected' : ''}>Banque initiale</option><option value="perso" ${biblioState.origine === 'perso' ? 'selected' : ''}>Mes questions</option></select>
     </div>
+    <div class="btn-row" style="margin-bottom:8px"><button class="btn secondary sm" id="fopen">Filtres : pathologie, territoire, contenu…</button></div>
+    <div id="fsum"></div>
     <div class="card" style="padding:0 14px" id="list"></div>`;
+  $('#fopen').onclick = () => sheet('Filtres', '<div id="bfp"></div><button class="btn block" data-close style="margin-top:14px">Voir les questions</button>', el => renderFilterPanel(el.querySelector('#bfp'), biblioState.f, draw));
   $('#search').oninput = e => { biblioState.q = e.target.value; draw(); };
   $('#fth').onchange = e => { biblioState.theme = e.target.value; draw(); };
   $('#fty').onchange = e => { biblioState.type = e.target.value; draw(); };
@@ -524,6 +614,11 @@ function renderEditor(id) {
   if (!q.choix) q.choix = ['', '', '', ''];
   if (!q.bonnes) q.bonnes = [0];
   if (!q.etapes) q.etapes = [{ question: '', choix: ['', '', ''], bonnes: [0], explication: '' }];
+  if (!q.patho) q.patho = ['IC'];
+  if (!q.nature) q.nature = 'clinique';
+  if (!q.zone) q.zone = {};
+  const tree = zoneTree();
+  const dl = (id, arr) => `<datalist id="${id}">${[...new Set(arr)].map(v => `<option value="${esc(v)}">`).join('')}</datalist>`;
   const choicesEditor = (arr, good, prefix) => `${arr.map((c, i) => `
       <div class="choice-edit"><input class="input" data-${prefix}c="${i}" value="${esc(c)}" placeholder="Réponse ${String.fromCharCode(65 + i)}">
       <label><input type="checkbox" data-${prefix}g="${i}" ${good.includes(i) ? 'checked' : ''}> bonne</label>
@@ -551,6 +646,11 @@ function renderEditor(id) {
         ${!isCase && !isCard ? `<label class="field"><span>Explication (affichée après la réponse)</span><textarea class="input" id="explication">${esc(q.explication || '')}</textarea></label>` : ''}
         <label class="field"><span>Source</span><select class="input" id="source"><option value="">—</option>${store.sources.map(s => `<option value="${esc(s.id)}" ${q.source === s.id ? 'selected' : ''}>${esc(s.titre)}</option>`).join('')}${q.source && !store.source(q.source) ? `<option value="${esc(q.source)}" selected>${esc(q.source)}</option>` : ''}</select>
           <span class="tiny" style="font-weight:400">Pour une nouvelle source (lien web, document), ajoutez-la d'abord dans Ressources.</span></label>
+        <div class="field"><span>Pathologie (une ou plusieurs)</span><div class="chips">${store.pathos.map(p => `<button type="button" class="chip" data-pa="${esc(p.id)}" aria-pressed="${q.patho.includes(p.id)}">${esc(p.nom)}</button>`).join('')}</div></div>
+        <label class="field"><span>Type de contenu</span><select class="input" id="nature">${store.natures.map(n => `<option value="${esc(n.id)}" ${q.nature === n.id ? 'selected' : ''}>${esc(n.nom)}</option>`).join('')}</select></label>
+        <div class="field"><span>Territoire concerné (laisser vide = connaissance nationale)</span>
+          <div class="toolbar" style="margin:0"><input class="input" id="zr" list="dlr" placeholder="Région (ex. Grand Est)" value="${esc(q.zone.region || '')}"><input class="input" id="zd" list="dld" placeholder="Département (ex. Moselle)" value="${esc(q.zone.dept || '')}"><input class="input" id="zc" list="dlc" placeholder="CPTS (ex. Cœur de Moselle)" value="${esc(q.zone.cpts || '')}"></div>
+          ${dl('dlr', ['Grand Est', ...Object.keys(tree)])}${dl('dld', Object.values(tree).flatMap(r => Object.keys(r.depts)))}${dl('dlc', Object.values(tree).flatMap(r => Object.values(r.depts).flatMap(d => Object.keys(d.cpts))))}</div>
         <label class="field"><span>Difficulté</span><div class="seg">${[[1, 'Facile'], [2, 'Moyen'], [3, 'Expert']].map(([v, l]) => `<button type="button" data-lv="${v}" aria-pressed="${(q.niveau || 1) === v}">${l}</button>`).join('')}</div></label>
       </div>
       <div class="sticky-actions"><button class="btn block" id="save">Enregistrer</button></div>`;
@@ -563,6 +663,13 @@ function renderEditor(id) {
     if ($('#explication')) q.explication = $('#explication').value.trim();
     if ($('#reponse')) q.reponse = $('#reponse').value.trim();
     if ($('#contexte')) q.contexte = $('#contexte').value.trim();
+    q.nature = $('#nature').value;
+    const z = { region: $('#zr').value.trim(), dept: $('#zd').value.trim(), cpts: $('#zc').value.trim() };
+    if ((z.cpts || z.dept) && !z.region) {
+      for (const [r, rv] of Object.entries(tree)) for (const [d, dv] of Object.entries(rv.depts)) if (d === z.dept || dv.cpts[z.cpts]) { z.region = r; z.dept ||= d; }
+      if (!z.region) z.region = 'Non précisée';
+    }
+    q.zone = z.region ? Object.fromEntries(Object.entries(z).filter(([, v]) => v)) : {};
     if (q.type === 'qcm') {
       q.choix = [...view().querySelectorAll('[data-mc]')].map(i => i.value);
       q.bonnes = [...view().querySelectorAll('[data-mg]')].map((c, i) => c.checked ? i : -1).filter(i => i >= 0);
@@ -585,6 +692,7 @@ function renderEditor(id) {
     view().querySelectorAll('[data-type]').forEach(b => b.onclick = () => { collect(); q.type = b.dataset.type; if (q.type === 'qcm' && q.choix.join('') === 'VraiFaux') q.choix = ['', '', '', '']; draw(); });
     view().querySelectorAll('[data-lv]').forEach(b => b.onclick = () => { collect(); q.niveau = +b.dataset.lv; draw(); });
     view().querySelectorAll('[data-vf]').forEach(b => b.onclick = () => { collect(); q.bonnes = [+b.dataset.vf]; draw(); });
+    view().querySelectorAll('[data-pa]').forEach(b => b.onclick = () => { collect(); const v = b.dataset.pa; q.patho = q.patho.includes(v) ? q.patho.filter(x => x !== v) : [...q.patho, v]; if (!q.patho.length) q.patho = ['Transversal']; draw(); });
     $('#theme').onchange = e => {
       if (e.target.value !== '__new') return;
       const nom = prompt('Nom du nouveau thème :');
@@ -609,6 +717,7 @@ function renderEditor(id) {
       if (out.type !== 'carte') delete out.reponse;
       if (out.type === 'cas') { delete out.choix; delete out.bonnes; delete out.explication; out.etapes = out.etapes.map(e => ({ ...e, choix: e.choix.map(c => c.trim()).filter(Boolean) })); }
       if (out.choix) out.choix = out.choix.map(c => c.trim());
+      if (!out.zone || !out.zone.region) delete out.zone;
       store.upsertQuestion(out);
       scheduleSync();
       toast('Question enregistrée');
@@ -728,6 +837,16 @@ function renderProgress() {
     return `<tr><td><span class="chip" style="padding:2px 8px;border:0;background:none"><span class="d" style="background:${esc(t.couleur)}"></span>${esc(t.nom)}</span></td><td class="n">${qs.filter(q => store.prog(q.id).s).length}/${qs.length}</td><td class="n">${s ? Math.round(c / s * 100) + ' %' : '—'}</td><td class="n">${pct(store.mastery(qs))}</td></tr>`;
   }).join('');
   const weak = store.weakQuestions().slice(0, 5);
+  const statRow = (label, qs, color) => { if (!qs.length) return ''; const ps = qs.map(q => store.prog(q.id)); const s = ps.reduce((a, p) => a + p.s, 0), c = ps.reduce((a, p) => a + p.c, 0);
+    return `<tr><td>${color ? `<span class="chip" style="padding:2px 8px;border:0;background:none"><span class="d" style="background:${esc(color)}"></span>${esc(label)}</span>` : esc(label)}</td><td class="n">${qs.filter(q => store.prog(q.id).s).length}/${qs.length}</td><td class="n">${s ? Math.round(c / s * 100) + ' %' : '—'}</td><td class="n">${pct(store.mastery(qs))}</td></tr>`; };
+  const tableHead = '<thead><tr><th></th><th class="n">Vues</th><th class="n">Réussite</th><th class="n">Maîtrise</th></tr></thead>';
+  const pathoRows = store.pathos.map(p => statRow(p.nom, all.filter(q => (q.patho || ['Transversal']).includes(p.id)))).join('');
+  const tree = zoneTree(all);
+  const zoneRows = [statRow('France (national)', all.filter(q => !q.zone || !q.zone.region)),
+    ...Object.entries(tree).flatMap(([r, rv]) => [statRow('Région ' + r, all.filter(q => q.zone && q.zone.region === r)),
+      ...Object.entries(rv.depts).flatMap(([d, dv]) => [statRow('— ' + d, all.filter(q => q.zone && q.zone.dept === d)),
+        ...Object.keys(dv.cpts).map(c => statRow('—— CPTS ' + c, all.filter(q => q.zone && q.zone.cpts === c)))])])].join('');
+  const natRows = store.natures.map(n => statRow(n.nom, all.filter(q => (q.nature || 'parcours') === n.id))).join('');
   view().innerHTML = `
     <h1>Ma progression</h1>
     <div class="kpis">
@@ -742,6 +861,9 @@ function renderProgress() {
       ${boxes.map((n, b) => `<div style="display:flex;align-items:center;gap:10px;margin:6px 0"><span class="tiny" style="width:64px">${b === 0 ? 'Nouvelles' : 'Boîte ' + b}</span><div class="bar" style="flex:1;margin:0"><i style="width:${all.length ? n / all.length * 100 : 0}%;background:${b === 0 ? 'var(--ink-3)' : 'var(--brand)'};opacity:${b === 0 ? .5 : .35 + b * .13}"></i></div><span class="pct">${n}</span></div>`).join('')}
     </div></div>
     <div class="section"><h2>Par thème</h2><div class="card" style="overflow-x:auto"><table class="t"><thead><tr><th>Thème</th><th class="n">Vues</th><th class="n">Réussite</th><th class="n">Maîtrise</th></tr></thead><tbody>${rows}</tbody></table></div></div>
+    <div class="section"><h2>Par pathologie</h2><div class="card" style="overflow-x:auto"><table class="t">${tableHead}<tbody>${pathoRows}</tbody></table></div></div>
+    <div class="section"><h2>Par territoire</h2><div class="card" style="overflow-x:auto"><table class="t">${tableHead}<tbody>${zoneRows}</tbody></table></div></div>
+    <div class="section"><h2>Par type de contenu</h2><div class="card" style="overflow-x:auto"><table class="t">${tableHead}<tbody>${natRows}</tbody></table></div></div>
     <div class="section"><div class="section-title"><h2>Points faibles</h2>${weak.length ? '<button class="btn sm" id="wk">S’entraîner</button>' : ''}</div>
       <div class="card">${weak.length ? weak.map(q => { const p = store.prog(q.id); return `<div class="res-item"><span class="ic">${p.c}/${p.s}</span><div class="grow small">${esc(q.question)}</div></div>`; }).join('') : '<p class="empty">Aucun point faible repéré pour l’instant.</p>'}</div></div>`;
   const wk = $('#wk'); if (wk) wk.onclick = () => startSession('faibles', {});
