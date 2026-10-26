@@ -2,7 +2,7 @@ import { store, uid, mergeStates } from './store.js';
 import { syncNow, scheduleSync, syncStatus, onSyncStatus, syncConfigured, testToken } from './sync.js';
 import { parseImport, csvTemplate } from './io.js';
 
-const APP_VERSION = '1.1.0';
+const APP_VERSION = '1.2.0';
 const $ = (s, el = document) => el.querySelector(s);
 const view = () => $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -384,7 +384,7 @@ function topicTerms(query) {
   for (let w of n.trim().split(/\s+/)) {
     if (!w || STOP.has(w) || (w.length < 2 && !/\d/.test(w))) continue;
     const base = w.length > 4 ? w.replace(/(es|s|x)$/, '') : w;
-    terms.push([...new Set([base, ...(SYN[w] || SYN[base] || [])])]);
+    terms.push([...new Set([w.length >= 8 ? w.slice(0, 6) : base, ...(SYN[w] || SYN[base] || [])])]);
   }
   return terms;
 }
@@ -412,7 +412,7 @@ export function searchTopic(query, pool = store.allQuestions()) {
 const topicState = { query: '', source: '', types: new Set(['qcm', 'vf', 'cas', 'carte']), n: 0 };
 function renderTopic() {
   const all = store.allQuestions();
-  const SUGG = ['CPTS Cœur de Moselle', 'Mortalité', 'Mortalité Grand Est', 'PRADO', 'NT-proBNP', 'NYHA', 'Télésurveillance', 'Dialyse', 'Sel', 'Vaccination', 'DAC', 'Textes de loi'];
+  const SUGG = ['CPTS Cœur de Moselle', 'Newcard', 'Télésurveillance rénale', 'Éligibilité', 'Urgences RPU', 'Mortalité', 'Mortalité Grand Est', 'PRADO', 'NT-proBNP', 'NYHA', 'Télésurveillance', 'Dialyse', 'Sel', 'Vaccination', 'DAC', 'Textes de loi'];
   const counts = new Map(); all.forEach(q => counts.set(q.source, (counts.get(q.source) || 0) + 1));
   const draw = (keepFocus) => {
     let pool = topicState.source ? all.filter(q => q.source === topicState.source) : all;

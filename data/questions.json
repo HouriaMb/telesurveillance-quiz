@@ -1,5 +1,5 @@
 {
- "version": 2,
+ "version": 3,
  "maj": "2026-10-26",
  "themes": [
   {
@@ -123,6 +123,34 @@
    "id": "annuaire",
    "titre": "Annuaire des CPTS Grand Est (mars 2024)",
    "type": "pdf"
+  },
+  {
+   "id": "newcard",
+   "titre": "La télésurveillance Newcard en Grand Est – bilan régional insuffisance cardiaque (présentation)",
+   "type": "pptx"
+  },
+  {
+   "id": "seminaire",
+   "titre": "L'insuffisance cardiaque et rénale – séminaire du 16/09 (support de formation)",
+   "type": "pdf"
+  },
+  {
+   "id": "vic",
+   "titre": "Association Vaincre l'Insuffisance Cardiaque",
+   "type": "web",
+   "url": "https://www.vaincrelinsuffisancecardiaque.org/"
+  },
+  {
+   "id": "estrescue",
+   "titre": "Est-Rescue – RPU et CPTS (Observatoire des urgences du Grand Est)",
+   "type": "web",
+   "url": "https://est-rescue.fr/travaux/rpu-cpts"
+  },
+  {
+   "id": "ars-prs",
+   "titre": "ARS Grand Est – page du Projet régional de santé",
+   "type": "web",
+   "url": "https://www.grand-est.ars.sante.fr/prs"
   },
   {
    "id": "ts-loi",
@@ -2792,6 +2820,904 @@
    "tags": [
     "Grand Est",
     "ARS Grand Est"
+   ]
+  },
+  {
+   "id": "ncd01",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Combien de patients insuffisants cardiaques la cohorte Newcard Grand Est suit-elle en continu ?",
+   "choix": [
+    "39",
+    "139",
+    "239",
+    "1 725"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "239 patients suivis en continu dans 11 centres, dont des bassins ruraux (Sarrebourg, Lunéville). 1 725 correspond au nombre d'alertes médicales analysées.",
+   "source": "newcard",
+   "niveau": 1,
+   "tags": [
+    "Newcard",
+    "Grand Est",
+    "télésurveillance insuffisance cardiaque"
+   ]
+  },
+  {
+   "id": "ncd02",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Quel est le taux d'observance des télé-mesures dans la cohorte Newcard Grand Est ?",
+   "choix": [
+    "54,2 %",
+    "72,5 %",
+    "88,8 %",
+    "99,1 %"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "88,8 % d'observance, avec un abandon limité à 6,12 %, malgré une population âgée et sévère.",
+   "source": "newcard",
+   "niveau": 1,
+   "tags": [
+    "Newcard",
+    "Grand Est",
+    "télésurveillance insuffisance cardiaque"
+   ]
+  },
+  {
+   "id": "ncd03",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Quel est le profil des patients de la cohorte Newcard Grand Est ?",
+   "choix": [
+    "63 % ont 75 ans ou plus",
+    "52,8 % ont une FEVG ≤ 40 %",
+    "La majorité a moins de 60 ans",
+    "Aucun n'a de FEVG altérée"
+   ],
+   "bonnes": [
+    0,
+    1
+   ],
+   "explication": "Des patients âgés et sévères, et pourtant très observants : le grand âge n'est pas un obstacle à la télésurveillance.",
+   "source": "newcard",
+   "niveau": 2,
+   "tags": [
+    "Newcard",
+    "Grand Est",
+    "télésurveillance insuffisance cardiaque"
+   ]
+  },
+  {
+   "id": "ncd04",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Mortalité à 12 mois : quel résultat la cohorte Newcard Grand Est affiche-t-elle, comparé à la littérature (ESC / OFACS) ?",
+   "choix": [
+    "3,06 % contre 8 à 12 %",
+    "12 % contre 3 %",
+    "25 % contre 50 %",
+    "Identique à la littérature"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Mortalité à 12 mois de 3,06 % contre 8 à 12 % dans la littérature citée (indicateurs Newcard, cohorte télésurveillée, non comparée par un essai contrôlé).",
+   "source": "newcard",
+   "niveau": 2,
+   "tags": [
+    "Newcard",
+    "Grand Est",
+    "télésurveillance insuffisance cardiaque"
+   ]
+  },
+  {
+   "id": "ncd05",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Taux de ré-hospitalisation à 30 jours dans la cohorte Newcard Grand Est, comparé au taux habituel :",
+   "choix": [
+    "5,8 % contre 22 %",
+    "22 % contre 5,8 %",
+    "15 % contre 30 %",
+    "1 % contre 5 %"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "5,8 % contre 22 % habituellement constaté, soit des ré-hospitalisations divisées par près de quatre ; 148 hospitalisations évitées au total.",
+   "source": "newcard",
+   "niveau": 2,
+   "tags": [
+    "Newcard",
+    "Grand Est",
+    "télésurveillance insuffisance cardiaque"
+   ]
+  },
+  {
+   "id": "ncd06",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Quelle part des patients de la cohorte Newcard est maintenue à domicile ?",
+   "choix": [
+    "48,3 %",
+    "64,0 %",
+    "84,7 %",
+    "100 %"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "84,7 % des patients sont maintenus à domicile.",
+   "source": "newcard",
+   "niveau": 1,
+   "tags": [
+    "Newcard",
+    "Grand Est",
+    "télésurveillance insuffisance cardiaque"
+   ]
+  },
+  {
+   "id": "ncd07",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Dans l'organisation Newcard, qui gère les alertes techniques (piles, transmission, appairage) ?",
+   "choix": [
+    "Le cardiologue",
+    "Le médecin traitant",
+    "L'IDE Newcard, à 100 %",
+    "Le patient seul"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "100 % des alertes techniques sont absorbées par l'IDE Newcard (0 minute de temps médecin) ; 100 % des alertes médicales, pré-qualifiées par l'IDE, sont transmises au cardiologue.",
+   "source": "newcard",
+   "niveau": 1,
+   "tags": [
+    "Newcard",
+    "Grand Est",
+    "télésurveillance insuffisance cardiaque"
+   ]
+  },
+  {
+   "id": "ncd08",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Quel temps de cardiologue la télésurveillance Newcard demande-t-elle en moyenne ?",
+   "choix": [
+    "4,2 min par patient et par mois",
+    "30 min par patient et par semaine",
+    "1 h par patient et par mois",
+    "Aucun"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Environ 4,2 min par patient et par mois, soit 1 à 2 alertes par semaine pour 15 patients ; la prescription en consultation prend moins de 2 minutes.",
+   "source": "newcard",
+   "niveau": 2,
+   "tags": [
+    "Newcard",
+    "Grand Est",
+    "télésurveillance insuffisance cardiaque"
+   ]
+  },
+  {
+   "id": "ncd09",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Comment Newcard répond-il au frein « mon patient n'a pas d'Internet » ?",
+   "choix": [
+    "Le patient doit installer une box",
+    "Dispositifs cellulaires multi-opérateurs (4G/2G) sans box ni Wi-Fi, avec mémoire de 60 mesures",
+    "Le patient envoie ses mesures par courrier",
+    "La télésurveillance est impossible"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Synchronisation automatique, aucun abandon lié à la connectivité en Grand Est ; données hébergées sur serveurs certifiés HDS, conformes au RGPD.",
+   "source": "newcard",
+   "niveau": 2,
+   "tags": [
+    "Newcard",
+    "Grand Est",
+    "télésurveillance insuffisance cardiaque"
+   ]
+  },
+  {
+   "id": "ncd10",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Pour un patient non autonome (troubles cognitifs, dépendant), comment la télésurveillance peut-elle être organisée selon le protocole CPTS présenté ?",
+   "choix": [
+    "Elle est contre-indiquée",
+    "L'IDEL réalise les mesures lors de son passage du matin",
+    "Le cardiologue se déplace chaque jour",
+    "Le patient est hospitalisé"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "L'autonomie n'est pas requise : l'IDEL mesure, l'IDE Newcard gère la technique, le cardiologue garde la maîtrise médicale.",
+   "source": "newcard",
+   "niveau": 2,
+   "tags": [
+    "Newcard",
+    "Grand Est",
+    "télésurveillance insuffisance cardiaque"
+   ]
+  },
+  {
+   "id": "ncd11",
+   "theme": "telesurv",
+   "type": "vf",
+   "question": "Selon la présentation, la télésurveillance Newcard est prise en charge à 100 % par l'Assurance Maladie.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Oui : prise en charge intégrale dans le cadre du droit commun de la télésurveillance.",
+   "source": "newcard",
+   "niveau": 1,
+   "tags": [
+    "Newcard",
+    "Grand Est",
+    "télésurveillance insuffisance cardiaque"
+   ]
+  },
+  {
+   "id": "ncd12",
+   "theme": "telesurv",
+   "type": "carte",
+   "question": "Télésurveillance Newcard Grand Est : les chiffres clés",
+   "reponse": "• 239 patients, 11 centres\n• 16 787 mesures, 1 725 alertes médicales\n• Observance 88,8 %, abandon 6,12 %\n• 84,7 % maintenus à domicile\n• Mortalité à 12 mois 3,06 % (vs 8-12 %)\n• Ré-hospitalisation à 30 j 5,8 % (vs 22 %)\n• 148 hospitalisations évitées\n• 4,2 min de cardiologue / patient / mois",
+   "source": "newcard",
+   "niveau": 2,
+   "tags": [
+    "Newcard",
+    "Grand Est",
+    "télésurveillance insuffisance cardiaque"
+   ]
+  },
+  {
+   "id": "ncd13",
+   "theme": "telesurv",
+   "type": "cas",
+   "question": "Patient A : alerte de prise de poids",
+   "contexte": "Patient insuffisant cardiaque sévère, antécédent de décompensation, sous furosémide à forte dose, télésurveillé. La balance connectée détecte une prise de poids de 2,8 kg en 48 heures.",
+   "etapes": [
+    {
+     "question": "Quelle est la première action de l'IDE de télésurveillance ?",
+     "choix": [
+      "Appeler le SAMU",
+      "Appeler le patient pour écarter une erreur de mesure et vérifier la dyspnée",
+      "Ignorer l'alerte",
+      "Arrêter le diurétique"
+     ],
+     "bonnes": [
+      1
+     ],
+     "explication": "L'alerte prioritaire est filtrée et pré-qualifiée par l'IDE avant transmission au cardiologue."
+    },
+    {
+     "question": "Quelle décision le cardiologue prend-il ?",
+     "choix": [
+      "Doublement du furosémide pendant 5 jours avec ionogramme et créatinine prescrits au MG",
+      "Hospitalisation immédiate en USIC",
+      "Arrêt de tous les traitements",
+      "Attendre la consultation suivante"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Majoration du diurétique et contrôle biologique par le médecin généraliste : parcours ville-spécialiste coordonné."
+    },
+    {
+     "question": "Quelle est l'issue ?",
+     "choix": [
+      "Retour au poids sec en 4 jours, hospitalisation d'urgence évitée",
+      "Hospitalisation en USIC",
+      "Décès",
+      "Aggravation"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Diurèse massive de J+2 à J+5, régression de l'essoufflement : décompensation désamorcée en ambulatoire."
+    }
+   ],
+   "source": "newcard",
+   "niveau": 2,
+   "tags": [
+    "Newcard",
+    "Grand Est",
+    "télésurveillance insuffisance cardiaque"
+   ]
+  },
+  {
+   "id": "ncd14",
+   "theme": "telesurv",
+   "type": "cas",
+   "question": "Patiente B : le cardiologue est en congés",
+   "contexte": "Patiente insuffisante cardiaque chronique polypathologique (insuffisance rénale, SEP), épisodes aigus récidivants. Alerte : prise de poids progressive, hypotension et majoration des œdèmes des membres inférieurs, pendant les congés de son cardiologue.",
+   "etapes": [
+    {
+     "question": "Que fait l'IDE de télésurveillance ?",
+     "choix": [
+      "Rien jusqu'au retour du cardiologue",
+      "Entretien urgent, repérage d'une rétention hydrosodée, orientation vers le médecin traitant avec consignes d'appel au 15 si aggravation",
+      "Adapter seule le traitement",
+      "Envoyer la patiente aux urgences sans évaluation"
+     ],
+     "bonnes": [
+      1
+     ],
+     "explication": "L'IDE joue un rôle pivot en l'absence du cardiologue référent."
+    },
+    {
+     "question": "Quelles signes justifiaient l'alerte ?",
+     "choix": [
+      "Prise de poids",
+      "Hypotension",
+      "Majoration des OMI",
+      "Hausse de la glycémie"
+     ],
+     "bonnes": [
+      0,
+      1,
+      2
+     ],
+     "explication": "Les trois signes associés évoquent une rétention hydrosodée."
+    },
+    {
+     "question": "Quel événement grave a été évité ?",
+     "choix": [
+      "Appel au SAMU et passage aux urgences",
+      "Une greffe",
+      "Une dialyse",
+      "Une chirurgie"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Le médecin traitant ajuste la posologie : diurèse > 2 L/24 h, normalisation tensionnelle et résorption des œdèmes en quelques jours."
+    }
+   ],
+   "source": "newcard",
+   "niveau": 2,
+   "tags": [
+    "Newcard",
+    "Grand Est",
+    "télésurveillance insuffisance cardiaque"
+   ]
+  },
+  {
+   "id": "sem01",
+   "theme": "ic-ttt",
+   "type": "qcm",
+   "question": "Quels paramètres surveiller sous IEC ou bêtabloquant selon le support de séminaire ?",
+   "choix": [
+    "Tension artérielle",
+    "Fréquence cardiaque",
+    "Glycémie",
+    "Température"
+   ],
+   "bonnes": [
+    0,
+    1
+   ],
+   "explication": "IEC (ramipril, périndopril…) et bêtabloquants (bisoprolol, carvédilol…) : surveiller TA et FC.",
+   "source": "seminaire",
+   "niveau": 1,
+   "tags": [
+    "séminaire IC et IR"
+   ]
+  },
+  {
+   "id": "sem02",
+   "theme": "ic-ttt",
+   "type": "qcm",
+   "question": "Sous antagoniste des minéralocorticoïdes (spironolactone), associé à un diurétique, que faut-il surveiller ?",
+   "choix": [
+    "La TA",
+    "Le poids",
+    "La fonction rénale",
+    "La vision"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Ils réduisent la rétention d'eau ; surveiller TA, poids et fonction rénale (et la kaliémie).",
+   "source": "seminaire",
+   "niveau": 2,
+   "tags": [
+    "séminaire IC et IR"
+   ]
+  },
+  {
+   "id": "sem03",
+   "theme": "ic-ttt",
+   "type": "qcm",
+   "question": "Quel « nouveau traitement » de l'IC aide les reins à éliminer le glucose et le sodium ?",
+   "choix": [
+    "Forxiga (dapagliflozine, inhibiteur de SGLT2)",
+    "Entresto",
+    "Bisoprolol",
+    "Ramipril"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Forxiga est un inhibiteur de SGLT2. Entresto (sacubitril/valsartan) favorise l'élimination de l'eau et du sel et bloque la vasoconstriction qui fatigue le cœur.",
+   "source": "seminaire",
+   "niveau": 2,
+   "tags": [
+    "séminaire IC et IR"
+   ]
+  },
+  {
+   "id": "sem04",
+   "theme": "ic-alerte",
+   "type": "qcm",
+   "question": "En télésurveillance IC, quand l'alerte « prise de poids progressive » se déclenche-t-elle chez un patient de plus de 55 kg ?",
+   "choix": [
+    "+ 1 kg par rapport à la veille",
+    "+ 4 kg par rapport au poids minimal des 30 derniers jours",
+    "+ 7 kg en un an",
+    "+ 10 %"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Plus de 55 kg : + 4 kg par rapport au poids minimal des 30 derniers jours ; moins de 55 kg : + 7 %.",
+   "source": "seminaire",
+   "niveau": 3,
+   "tags": [
+    "séminaire IC et IR"
+   ]
+  },
+  {
+   "id": "sem05",
+   "theme": "ic-alerte",
+   "type": "qcm",
+   "question": "Quelles sont les 3 principales alertes de télésurveillance IC présentées au séminaire ?",
+   "choix": [
+    "Prise de poids progressive",
+    "Dégradation clinique (essoufflement, orthopnée, OMI)",
+    "Tension artérielle basse",
+    "Hyperthermie"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Une baisse significative de la TA peut être liée à l'IC elle-même ou être iatrogène (traitements).",
+   "source": "seminaire",
+   "niveau": 2,
+   "tags": [
+    "séminaire IC et IR"
+   ]
+  },
+  {
+   "id": "sem06",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Quels sont les critères d'éligibilité à la télésurveillance de l'insuffisance cardiaque ?",
+   "choix": [
+    "Hospitalisation pour poussée d'IC dans les 12 derniers mois",
+    "OU classe NYHA ≥ 2 avec peptides natriurétiques élevés (BNP > 100 pg/mL ou NT-proBNP > 1 000 pg/mL)",
+    "Âge inférieur à 75 ans",
+    "Disposer d'une box internet"
+   ],
+   "bonnes": [
+    0,
+    1
+   ],
+   "explication": "Deux portes d'entrée alternatives. Ni l'âge ni la connexion Internet ne sont des critères.",
+   "source": "seminaire",
+   "niveau": 2,
+   "tags": [
+    "séminaire IC et IR"
+   ]
+  },
+  {
+   "id": "sem07",
+   "theme": "renal",
+   "type": "qcm",
+   "question": "Quels déchets s'accumulent principalement dans l'insuffisance rénale ?",
+   "choix": [
+    "Urée",
+    "Créatinine",
+    "Excès de sel et de potassium",
+    "Glucose"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Les reins filtrent moins bien : accumulation d'eau et de « déchets ». Un rein sain les élimine par les urines.",
+   "source": "seminaire",
+   "niveau": 1,
+   "tags": [
+    "séminaire IC et IR"
+   ]
+  },
+  {
+   "id": "sem08",
+   "theme": "renal",
+   "type": "carte",
+   "question": "Le rôle normal des reins",
+   "reponse": "• Filtrer le sang en continu\n• Réguler l'eau et le sel de l'organisme\n• Équilibrer les minéraux et la tension artérielle",
+   "source": "seminaire",
+   "niveau": 1,
+   "tags": [
+    "séminaire IC et IR"
+   ]
+  },
+  {
+   "id": "sem09",
+   "theme": "renal",
+   "type": "qcm",
+   "question": "Quel est l'effet des IEC/ARA II (périndopril, valsartan, irbésartan) dans l'insuffisance rénale ?",
+   "choix": [
+    "Ils diminuent la pression artérielle et protègent le rein",
+    "Ils traitent l'anémie",
+    "Ils corrigent l'hyperkaliémie",
+    "Ils remplacent la dialyse"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le traitement dépend du stade, de la cause et de la présence d'une albuminurie.",
+   "source": "seminaire",
+   "niveau": 1,
+   "tags": [
+    "séminaire IC et IR"
+   ]
+  },
+  {
+   "id": "sem10",
+   "theme": "renal",
+   "type": "qcm",
+   "question": "Selon le support du séminaire, en dessous de quel DFG les inhibiteurs de SGLT2 sont-ils contre-indiqués ?",
+   "choix": [
+    "< 60 mL/min",
+    "< 45 mL/min",
+    "< 20 mL/min",
+    "Jamais"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "Dapagliflozine, empagliflozine : ralentissent la progression de la maladie rénale et réduisent le risque cardiovasculaire ; contre-indiqués si DFG < 20 mL/min selon le support (se référer au RCP à jour).",
+   "source": "seminaire",
+   "niveau": 2,
+   "tags": [
+    "séminaire IC et IR"
+   ]
+  },
+  {
+   "id": "sem11",
+   "theme": "renal",
+   "type": "qcm",
+   "question": "Quels traitements ciblent les complications de l'insuffisance rénale ?",
+   "choix": [
+    "Diurétiques pour la surcharge hydrosodée",
+    "EPO pour l'anémie",
+    "Chélateur du potassium (Kayexalate) pour l'hyperkaliémie",
+    "Antibiotiques systématiques"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Traitements ciblés selon les complications.",
+   "source": "seminaire",
+   "niveau": 2,
+   "tags": [
+    "séminaire IC et IR"
+   ]
+  },
+  {
+   "id": "sem12",
+   "theme": "renal",
+   "type": "qcm",
+   "question": "À quelle fréquence contrôler la fonction rénale (biologie) chez l'insuffisant rénal selon le séminaire ?",
+   "choix": [
+    "Tous les ans",
+    "Tous les 3 mois, voire plus souvent si besoin",
+    "Tous les 5 ans",
+    "Uniquement avant dialyse"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Contrôle biologique tous les 3 mois, ou plus souvent selon la situation.",
+   "source": "seminaire",
+   "niveau": 1,
+   "tags": [
+    "séminaire IC et IR"
+   ]
+  },
+  {
+   "id": "sem13",
+   "theme": "renal",
+   "type": "qcm",
+   "question": "En télésurveillance rénale, quand l'alerte de pression artérielle se déclenche-t-elle ?",
+   "choix": [
+    "Dès une mesure isolée élevée",
+    "Lors de 3 mesures consécutives au-dessus de la borne (systolique ou diastolique)",
+    "Une fois par mois",
+    "Jamais"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Les autres alertes principales : prise de poids progressive et hausse de la dyspnée. Une hausse rapide de la créatininémie ou une fluctuation du potassium imposent une prise en charge immédiate.",
+   "source": "seminaire",
+   "niveau": 2,
+   "tags": [
+    "séminaire IC et IR"
+   ]
+  },
+  {
+   "id": "sem14",
+   "theme": "renal",
+   "type": "vf",
+   "question": "Chez l'insuffisant rénal, la dyspnée est surtout pertinente si elle s'accompagne d'une prise de poids.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "La prise de poids liée aux œdèmes et à la dyspnée peut indiquer l'urgence d'une dialyse ; une perte de poids (AEG, nausées) peut aussi précéder la dialyse.",
+   "source": "seminaire",
+   "niveau": 2,
+   "tags": [
+    "séminaire IC et IR"
+   ]
+  },
+  {
+   "id": "sem15",
+   "theme": "renal",
+   "type": "qcm",
+   "question": "Quels patients sont éligibles à la télésurveillance rénale dans le droit commun ?",
+   "choix": [
+    "MRC stade 4 (DFG entre 15 et 30 mL/min/1,73 m²)",
+    "MRC stade 5 (DFG < 15 mL/min/1,73 m²)",
+    "Transplantés rénaux greffés depuis plus de 3 mois",
+    "MRC stade 2"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Trois portes d'entrée : stade 4, stade 5 et greffés rénaux de plus de 3 mois.",
+   "source": "seminaire",
+   "niveau": 2,
+   "tags": [
+    "séminaire IC et IR"
+   ]
+  },
+  {
+   "id": "sem16",
+   "theme": "renal",
+   "type": "carte",
+   "question": "Télésurveillance rénale : les 3 alertes principales",
+   "reponse": "1. Tension : 3 mesures consécutives au-dessus de la borne\n2. Poids : prise progressive (rétention, décompensation possible)\n3. Dyspnée : hausse de l'essoufflement (liquide pulmonaire)\n+ Biologie : hausse rapide de la créatininémie, fluctuation anormale du potassium → prise en charge immédiate",
+   "source": "seminaire",
+   "niveau": 2,
+   "tags": [
+    "séminaire IC et IR"
+   ]
+  },
+  {
+   "id": "web01",
+   "theme": "ic-alerte",
+   "type": "qcm",
+   "question": "Quelle est la mission de l'association Vaincre l'Insuffisance Cardiaque ?",
+   "choix": [
+    "Aider à optimiser le parcours de soins des patients insuffisants cardiaques",
+    "Financer la greffe cardiaque",
+    "Délivrer les autorisations de télésurveillance",
+    "Remplacer le médecin traitant"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Elle travaille aussi à renforcer les compétences des professionnels, avec les patients, les aidants et les associations. Elle diffuse les messages EPOF et EPON.",
+   "source": "vic",
+   "niveau": 1
+  },
+  {
+   "id": "web02",
+   "theme": "ic-alerte",
+   "type": "qcm",
+   "question": "Quels outils pour les patients l'association Vaincre l'Insuffisance Cardiaque met-elle à disposition ?",
+   "choix": [
+    "Classeur de suivi de l'IC",
+    "Guide santé de l'IC",
+    "Fiche de suivi du poids à imprimer",
+    "Application de téléconsultation"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Ces supports sont téléchargeables sur son site.",
+   "source": "vic",
+   "niveau": 2
+  },
+  {
+   "id": "web03",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Qu'est-ce qu'Est-Rescue ?",
+   "choix": [
+    "Le réseau et observatoire des urgences du Grand Est",
+    "Un service de SAMU",
+    "Une CPTS",
+    "Une plateforme de télésurveillance"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Est-Rescue exploite les RPU (résumés de passage aux urgences) générés en temps réel à chaque passage.",
+   "source": "estrescue",
+   "niveau": 1,
+   "tags": [
+    "Grand Est"
+   ]
+  },
+  {
+   "id": "web04",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Que signifie RPU ?",
+   "choix": [
+    "Résumé de passage aux urgences",
+    "Réseau public d'urgence",
+    "Registre des patients urgents",
+    "Régulation pré-urgence"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le RPU est généré en temps réel lors de chaque passage aux urgences.",
+   "source": "estrescue",
+   "niveau": 1,
+   "tags": [
+    "Grand Est"
+   ]
+  },
+  {
+   "id": "web05",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Quel est l'objectif de l'analyse « RPU et CPTS » menée par Est-Rescue avec l'ARS et l'URPS ML ?",
+   "choix": [
+    "Donner aux CPTS des repères sur le volume de patients relevant potentiellement des soins non programmés de ville qui consultent aux urgences",
+    "Fermer des services d'urgence",
+    "Évaluer les médecins individuellement",
+    "Facturer les passages"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Les passages sont rattachés à la CPTS de la commune de résidence ; données actualisées tous les 6 mois pour suivre l'effet des actions.",
+   "source": "estrescue",
+   "niveau": 2,
+   "tags": [
+    "Grand Est"
+   ]
+  },
+  {
+   "id": "web06",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Quels indicateurs l'analyse RPU-CPTS d'Est-Rescue étudie-t-elle ?",
+   "choix": [
+    "Âge et sex-ratio",
+    "Heures d'arrivée (notamment en horaires de PDSA)",
+    "Gravité (CCMU 1 et 2) et diagnostics principaux",
+    "Durée de passage et mode de sortie"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Aussi le mode de transport. La méthode retient les 3 services d'urgence les plus fréquentés par CPTS (en général plus de 70 % des passages).",
+   "source": "estrescue",
+   "niveau": 3,
+   "tags": [
+    "Grand Est"
+   ]
+  },
+  {
+   "id": "web07",
+   "theme": "prs",
+   "type": "qcm",
+   "question": "Quand le PRS Grand Est 2018-2028 a-t-il été adopté ?",
+   "choix": [
+    "Février 2018",
+    "Juin 2018",
+    "Janvier 2020",
+    "Juin 2023"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Adopté en juin 2018 (la version de février 2018 était soumise à consultation) et régulièrement révisé.",
+   "source": "ars-prs",
+   "niveau": 2,
+   "tags": [
+    "Grand Est"
+   ]
+  },
+  {
+   "id": "web08",
+   "theme": "prs",
+   "type": "qcm",
+   "question": "Quelle est la période du schéma régional de santé (SRS) actuellement en vigueur en Grand Est ?",
+   "choix": [
+    "2018-2023",
+    "2023-2028",
+    "2025-2030",
+    "2028-2033"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Le 2e SRS couvre 2023-2028 ; il a été révisé en 2025 (renforcement de l'HAD, possibilité d'antennes de médecine d'urgence).",
+   "source": "ars-prs",
+   "niveau": 2,
+   "tags": [
+    "Grand Est"
+   ]
+  },
+  {
+   "id": "web09",
+   "theme": "prs",
+   "type": "qcm",
+   "question": "Quelles sont les 4 priorités structurantes du SRS 2023-2028 ?",
+   "choix": [
+    "Changement climatique et santé",
+    "Prévention dès le plus jeune âge (0-16 ans)",
+    "Préservation de l'autonomie",
+    "Soins non programmés",
+    "Chirurgie esthétique"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Le COS garde ses 7 axes ; le PRAPS est organisé en 6 axes.",
+   "source": "ars-prs",
+   "niveau": 2,
+   "tags": [
+    "Grand Est"
    ]
   },
   {
