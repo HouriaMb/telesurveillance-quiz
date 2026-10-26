@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Télésurveillance Quiz</title>
+  <meta name="description" content="Quiz et révisions : télésurveillance cardiaque et rénale, PRADO, parcours insuffisance cardiaque, CPTS et ARS.">
+  <meta name="theme-color" content="#0f5e63">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Télésurv Quiz">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="stylesheet" href="css/app.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="16" fill="#0f5e63"/>
+        <path d="M32 50S14 39 14 26a9 9 0 0 1 18-3 9 9 0 0 1 18 3c0 13-18 24-18 24z" fill="#d9483b"/>
+        <path d="M10 32h12l4-7 6 14 5-10 3 3h14" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="brand">Télésurveillance Quiz<small>Cœur · Rein · Parcours</small></div>
+      <button class="sync-pill" id="syncPill" data-state="off" aria-label="État de la synchronisation"><span class="dot"></span><span>Local</span></button>
+    </div>
+  </header>
+
+  <main id="view"><p class="empty">Chargement…</p></main>
+
+  <nav class="tabbar" aria-label="Navigation principale">
+    <div class="tabbar-inner">
+      <a class="tab" data-tab="" href="#/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3.5 21 11"/><path d="M5.5 9.5V20h13V9.5"/></svg>Accueil</a>
+      <a class="tab" data-tab="config" href="#/config/quiz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4.5v15l12-7.5z"/></svg>S'entraîner</a>
+      <a class="tab" data-tab="biblio" href="#/biblio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H20v15H5.5A1.5 1.5 0 0 0 4 19.5z"/><path d="M4 19.5A1.5 1.5 0 0 0 5.5 21H20"/></svg>Questions</a>
+      <a class="tab" data-tab="progres" href="#/progres"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Progrès</a>
+      <a class="tab" data-tab="reglages" href="#/reglages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>Réglages</a>
+    </div>
+  </nav>
+</body>
+</html>

@@ -1,0 +1,2811 @@
+{
+ "version": 1,
+ "maj": "2026-10-26",
+ "themes": [
+  {
+   "id": "ic-base",
+   "nom": "IC – Définition & diagnostic",
+   "couleur": "#c2410c"
+  },
+  {
+   "id": "ic-alerte",
+   "nom": "IC – Signes d'alerte (EPOF/EPON)",
+   "couleur": "#dc2626"
+  },
+  {
+   "id": "ic-ttt",
+   "nom": "IC – Traitements & hygiène de vie",
+   "couleur": "#9333ea"
+  },
+  {
+   "id": "ic-suivi",
+   "nom": "IC – Suivi & parcours de soins",
+   "couleur": "#2563eb"
+  },
+  {
+   "id": "prado",
+   "nom": "PRADO insuffisance cardiaque",
+   "couleur": "#0d9488"
+  },
+  {
+   "id": "telesurv",
+   "nom": "Télésurveillance & télémédecine",
+   "couleur": "#0369a1"
+  },
+  {
+   "id": "renal",
+   "nom": "Insuffisance rénale chronique",
+   "couleur": "#a16207"
+  },
+  {
+   "id": "prs",
+   "nom": "PRS Grand Est & ARS",
+   "couleur": "#4d7c0f"
+  },
+  {
+   "id": "orga",
+   "nom": "CPTS, MSP, DAC & coordination",
+   "couleur": "#be185d"
+  },
+  {
+   "id": "territoire",
+   "nom": "Diagnostic territorial Cœur de Moselle",
+   "couleur": "#15803d"
+  },
+  {
+   "id": "bucco",
+   "nom": "Santé bucco-dentaire & cœur",
+   "couleur": "#0891b2"
+  }
+ ],
+ "sources": [
+  {
+   "id": "proto",
+   "titre": "Protocole insuffisance cardiaque – MSP Bouzonville Freistroff (annexe 6)",
+   "type": "pdf"
+  },
+  {
+   "id": "prado",
+   "titre": "Carnet de suivi Prado – décompensation cardiaque (Assurance Maladie / SFC)",
+   "type": "pdf"
+  },
+  {
+   "id": "odt",
+   "titre": "Diagnostic territorial insuffisance cardiaque – principaux constats (ODT parcours IC)",
+   "type": "docx"
+  },
+  {
+   "id": "fiche",
+   "titre": "Fiche action ACI 2.2 – Formation EPOF, CPTS Cœur de Moselle",
+   "type": "docx"
+  },
+  {
+   "id": "affiche-ic",
+   "titre": "Affiche CPTS Cœur de Moselle – L'insuffisance cardiaque (EPOF / EPON)",
+   "type": "image"
+  },
+  {
+   "id": "affiche-bouche",
+   "titre": "Affiche CPTS Cœur de Moselle – Votre bouche et votre cœur",
+   "type": "image"
+  },
+  {
+   "id": "prs",
+   "titre": "Projet régional de santé Grand Est 2018-2028 (COS, SRS & PRAPS)",
+   "type": "pdf"
+  },
+  {
+   "id": "dac",
+   "titre": "Infographie « Connaissez-vous les DAC ? » – URPS ML / FACS Occitanie",
+   "type": "pdf"
+  },
+  {
+   "id": "msp-cpts",
+   "titre": "MSP-CPTS : guide pratique – AVECsanté",
+   "type": "pdf"
+  },
+  {
+   "id": "enquete",
+   "titre": "Grande Enquête des CPTS, volet 2 – relations ville-hôpital (FCPTS, 2025)",
+   "type": "pdf"
+  },
+  {
+   "id": "payshaut",
+   "titre": "CPTS du Pays-Haut : un HUB médical – URPS ML Grand Est",
+   "type": "pdf"
+  },
+  {
+   "id": "urps-fiche",
+   "titre": "Fiche pratique « Faire grandir sa CPTS » – URPS ML Grand Est",
+   "type": "pdf"
+  },
+  {
+   "id": "annuaire",
+   "titre": "Annuaire des CPTS Grand Est (mars 2024)",
+   "type": "pdf"
+  },
+  {
+   "id": "ts-loi",
+   "titre": "Télésurveillance médicale : entrée dans le droit commun (1er juillet 2023)",
+   "type": "web",
+   "url": "https://www.previssima.fr/actualite/sante-la-telesurveillance-medicale-sera-prise-en-charge-par-lassurance-maladie-a-compter-du-1er-juillet-2023.html"
+  },
+  {
+   "id": "ts-guide",
+   "titre": "Guide de la facturation des actes de télésurveillance – ministère de la Santé",
+   "type": "web",
+   "url": "https://sante.gouv.fr/IMG/pdf/le_guide_de_la_facturation_des_actes_de_telesurveillance_003_co_002_002_.pdf"
+  },
+  {
+   "id": "has-ts",
+   "titre": "HAS – Télésurveillance médicale : référentiels des fonctions et organisations des soins",
+   "type": "web",
+   "url": "https://has-sante.fr/jcms/p_3311071/fr/telesurveillance-medicale-referentiels-des-fonctions-et-organisations-des-soins"
+  }
+ ],
+ "questions": [
+  {
+   "id": "icb01",
+   "theme": "ic-base",
+   "type": "qcm",
+   "question": "Combien de personnes l'insuffisance cardiaque touche-t-elle en France selon le protocole ?",
+   "choix": [
+    "150 000",
+    "500 000",
+    "1,5 million",
+    "5 millions"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "Environ 1,5 million de personnes, avec près de 70 000 décès et plus de 150 000 hospitalisations par an.",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "icb02",
+   "theme": "ic-base",
+   "type": "qcm",
+   "question": "Quelle est la prévalence de l'IC chez les plus de 75 ans ?",
+   "choix": [
+    "2 %",
+    "5 %",
+    "10 %",
+    "30 %"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "L'IC concerne environ 2 % de la population générale et 10 % des plus de 75 ans.",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "icb03",
+   "theme": "ic-base",
+   "type": "qcm",
+   "question": "Quelle mortalité après le diagnostic d'IC le protocole retient-il ?",
+   "choix": [
+    "5 % à 1 an, 20 % à 5 ans",
+    "20 % à 1 an, 53 % à 5 ans",
+    "40 % à 1 an, 80 % à 5 ans",
+    "10 % à 1 an, 30 % à 5 ans"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Mortalité de 20 % à 1 an et 53 % à 5 ans du diagnostic (Gerber, JAMA Intern Med 2015).",
+   "source": "proto",
+   "niveau": 2
+  },
+  {
+   "id": "icb04",
+   "theme": "ic-base",
+   "type": "qcm",
+   "question": "Quel est l'âge moyen au moment du diagnostic d'IC en France ?",
+   "choix": [
+    "54 ans",
+    "64 ans",
+    "74 ans",
+    "84 ans"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "L'âge moyen au diagnostic est de 74 ans ; passé 70 ans, l'IC toucherait 10 à 20 % des personnes.",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "icb05",
+   "theme": "ic-base",
+   "type": "qcm",
+   "question": "Une IC à fraction d'éjection altérée (IC systolique) correspond à une FEVG…",
+   "choix": [
+    "< 40 %",
+    "entre 40 et 50 %",
+    "> 50 %",
+    "> 70 %"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "FEVG < 40 % = IC à FE altérée (systolique) ; 40-50 % = modérément altérée ; > 50 % = FE préservée (diastolique).",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "icb06",
+   "theme": "ic-base",
+   "type": "qcm",
+   "question": "Quelle est la première cause d'IC systolique (et d'IC en général) ?",
+   "choix": [
+    "L'hypertension artérielle",
+    "La cardiopathie ischémique (infarctus)",
+    "L'alcool",
+    "Le rétrécissement aortique"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "L'infarctus entraîne des lésions irréversibles d'une partie du muscle cardiaque, qui ne pompe plus correctement.",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "icb07",
+   "theme": "ic-base",
+   "type": "qcm",
+   "question": "Quelle est la première cause d'IC à fraction d'éjection préservée (diastolique) ?",
+   "choix": [
+    "L'hypertension artérielle",
+    "La cardiomyopathie dilatée",
+    "L'infarctus du myocarde",
+    "La chimiothérapie"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "L'HTA fait lutter le cœur contre une forte pression : le myocarde s'hypertrophie, les parois s'épaississent et le remplissage se dégrade.",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "icb08",
+   "theme": "ic-base",
+   "type": "vf",
+   "question": "Un dosage normal de BNP ou de NT-proBNP permet d'éliminer le diagnostic d'IC.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Oui : le protocole précise que le dosage normal élimine le diagnostic d'IC.",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "icb09",
+   "theme": "ic-base",
+   "type": "qcm",
+   "question": "En dessous de quel seuil de BNP une IC aiguë est-elle peu probable ?",
+   "choix": [
+    "< 35 ng/L",
+    "< 100 ng/L",
+    "< 300 ng/L",
+    "< 400 ng/L"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "BNP < 100 ng/L : ICA peu probable ; BNP > 400 ng/L : ICA très probable.",
+   "source": "proto",
+   "niveau": 2
+  },
+  {
+   "id": "icb10",
+   "theme": "ic-base",
+   "type": "qcm",
+   "question": "Chez un patient de 80 ans, au-dessus de quel taux de NT-proBNP l'IC aiguë est-elle très probable ?",
+   "choix": [
+    "> 300 ng/L",
+    "> 450 ng/L",
+    "> 900 ng/L",
+    "> 1 800 ng/L"
+   ],
+   "bonnes": [
+    3
+   ],
+   "explication": "Seuils NT-proBNP « ICA très probable » : > 450 si < 50 ans, > 900 entre 50 et 75 ans, > 1 800 si > 75 ans. En dessous de 300 ng/L, l'ICA est peu probable.",
+   "source": "proto",
+   "niveau": 3
+  },
+  {
+   "id": "icb11",
+   "theme": "ic-base",
+   "type": "vf",
+   "question": "Les signes EPOF étant toujours présents, l'examen clinique suffit à mesurer la gravité de l'IC.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Faux : l'IC apparaît progressivement et les signes EPOF peuvent être absents. Seule l'échographie cardiaque mesure la FEVG et précise l'origine et la gravité.",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "icb12",
+   "theme": "ic-base",
+   "type": "qcm",
+   "question": "Classification NYHA : un patient à l'aise au repos mais limité par une activité moindre que l'activité quotidienne est en stade…",
+   "choix": [
+    "NYHA I",
+    "NYHA II",
+    "NYHA III",
+    "NYHA IV"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "NYHA III = limitation marquée : symptômes pour des activités moindres que les activités quotidiennes, confortable au repos. NYHA IV = symptômes au repos.",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "icb13",
+   "theme": "ic-base",
+   "type": "carte",
+   "question": "Les 4 classes NYHA",
+   "reponse": "I : aucune limitation de l'activité physique.\nII : limitation légère (fatigue, dyspnée, palpitations aux activités ordinaires).\nIII : limitation marquée (symptômes pour des activités moindres), confortable au repos.\nIV : symptômes présents même au repos.",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "icb14",
+   "theme": "ic-base",
+   "type": "qcm",
+   "question": "Quels examens de ville le logigramme CMG/CNPCV propose-t-il en cas de suspicion d'IC sans critère d'hospitalisation ?",
+   "choix": [
+    "ECG",
+    "BNP ou NT-proBNP",
+    "Bilan biologique standard (NFS, iono, créatinine, bilan martial…)",
+    "Coronarographie"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "En ville : ECG + BNP/NT-proBNP (adapté à la créatininémie) + bilan standard (NFS, ionogramme, créatinine, CRP, troponine, bilan martial, albumine, EAL, ASAT, ALAT, glycémie, TSH, INR si anticoagulants). L'échocardiographie doppler suit, chez le cardiologue.",
+   "source": "proto",
+   "niveau": 2
+  },
+  {
+   "id": "icb15",
+   "theme": "ic-base",
+   "type": "carte",
+   "question": "Population à risque d'IC (à dépister)",
+   "reponse": "Patients de 60 ans et plus et/ou porteurs de :\n• cardiopathies sous-jacentes : ischémique, valvulaire, rythmique, congénitale, HTA, cardiotoxicité (chimio/radiothérapie) ;\n• comorbidités : diabète, tabac, surpoids, dyslipidémie, dénutrition, insuffisance rénale, apnée du sommeil, anémie, dépression, anxiété, BPCO…",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "icb16",
+   "theme": "ic-base",
+   "type": "qcm",
+   "question": "Selon le protocole, combien de personnes en France auraient une IC non diagnostiquée ?",
+   "choix": [
+    "10 000 à 50 000",
+    "100 000 à 200 000",
+    "400 000 à 700 000",
+    "Plus de 2 millions"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "Entre 400 000 et 700 000 personnes ne seraient pas diagnostiquées : l'IC reste une maladie méconnue.",
+   "source": "proto",
+   "niveau": 2
+  },
+  {
+   "id": "icb17",
+   "theme": "ic-base",
+   "type": "vf",
+   "question": "Avec l'insuffisance cardiaque, les reins reçoivent moins de sang, ce qui favorise la rétention de sel et d'eau.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Les reins éliminent moins bien le sel, d'où une rétention d'eau dans les tissus (poumons, foie, jambes), des œdèmes et une prise de poids.",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "ica01",
+   "theme": "ic-alerte",
+   "type": "carte",
+   "question": "Que signifie EPOF ?",
+   "reponse": "E : Essoufflement\nP : Prise de poids\nO : Œdèmes\nF : Fatigue\n→ 4 signes d'alerte de l'insuffisance cardiaque / de décompensation.",
+   "source": "affiche-ic",
+   "niveau": 1
+  },
+  {
+   "id": "ica02",
+   "theme": "ic-alerte",
+   "type": "carte",
+   "question": "Que signifie EPON ?",
+   "reponse": "E : Exercice physique\nP : se Peser (prendre son poids)\nO : Observance des traitements\nN : Nutrition (ne pas trop saler)\n→ 4 bons réflexes pour mieux vivre avec son cœur.",
+   "source": "affiche-ic",
+   "niveau": 1
+  },
+  {
+   "id": "ica03",
+   "theme": "ic-alerte",
+   "type": "qcm",
+   "question": "Quelle prise de poids doit faire appeler immédiatement le médecin traitant selon le carnet Prado ?",
+   "choix": [
+    "1 kg en une semaine",
+    "2 kg ou plus en 3 jours",
+    "5 kg en un mois",
+    "Toute prise de poids supérieure à 500 g"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Prise de 2 kg ou plus en 3 jours = alerte. Le protocole parle de 2-3 kg en quelques jours ; l'affiche EPON de + 2 kg en 2-3 jours.",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "ica04",
+   "theme": "ic-alerte",
+   "type": "qcm",
+   "question": "Comment le patient doit-il se peser ?",
+   "choix": [
+    "Le soir après le dîner",
+    "Chaque matin, à jeun, après avoir uriné, même tenue, même balance",
+    "Une fois par semaine chez le pharmacien",
+    "Uniquement en cas d'œdèmes"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Pesée quotidienne, le matin à jeun après avoir uriné, toujours dans la même tenue et sur la même balance.",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "ica05",
+   "theme": "ic-alerte",
+   "type": "qcm",
+   "question": "Lesquels de ces signes traduisent une gêne respiratoire évocatrice de décompensation ?",
+   "choix": [
+    "Besoin d'un oreiller supplémentaire pour dormir",
+    "Besoin de dormir assis",
+    "Essoufflement en parlant ou pour un effort habituel",
+    "Toux brutale"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Tous : orthopnée (oreillers, position assise), dyspnée pour un effort qui ne gênait pas avant, toux d'apparition brutale.",
+   "source": "prado",
+   "niveau": 2
+  },
+  {
+   "id": "ica06",
+   "theme": "ic-alerte",
+   "type": "qcm",
+   "question": "Quel test simple permet au patient de repérer un œdème ?",
+   "choix": [
+    "Mesurer son tour de taille",
+    "Appuyer quelques secondes avec le doigt sur le pied/la cheville et voir s'il reste un creux",
+    "Prendre son pouls",
+    "Se peser deux fois par jour"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Le godet : un creux qui persiste après pression du doigt signe l'œdème. Autres indices : chaussures ou chaussettes qui serrent, marque de l'élastique.",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "ica07",
+   "theme": "ic-alerte",
+   "type": "vf",
+   "question": "Chez le sujet âgé, l'IC peut se manifester par des symptômes non spécifiques : confusion, chutes, troubles du sommeil, perte d'autonomie.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le document HAS/Assurance Maladie annexé au protocole cite asthénie, confusion, troubles du comportement, désorientation, troubles du sommeil, chutes, perte d'autonomie et prise de poids rapide.",
+   "source": "proto",
+   "niveau": 2
+  },
+  {
+   "id": "ica08",
+   "theme": "ic-alerte",
+   "type": "qcm",
+   "question": "Parmi ces situations, lesquelles doivent faire appeler immédiatement le médecin selon le carnet Prado ?",
+   "choix": [
+    "Vertiges, malaise ou perte de connaissance",
+    "Palpitations",
+    "Essoufflement en position couchée",
+    "Fatigue beaucoup plus importante que d'habitude"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Tous ces signes sont des signes d'alerte, de même que les œdèmes des chevilles/jambes, la prise de 2 kg en 3 jours et une douleur ou un mal inhabituels (toux, fièvre, douleur thoracique, diarrhée).",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "ica09",
+   "theme": "ic-alerte",
+   "type": "qcm",
+   "question": "Pourquoi la diffusion des signes EPOF est-elle une priorité de la fiche action de la CPTS ?",
+   "choix": [
+    "Pour remplacer l'échographie",
+    "Pour dépister précocement l'IC et repérer les décompensations afin de réduire les hospitalisations évitables",
+    "Pour sélectionner les patients éligibles à la greffe",
+    "Pour calculer la FEVG"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Objectifs : renforcer les compétences des professionnels sur le diagnostic précoce et la gestion des signes d'alerte, réduire les hospitalisations évitables et les réhospitalisations à 30 jours.",
+   "source": "fiche",
+   "niveau": 1
+  },
+  {
+   "id": "ica10",
+   "theme": "ic-alerte",
+   "type": "vf",
+   "question": "S'il existe un seul signe EPOF chez un patient, il faut l'inciter à prendre rendez-vous chez son médecin traitant.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le protocole insiste : sensibiliser les patients aux signes EPOF et, au moindre signe, les inciter à consulter leur médecin traitant.",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "ica11",
+   "theme": "ic-alerte",
+   "type": "carte",
+   "question": "Questions simples à poser au patient à risque (EPOF)",
+   "reponse": "• Ressentez-vous un essoufflement inhabituel ? Au repos, allongé ?\n• Avez-vous pris 2-3 kg en quelques jours sans explication ?\n• Vos pieds/chevilles sont-ils gonflés ? La marque des chaussettes reste-t-elle visible ?\n• Êtes-vous plus fatigué lors des activités quotidiennes (marche, escaliers, charges) ?",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "ica12",
+   "theme": "ic-alerte",
+   "type": "qcm",
+   "question": "Lequel de ces facteurs peut déclencher une décompensation cardiaque ?",
+   "choix": [
+    "Prise récente d'AINS ou de corticoïdes",
+    "Infection pulmonaire ou virale",
+    "Écart de régime (excès de sel)",
+    "Mauvaise observance du traitement"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Causes déclenchantes : observance sub-optimale, prise hydrosodée excessive, trouble du rythme, ischémie, HTA non contrôlée, médicaments (AINS, corticoïdes, antiarythmiques classe I), anémie, infection, insuffisance rénale…",
+   "source": "proto",
+   "niveau": 2
+  },
+  {
+   "id": "ict01",
+   "theme": "ic-ttt",
+   "type": "qcm",
+   "question": "Quelles classes thérapeutiques composent la « quadrithérapie » de l'IC à FE réduite ?",
+   "choix": [
+    "IEC (ou ARA II / sacubitril-valsartan)",
+    "Bêtabloquants",
+    "Antagonistes des récepteurs minéralocorticoïdes",
+    "Inhibiteurs de SGLT2 (gliflozines)",
+    "AINS"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Le protocole cite IEC, ARA II (sartans), bêtabloquants, antagonistes des récepteurs minéralocorticoïdes (spironolactone) et inhibiteurs de SGLT2. Les AINS sont au contraire à éviter (risque de décompensation).",
+   "source": "proto",
+   "niveau": 2
+  },
+  {
+   "id": "ict02",
+   "theme": "ic-ttt",
+   "type": "qcm",
+   "question": "Quel est le rôle du diurétique dans l'IC ?",
+   "choix": [
+    "Ralentir le cœur",
+    "Augmenter l'élimination rénale du sel et donc de l'eau, pour soulager le cœur",
+    "Fluidifier le sang",
+    "Faire baisser le cholestérol"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Le diurétique augmente le volume d'urines et élimine l'excès de sel et de liquide.",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "ict03",
+   "theme": "ic-ttt",
+   "type": "qcm",
+   "question": "Quand prescrit-on le plus souvent un ARA II à la place d'un IEC ?",
+   "choix": [
+    "En première intention chez tous les patients",
+    "Quand l'IEC est mal toléré (toux par exemple)",
+    "Uniquement en cas de FEVG > 50 %",
+    "Jamais"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Les ARA II remplacent le plus souvent les IEC mal tolérés, notamment en cas de toux.",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "ict04",
+   "theme": "ic-ttt",
+   "type": "vf",
+   "question": "Le médecin peut augmenter la dose d'un traitement de l'IC même si le patient se sent mieux.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "La plupart des traitements ont une efficacité optimale à certaines doses qu'on n'atteint que très progressivement (titration).",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "ict05",
+   "theme": "ic-ttt",
+   "type": "qcm",
+   "question": "Le patient a oublié son comprimé du matin et s'en rend compte au moment de la prise du soir. Que faire ?",
+   "choix": [
+    "Doubler la dose du soir",
+    "Prendre la dose du soir sans doubler",
+    "Arrêter le traitement 24 h",
+    "Prendre deux doses le lendemain"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "On prend le médicament oublié dès qu'on s'en aperçoit, sauf s'il est l'heure de la prise suivante : on ne double jamais la dose.",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "ict06",
+   "theme": "ic-ttt",
+   "type": "qcm",
+   "question": "Quelle quantité maximale de sel le carnet Prado indique-t-il à titre indicatif pour une alimentation peu salée ?",
+   "choix": [
+    "2 g/jour",
+    "6 g/jour",
+    "10 g/jour",
+    "12 g/jour"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Au maximum 6 g de sel par jour à titre indicatif. L'équipe médicale fixe la dose maximale propre au patient (notée en page 1 du carnet).",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "ict07",
+   "theme": "ic-ttt",
+   "type": "qcm",
+   "question": "1 g de sel (NaCl) contient environ…",
+   "choix": [
+    "40 mg de sodium",
+    "400 mg de sodium",
+    "1 g de sodium",
+    "2,5 g de sodium"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "1 g de sel = 400 mg de sodium ; inversement, 1 g de sodium = 2,5 g de sel.",
+   "source": "prado",
+   "niveau": 2
+  },
+  {
+   "id": "ict08",
+   "theme": "ic-ttt",
+   "type": "qcm",
+   "question": "Quelle part du sel consommé provient du sel ajouté en cuisinant ou à table ?",
+   "choix": [
+    "Environ 20 %",
+    "Environ 50 %",
+    "Environ 80 %",
+    "100 %"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Environ 20 % seulement ; 80 % viennent des produits alimentaires (charcuterie, fromages, conserves, plats cuisinés, pain…).",
+   "source": "prado",
+   "niveau": 2
+  },
+  {
+   "id": "ict09",
+   "theme": "ic-ttt",
+   "type": "vf",
+   "question": "Le patient peut remplacer librement son sel par du « sel de régime ».",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Faux : le sel de régime contient du potassium dont la consommation peut entraîner des troubles graves. Uniquement sur avis médical.",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "ict10",
+   "theme": "ic-ttt",
+   "type": "qcm",
+   "question": "Lesquels de ces produits sont riches en sodium ?",
+   "choix": [
+    "Médicaments effervescents",
+    "Levure chimique",
+    "Eaux gazeuses bicarbonatées",
+    "Herbes aromatiques fraîches"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Médicaments effervescents, levure chimique, bicarbonate et eaux gazeuses bicarbonatées apportent du sodium. Les herbes aromatiques sont à privilégier pour donner du goût.",
+   "source": "prado",
+   "niveau": 2
+  },
+  {
+   "id": "ict11",
+   "theme": "ic-ttt",
+   "type": "qcm",
+   "question": "Quelle teneur en sel une eau doit-elle avoir pour être considérée comme peu salée selon le carnet Prado ?",
+   "choix": [
+    "< 50 mg de NaCl par litre",
+    "< 500 mg par litre",
+    "< 1 g par litre",
+    "Toutes les eaux conviennent"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Choisir une eau dont la teneur est inférieure à 50 mg de NaCl par litre ; l'eau du robinet est en général très peu salée.",
+   "source": "prado",
+   "niveau": 2
+  },
+  {
+   "id": "ict12",
+   "theme": "ic-ttt",
+   "type": "qcm",
+   "question": "Quelle activité physique est recommandée quand l'IC est stabilisée ?",
+   "choix": [
+    "Aucune, repos strict",
+    "Une activité modérée comme la marche, sans essoufflement ni palpitations",
+    "Du sport intensif pour renforcer le cœur",
+    "Uniquement de la musculation"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Activité modérée (marche) ; l'intérêt est dans la durée plus que dans l'intensité. Avis du médecin traitant avant de commencer.",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "ict13",
+   "theme": "ic-ttt",
+   "type": "qcm",
+   "question": "Pendant une activité physique, quels symptômes doivent la faire arrêter immédiatement ?",
+   "choix": [
+    "Essoufflement",
+    "Vertige",
+    "Douleur dans la poitrine",
+    "Nausée ou sueurs froides"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Tous ; s'ils persistent, prévenir sans tarder le médecin ou l'infirmier. Éviter l'exercice à jeun ou après un repas copieux (idéalement 1 à 2 h après un repas léger).",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "ict14",
+   "theme": "ic-ttt",
+   "type": "qcm",
+   "question": "Quels vaccins le carnet Prado recommande-t-il pour éviter une aggravation de l'IC ?",
+   "choix": [
+    "Antigrippal tous les ans",
+    "Antipneumococcique",
+    "BCG",
+    "Fièvre jaune"
+   ],
+   "bonnes": [
+    0,
+    1
+   ],
+   "explication": "Les infections respiratoires peuvent aggraver rapidement l'IC : vaccin antigrippal annuel et vaccin antipneumococcique (le protocole ajoute la COVID annuelle). Vérifiez toujours le calendrier vaccinal en vigueur, qui évolue.",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "ict15",
+   "theme": "ic-ttt",
+   "type": "carte",
+   "question": "Règles hygiéno-diététiques de l'IC (protocole)",
+   "reponse": "• Arrêt du tabac et/ou de l'alcool\n• Perte de poids si surcharge\n• Activité physique régulière et adaptée\n• Régime pauvre en sel et en graisses (privilégier les insaturées)\n• Restriction hydrique selon prescription\n• Éducation thérapeutique : observance",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "ict16",
+   "theme": "ic-ttt",
+   "type": "vf",
+   "question": "L'automédication est sans risque pour un patient insuffisant cardiaque si le produit est en vente libre.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Faux : demander conseil au médecin ou au pharmacien avant tout médicament en vente libre (ex. AINS, effervescents riches en sodium).",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "ict17",
+   "theme": "ic-ttt",
+   "type": "qcm",
+   "question": "Quel médicament de l'IC « aide le cœur à battre plus lentement et à moins se fatiguer » ?",
+   "choix": [
+    "Le diurétique",
+    "Le bêtabloquant",
+    "La statine",
+    "L'antiagrégant plaquettaire"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Le bêtabloquant ralentit le cœur. L'ivabradine et les digitaliques ralentissent aussi la fréquence cardiaque.",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "ics01",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Parcours HAS 2014 : à quelle fréquence le médecin traitant voit-il un patient stable en NYHA II ?",
+   "choix": [
+    "Au moins 1 fois/an",
+    "Au moins 2 fois/an",
+    "Au moins 4 fois/an",
+    "4 à 12 fois/an"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "Médecin traitant : stade I au moins 2 fois/an, stade II au moins 4 fois/an, stade III 4 à 12 fois/an.",
+   "source": "proto",
+   "niveau": 2
+  },
+  {
+   "id": "ics02",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Parcours HAS 2014 : à quelle fréquence le cardiologue voit-il un patient stable en NYHA I ?",
+   "choix": [
+    "1 fois/an",
+    "2 fois/an",
+    "4 fois/an",
+    "Tous les mois"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Cardiologue : stade I 1 fois/an, stade II 2 fois/an, stade III 4 à 12 fois/an.",
+   "source": "proto",
+   "niveau": 2
+  },
+  {
+   "id": "ics03",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Après une hospitalisation pour décompensation, dans quels délais les consultations doivent-elles avoir lieu (HAS 2014) ?",
+   "choix": [
+    "MT dans le mois, cardiologue dans les 6 mois",
+    "MT dans la semaine, cardiologue dans les 30 jours",
+    "MT et cardiologue le jour de la sortie",
+    "Uniquement le cardiologue à 3 mois"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Médecin traitant dans la semaine après la sortie, cardiologue dans les 30 jours. Si l'état de base n'est pas atteint : consultations supplémentaires.",
+   "source": "proto",
+   "niveau": 2
+  },
+  {
+   "id": "ics04",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Quels paramètres biologiques le protocole demande-t-il de surveiller au cours du suivi ?",
+   "choix": [
+    "NT-proBNP",
+    "DFG (fonction rénale)",
+    "Kaliémie",
+    "PSA"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Biologie de suivi : NT-proBNP, DFG et potassium (K). Le biologiste alerte aussi sur troubles ioniques, anémie, INR déséquilibré.",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "ics05",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Lesquels sont des critères d'hospitalisation listés dans le protocole ?",
+   "choix": [
+    "Apparition d'une fibrillation atriale",
+    "Hyponatrémie et/ou hyperkaliémie",
+    "Bradycardie ou hypotension mal tolérées",
+    "Prise de poids de 500 g"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Aussi : éléments EPOF majorés, décompensations répétées malgré rééquilibrage à domicile, précordialgie, anémie sévère, insuffisance rénale qui se majore, cytolyse hépatique.",
+   "source": "proto",
+   "niveau": 2
+  },
+  {
+   "id": "ics06",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Quel professionnel, selon le protocole, « assure la télésurveillance » et indique la pose d'un stimulateur ou d'un défibrillateur ?",
+   "choix": [
+    "Le médecin traitant",
+    "Le cardiologue",
+    "Le pharmacien",
+    "L'infirmier"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Le cardiologue confirme le diagnostic, mesure la FEVG, optimise le traitement, organise le calendrier de suivi et assure la télésurveillance.",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "ics07",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Quel est le rôle du pharmacien dans le parcours IC ?",
+   "choix": [
+    "Poser le diagnostic",
+    "Évaluer l'observance, vérifier doses et interactions, prévenir l'automédication",
+    "Réaliser l'échocardiographie",
+    "Prescrire les diurétiques"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Le pharmacien évalue l'observance, informe sur les risques de l'automédication, vérifie doses et interactions et alerte le MG en cas de doute.",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "ics08",
+   "theme": "ic-suivi",
+   "type": "carte",
+   "question": "Les 3 actes de la synthèse du protocole IC",
+   "reponse": "Acte 1 : penser à l'IC, même devant des signes peu spécifiques.\nActe 2 : affiner le risque, traquer les symptômes et leur majoration pour prévenir les hospitalisations, adresser pour optimiser le traitement.\nActe 3 : organiser le suivi, prendre en charge les comorbidités, faire de la prévention.",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "ics09",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Dans le logigramme CMG/CNPCV, quelle alternative est proposée à la consultation (idéalement rapide) chez le cardiologue ?",
+   "choix": [
+    "La télé-expertise MG/cardiologue",
+    "Le passage aux urgences systématique",
+    "La téléconsultation avec un pharmacien",
+    "Aucune"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "La télé-expertise médecin généraliste / cardiologue est l'alternative proposée.",
+   "source": "proto",
+   "niveau": 2
+  },
+  {
+   "id": "ics10",
+   "theme": "ic-suivi",
+   "type": "vf",
+   "question": "Le médecin généraliste peut prescrire un diurétique de l'anse en cas de signes congestifs, sans critère biologique d'hospitalisation, avant l'avis du cardiologue.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Oui : le logigramme indique « prescription de diurétiques de l'anse possible par le MG si signes congestifs ».",
+   "source": "proto",
+   "niveau": 3
+  },
+  {
+   "id": "ics11",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Quels professionnels interviennent dans le parcours IC selon le protocole de la MSP ?",
+   "choix": [
+    "Médecin, cardiologue, infirmier",
+    "Pharmacien, biologiste",
+    "Diététicien, kinésithérapeute",
+    "Tous ces professionnels"
+   ],
+   "bonnes": [
+    3
+   ],
+   "explication": "Le protocole détaille le rôle de chacun : MG, cardiologue, IDE, pharmacien, biologiste, diététicien et kinésithérapeute.",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "ics12",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Dans quel cadre les cas des patients inclus dans le protocole IC sont-ils discutés à la MSP ?",
+   "choix": [
+    "En RCP (réunions de concertation pluriprofessionnelle)",
+    "Aux urgences",
+    "En commission ARS",
+    "Uniquement par courrier"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Les cas sont évoqués en RCP ; le protocole est révisé chaque année par la commission « maladie chronique ».",
+   "source": "proto",
+   "niveau": 1
+  },
+  {
+   "id": "pra01",
+   "theme": "prado",
+   "type": "carte",
+   "question": "Qu'est-ce que Prado ?",
+   "reponse": "Le service de retour à domicile de l'Assurance Maladie : après une hospitalisation (ici pour décompensation cardiaque), un conseiller de l'Assurance Maladie organise les premiers rendez-vous (médecin traitant, infirmier, cardiologue) pour un retour à domicile dans les meilleures conditions.",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "pra02",
+   "theme": "prado",
+   "type": "qcm",
+   "question": "Dans quel délai a lieu la première consultation chez le médecin traitant après la sortie, avec Prado ?",
+   "choix": [
+    "Dans les 48 heures",
+    "Dans les 7 jours",
+    "Dans le mois",
+    "Dans les 3 mois"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Le conseiller organise la première consultation chez le médecin traitant dans les 7 jours suivant la sortie.",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "pra03",
+   "theme": "prado",
+   "type": "qcm",
+   "question": "À quel moment est programmée la consultation chez le cardiologue dans le cadre de Prado ?",
+   "choix": [
+    "Environ 1 mois après la sortie",
+    "6 mois après",
+    "1 an après",
+    "Avant la sortie"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Environ un mois après la sortie ; le cardiologue décide ensuite de la périodicité.",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "pra04",
+   "theme": "prado",
+   "type": "qcm",
+   "question": "À quel rythme l'infirmier rend-il visite au patient pendant les 2 premiers mois ?",
+   "choix": [
+    "Tous les jours",
+    "Une fois par semaine",
+    "Une fois toutes les deux semaines",
+    "Une fois par mois"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Une visite par semaine durant les 2 mois suivant la sortie (8 séances), puis suivi adapté du 3e au 6e mois.",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "pra05",
+   "theme": "prado",
+   "type": "qcm",
+   "question": "Patient sorti en stade NYHA III : comment se poursuit le suivi infirmier Prado après les 2 premiers mois ?",
+   "choix": [
+    "Il s'arrête",
+    "Il continue 4 mois (6 mois au total) à raison d'une séance toutes les deux semaines",
+    "Il continue un an chaque semaine",
+    "Il est remplacé par des courriers"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "NYHA III ou IV : visites prises en charge pendant 4 mois supplémentaires (6 mois au total), une séance toutes les deux semaines. NYHA I ou II : 8 visites en 2 mois puis deux courriers de rappel d'éducation.",
+   "source": "prado",
+   "niveau": 2
+  },
+  {
+   "id": "pra06",
+   "theme": "prado",
+   "type": "qcm",
+   "question": "Qui assure la coordination de la prise en charge du patient Prado ?",
+   "choix": [
+    "Le conseiller de l'Assurance Maladie",
+    "Le médecin traitant",
+    "L'infirmier",
+    "Le cardiologue hospitalier"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "C'est le médecin traitant qui assure la coordination ; le conseiller de l'Assurance Maladie organise les premiers rendez-vous et les aspects administratifs.",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "pra07",
+   "theme": "prado",
+   "type": "qcm",
+   "question": "Lors des visites infirmières Prado, quels seuils imposent d'alerter immédiatement le médecin traitant ?",
+   "choix": [
+    "Prise ou perte rapide de plus de 2 kg en 3 jours",
+    "PAS < 90 mmHg ou baisse de PA symptomatique",
+    "Pouls < 50/min, > 120/min ou irrégulier",
+    "Apparition ou aggravation d'œdèmes, d'essoufflement ou de toux"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Tous ces seuils figurent dans les tableaux de surveillance ; s'y ajoute le besoin de dormir assis ou d'ajouter plusieurs oreillers. À défaut du médecin : le 15 (112 depuis un portable).",
+   "source": "prado",
+   "niveau": 2
+  },
+  {
+   "id": "pra08",
+   "theme": "prado",
+   "type": "qcm",
+   "question": "Qu'évalue le bilan éducationnel réalisé par l'infirmier à l'issue des 8 premières séances ?",
+   "choix": [
+    "Le patient sait reconnaître les signes d'alerte",
+    "Il connaît la conduite à tenir et les personnes à contacter",
+    "Il respecte les consignes hygiéno-diététiques et prend son traitement",
+    "Sa FEVG"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Le bilan éducationnel porte sur les signes d'alerte, la conduite à tenir, les personnes à contacter, les consignes hygiéno-diététiques et l'observance.",
+   "source": "prado",
+   "niveau": 2
+  },
+  {
+   "id": "pra09",
+   "theme": "prado",
+   "type": "carte",
+   "question": "Consultation longue du médecin traitant (Prado) : que vérifie-t-il ?",
+   "reponse": "• Niveau d'information et d'implication du patient (bilan infirmier)\n• Efficacité et tolérance du traitement\n• Consultation cardiologique réalisée avant la fin du 2e mois\n• Utilité de consultations spécialisées complémentaires\n• Adéquation besoins / aidants / moyens\n• Actions pour éviter l'hospitalisation en urgence",
+   "source": "prado",
+   "niveau": 2
+  },
+  {
+   "id": "pra10",
+   "theme": "prado",
+   "type": "qcm",
+   "question": "Quel acte infirmier, cité dans le diagnostic territorial, correspond au suivi Prado IC ?",
+   "choix": [
+    "AMI 1",
+    "AMI 5.8",
+    "AIS 3",
+    "BSI"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Le recours à l'acte AMI 5.8 est estimé à seulement 7,3 % sur le territoire : le dispositif Prado semble peu mobilisé.",
+   "source": "odt",
+   "niveau": 2
+  },
+  {
+   "id": "pra11",
+   "theme": "prado",
+   "type": "vf",
+   "question": "Un médecin peut demander que les visites infirmières se poursuivent au-delà de 2 mois pour un patient NYHA I ou II.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Oui : il peut contacter le conseiller de l'Assurance Maladie (coordonnées page 4 du carnet).",
+   "source": "prado",
+   "niveau": 3
+  },
+  {
+   "id": "pra12",
+   "theme": "prado",
+   "type": "qcm",
+   "question": "Selon la Grande Enquête des CPTS, quel volet Prado est le plus souvent concerné par les actions des CPTS ?",
+   "choix": [
+    "Personnes âgées",
+    "Insuffisance cardiaque",
+    "BPCO",
+    "Chirurgie"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Insuffisance cardiaque 85 %, personnes âgées 54 %, BPCO 24 %, AVC 17 %, chirurgie 17 %. 34 % des CPTS ont des actions en lien avec (ou en remplacement de) Prado.",
+   "source": "enquete",
+   "niveau": 2
+  },
+  {
+   "id": "pra13",
+   "theme": "prado",
+   "type": "vf",
+   "question": "Le carnet de suivi Prado est à présenter à l'infirmier à chaque visite et à emporter en consultation, en vacances ou aux urgences.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "C'est un outil de coordination : chaque professionnel y inscrit ses observations.",
+   "source": "prado",
+   "niveau": 1
+  },
+  {
+   "id": "tls01",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Depuis quand la télésurveillance médicale est-elle prise en charge dans le droit commun par l'Assurance Maladie ?",
+   "choix": [
+    "1er janvier 2018",
+    "1er juillet 2023",
+    "1er janvier 2025",
+    "Elle est toujours expérimentale"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Généralisation au 1er juillet 2023, après une période de transition entre le programme ETAPES et le droit commun.",
+   "source": "ts-loi",
+   "niveau": 1
+  },
+  {
+   "id": "tls02",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Que signifie ETAPES ?",
+   "choix": [
+    "Expérimentations de télémédecine pour l'amélioration des parcours en santé",
+    "Évaluation des techniques avancées en prévention et santé",
+    "Équipes territoriales d'appui aux parcours en santé",
+    "Établissements de télésurveillance agréés par l'État"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Programme national d'expérimentations de télémédecine pour l'amélioration des parcours en santé, cité dans le PRS Grand Est.",
+   "source": "prs",
+   "niveau": 1
+  },
+  {
+   "id": "tls03",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Quelles pathologies étaient couvertes par les expérimentations ETAPES de télésurveillance ?",
+   "choix": [
+    "Insuffisance cardiaque",
+    "Insuffisance rénale",
+    "Insuffisance respiratoire",
+    "Diabète",
+    "Prothèses cardiaques implantables"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "explication": "Les 5 : diabète, insuffisance cardiaque, insuffisance rénale, insuffisance respiratoire et prothèses cardiaques implantables.",
+   "source": "ts-loi",
+   "niveau": 2
+  },
+  {
+   "id": "tls04",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Qui est « l'opérateur de télésurveillance » ?",
+   "choix": [
+    "Le fabricant du dispositif médical numérique",
+    "Le professionnel, la structure ou l'équipe de professionnels de santé qui assure la surveillance médicale du patient",
+    "La CPAM",
+    "Le patient"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "L'opérateur assure le suivi médical à distance ; le fabricant perçoit un forfait technique pour le dispositif.",
+   "source": "ts-loi",
+   "niveau": 1
+  },
+  {
+   "id": "tls05",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Quelles démarches l'opérateur de télésurveillance doit-il accomplir pour être remboursé ?",
+   "choix": [
+    "Déclarer son activité à l'ARS (démarches simplifiées), une seule fois",
+    "Obtenir un agrément de la HAS pour chaque patient",
+    "Signer une convention avec chaque pharmacie",
+    "Aucune"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "L'opérateur déclare son activité à l'ARS ; il s'engage alors à respecter le référentiel de la pathologie. L'ARS délivre une attestation de dépôt qui permet la facturation.",
+   "source": "ts-loi",
+   "niveau": 2
+  },
+  {
+   "id": "tls06",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Quels forfaits rémunèrent la télésurveillance médicale dans le droit commun ?",
+   "choix": [
+    "Un forfait « opérateur » pour le suivi médical",
+    "Un forfait technique pour le fabricant/exploitant du dispositif médical numérique",
+    "Un forfait pour le patient",
+    "Un forfait pour la mutuelle"
+   ],
+   "bonnes": [
+    0,
+    1
+   ],
+   "explication": "Deux forfaits : opérateur (professionnels qui surveillent) et technique (dispositif médical numérique).",
+   "source": "ts-loi",
+   "niveau": 2
+  },
+  {
+   "id": "tls07",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Selon l'arrêté du 16 mai 2023, quel est le montant mensuel du forfait opérateur de niveau 2 (insuffisance cardiaque, rénale, respiratoire, diabète) ?",
+   "choix": [
+    "11 €",
+    "28 €",
+    "60 €",
+    "150 €"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Niveau 1 : 11 € ; niveau 2 : 28 € (montants mensuels fixés par l'arrêté du 16 mai 2023 ; vérifier les éventuelles revalorisations).",
+   "source": "ts-loi",
+   "niveau": 3
+  },
+  {
+   "id": "tls08",
+   "theme": "telesurv",
+   "type": "vf",
+   "question": "Selon le PRS Grand Est, la télémédecine est une fin en soi qui peut déroger au parcours coordonné du patient.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Faux : la télémédecine ne déroge pas au parcours coordonné ; elle n'est pas une fin en soi mais une modalité d'organisation inscrite dans un projet de soins, et doit s'intégrer aux systèmes d'information des acteurs.",
+   "source": "prs",
+   "niveau": 1
+  },
+  {
+   "id": "tls09",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Pour quelles pathologies le PRS Grand Est veut-il faciliter la télésurveillance au domicile ou au plus près (MSP, EHPAD) ?",
+   "choix": [
+    "Cardiologie",
+    "Insuffisance rénale",
+    "Dermatologie esthétique",
+    "Orthopédie"
+   ],
+   "bonnes": [
+    0,
+    1
+   ],
+   "explication": "Le PRS cite explicitement la télésurveillance en cardiologie et dans l'insuffisance rénale.",
+   "source": "prs",
+   "niveau": 1
+  },
+  {
+   "id": "tls10",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Selon la Grande Enquête des CPTS, quelle proportion de CPTS utilisent ou promeuvent un outil de télésurveillance dans leurs actions avec l'hôpital ?",
+   "choix": [
+    "5 %",
+    "35 %",
+    "54 %",
+    "71 %"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Seulement 5 %, contre 71 % pour la messagerie sécurisée de santé, 54 % pour DMP/Mon espace santé et 35 % pour la téléexpertise.",
+   "source": "enquete",
+   "niveau": 2
+  },
+  {
+   "id": "tls11",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Quel constat le diagnostic territorial fait-il sur la télésurveillance des patients IC ?",
+   "choix": [
+    "Elle est parfaitement coordonnée avec la ville",
+    "Elle est parfois instaurée à l'initiative de l'hôpital sans coordination suffisamment structurée avec les professionnels de ville",
+    "Elle n'existe pas",
+    "Elle est réservée aux NYHA I"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Une réflexion collective est prévue : partage d'informations, répartition des rôles, intégration au parcours de soins.",
+   "source": "odt",
+   "niveau": 2
+  },
+  {
+   "id": "tls12",
+   "theme": "telesurv",
+   "type": "carte",
+   "question": "Téléconsultation, télé-expertise, télésurveillance : différences",
+   "reponse": "• Téléconsultation : consultation à distance entre un professionnel médical et un patient.\n• Télé-expertise : un professionnel sollicite à distance l'avis d'un confrère (ex. MG → cardiologue).\n• Télésurveillance : interprétation à distance, par un professionnel ou une équipe médicale, des données recueillies par un dispositif médical numérique utilisé par le patient.",
+   "source": "ts-loi",
+   "niveau": 1
+  },
+  {
+   "id": "tls13",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Dans la CPTS du Pays-Haut, comment fonctionne la téléconsultation assistée ?",
+   "choix": [
+    "Le patient est seul chez lui avec une application",
+    "Une infirmière accueille le patient, prend les paramètres et assiste la téléconsultation menée par un médecin à distance",
+    "Un pharmacien réalise seul la consultation",
+    "Elle passe par le 15"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Le médecin à distance pose un diagnostic, prescrit ou oriente. 26 IDEL formés à la TLC assistée couvrent le territoire ; 297 téléconsultations assistées sur 6 500 consultations en 2024.",
+   "source": "payshaut",
+   "niveau": 2
+  },
+  {
+   "id": "tls14",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Quels objectifs de la fiche action CPTS concernent la télésurveillance ?",
+   "choix": [
+    "Déployer des outils de télésurveillance",
+    "Former les professionnels à leur utilisation",
+    "Remplacer les consultations de cardiologie",
+    "Installer des procédures de télésurveillance et d'expertise"
+   ],
+   "bonnes": [
+    0,
+    1,
+    3
+   ],
+   "explication": "La fiche prévoit de déployer la télésurveillance, de former les professionnels (formation Newcard le 27 octobre 2026) et d'installer outils et procédures de télésurveillance et d'expertise.",
+   "source": "fiche",
+   "niveau": 2
+  },
+  {
+   "id": "tls15",
+   "theme": "telesurv",
+   "type": "vf",
+   "question": "La HAS a publié des référentiels des fonctions et organisations des soins pour la télésurveillance médicale.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Oui : en s'inscrivant, l'opérateur s'engage à respecter le référentiel de la pathologie concernée.",
+   "source": "has-ts",
+   "niveau": 1
+  },
+  {
+   "id": "ren01",
+   "theme": "renal",
+   "type": "qcm",
+   "question": "Quel objectif chiffré le PRS Grand Est fixe-t-il pour les dialyses en urgence ?",
+   "choix": [
+    "Les diminuer d'au moins 10 %",
+    "Les diminuer d'au moins 50 %",
+    "Les supprimer totalement",
+    "Aucun objectif chiffré"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Objectif : diminuer d'au moins 50 % le nombre de personnes insuffisantes rénales dialysées en urgence, via repérage, dépistage et prise en charge précoce.",
+   "source": "prs",
+   "niveau": 1
+  },
+  {
+   "id": "ren02",
+   "theme": "renal",
+   "type": "qcm",
+   "question": "Combien coûte annuellement le traitement de suppléance de l'insuffisance rénale terminale par patient, selon le PRS ?",
+   "choix": [
+    "3 000 à 9 000 €",
+    "30 000 à 90 000 €",
+    "300 000 €",
+    "Moins de 1 000 €"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Entre 30 000 et 90 000 € par an selon les modalités de suppléance, en plus du coût humain.",
+   "source": "prs",
+   "niveau": 2
+  },
+  {
+   "id": "ren03",
+   "theme": "renal",
+   "type": "qcm",
+   "question": "À partir de quel stade de maladie rénale chronique le PRS veut-il promouvoir des coopérations interprofessionnelles de suivi ?",
+   "choix": [
+    "Stade I",
+    "Stade II",
+    "Stade IIIb (insuffisance rénale modérée)",
+    "Stade V uniquement"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "Coopérations interprofessionnelles pour le suivi des patients insuffisants rénaux à partir du stade IIIb.",
+   "source": "prs",
+   "niveau": 2
+  },
+  {
+   "id": "ren04",
+   "theme": "renal",
+   "type": "qcm",
+   "question": "Quelles modalités « hors centre lourd » le PRS veut-il développer ?",
+   "choix": [
+    "Dialyse péritonéale",
+    "Hémodialyse autonome",
+    "Greffe",
+    "Hémodialyse en centre lourd"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Objectif : augmenter le nombre de patients pris en charge hors centre lourd pour préserver leur autonomie.",
+   "source": "prs",
+   "niveau": 2
+  },
+  {
+   "id": "ren05",
+   "theme": "renal",
+   "type": "vf",
+   "question": "Selon le PRS, la greffe rénale, lorsqu'elle est possible, est le traitement de l'insuffisance rénale terminale qui apporte la meilleure qualité de vie.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Oui ; son coût, identique la 1re année à celui de l'hémodialyse en centre, décroît rapidement à partir de la 2e année.",
+   "source": "prs",
+   "niveau": 1
+  },
+  {
+   "id": "ren06",
+   "theme": "renal",
+   "type": "qcm",
+   "question": "Quel est l'élément clé du repérage et du dépistage de la maladie rénale chronique selon le PRS ?",
+   "choix": [
+    "L'imagerie",
+    "La biologie médicale",
+    "L'examen clinique seul",
+    "La génétique"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "La biologie médicale est l'élément clé ; mieux coordonner biologistes, MG et pharmaciens permettrait un repérage plus efficient.",
+   "source": "prs",
+   "niveau": 1
+  },
+  {
+   "id": "ren07",
+   "theme": "renal",
+   "type": "qcm",
+   "question": "Quelle complication du diabète le PRS cible-t-il particulièrement ?",
+   "choix": [
+    "La rétinopathie uniquement",
+    "L'insuffisance rénale chronique",
+    "L'amputation uniquement",
+    "La neuropathie"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Objectif : prévenir et limiter les complications du diabète, en particulier l'insuffisance rénale chronique.",
+   "source": "prs",
+   "niveau": 1
+  },
+  {
+   "id": "ren08",
+   "theme": "renal",
+   "type": "vf",
+   "question": "L'insuffisance rénale est une comorbidité à risque d'IC et une aggravation de la fonction rénale est un critère d'hospitalisation chez l'insuffisant cardiaque.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "L'IR figure parmi les comorbidités à risque, et une IR qui se majore fait partie des critères d'hospitalisation du protocole.",
+   "source": "proto",
+   "niveau": 2
+  },
+  {
+   "id": "ren09",
+   "theme": "renal",
+   "type": "qcm",
+   "question": "Selon le diagnostic territorial, quelle part des patients IC n'a pas d'ionogramme ni d'évaluation de la fonction rénale dans l'année ?",
+   "choix": [
+    "5 %",
+    "25 %",
+    "40 %",
+    "60 %"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "25 % n'ont ni ionogramme ni évaluation de la fonction rénale ; 40 % n'ont pas de bilan martial annuel.",
+   "source": "odt",
+   "niveau": 2
+  },
+  {
+   "id": "prs01",
+   "theme": "prs",
+   "type": "qcm",
+   "question": "Quelles sont les composantes du PRS Grand Est 2018-2028 ?",
+   "choix": [
+    "Un cadre d'orientation stratégique (COS) à 10 ans",
+    "Un schéma régional de santé (SRS) à 5 ans",
+    "Un PRAPS intégré au SRS",
+    "Un plan national d'accès aux soins"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "COS à 10 ans, SRS à 5 ans et PRAPS (accès à la prévention et aux soins des plus démunis). Un 3e volume porte sur les objectifs quantifiés de l'offre de soins (OQOS). Deux SRS se succèdent sur 2018-2028.",
+   "source": "prs",
+   "niveau": 2
+  },
+  {
+   "id": "prs02",
+   "theme": "prs",
+   "type": "qcm",
+   "question": "Que signifie PRAPS ?",
+   "choix": [
+    "Programme régional d'accès à la prévention et aux soins des personnes les plus démunies",
+    "Plan régional d'amélioration des pratiques de soins",
+    "Programme d'accompagnement du retour à domicile",
+    "Projet régional d'appui aux professionnels de santé"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Programme spécifique intégré au schéma régional de santé.",
+   "source": "prs",
+   "niveau": 1
+  },
+  {
+   "id": "prs03",
+   "theme": "prs",
+   "type": "qcm",
+   "question": "Combien d'axes stratégiques compte le schéma régional de santé du PRS Grand Est ?",
+   "choix": [
+    "3",
+    "5",
+    "7",
+    "11"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "7 axes : prévention, offre de soins de proximité, ressources humaines, logique de parcours, accès aux soins et autonomie, qualité/pertinence/efficience, innovation.",
+   "source": "prs",
+   "niveau": 2
+  },
+  {
+   "id": "prs04",
+   "theme": "prs",
+   "type": "carte",
+   "question": "Les 7 axes stratégiques du PRS Grand Est",
+   "reponse": "1. Orienter la politique de santé vers la prévention\n2. Renforcer et structurer l'offre de soins de proximité\n3. Adapter la politique de ressources humaines en santé\n4. Faire évoluer le système de santé dans une logique de parcours\n5. Améliorer l'accès aux soins et l'autonomie des personnes\n6. Qualité, pertinence et efficience\n7. Politique d'innovation",
+   "source": "prs",
+   "niveau": 2
+  },
+  {
+   "id": "prs05",
+   "theme": "prs",
+   "type": "qcm",
+   "question": "Quel objectif le PRS fixe-t-il pour les patients insuffisants cardiaques en ALD ?",
+   "choix": [
+    "100 % en télésurveillance",
+    "Au moins 50 % inclus dans un protocole de coopération type « Asalée » ou un protocole de suivi à domicile",
+    "Au moins 20 % en réadaptation cardiaque",
+    "Aucun objectif spécifique"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Objectif 5 de l'axe parcours : coopérations MG-IDE (type Asalée), éducation thérapeutique, suivi médical régulier à domicile.",
+   "source": "prs",
+   "niveau": 2
+  },
+  {
+   "id": "prs06",
+   "theme": "prs",
+   "type": "qcm",
+   "question": "Pourquoi le nombre de patients insuffisants cardiaques augmente-t-il selon le PRS ?",
+   "choix": [
+    "Les infarctus sont plus fréquents",
+    "Les progrès du traitement de l'infarctus réduisent la mortalité sans éliminer la morbidité",
+    "Le dépistage est moins bon",
+    "La population rajeunit"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "L'allongement de la survie après infarctus augmente mécaniquement le nombre de patients IC (de même que le vieillissement).",
+   "source": "prs",
+   "niveau": 1
+  },
+  {
+   "id": "prs07",
+   "theme": "prs",
+   "type": "qcm",
+   "question": "Quelle action le PRS prévoit-il pour réduire les réhospitalisations des IC chroniques ?",
+   "choix": [
+    "Élaborer un diagnostic régional et territorial du parcours IC puis un plan d'actions",
+    "Supprimer les hospitalisations",
+    "Imposer la télésurveillance",
+    "Fermer les petits services"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Diagnostic régional et territorial du parcours, puis plan d'actions visant les réhospitalisations évitables.",
+   "source": "prs",
+   "niveau": 2
+  },
+  {
+   "id": "prs08",
+   "theme": "prs",
+   "type": "qcm",
+   "question": "Quelle structure régionale l'ARS mobilise-t-elle pour l'appui au développement de la e-santé ?",
+   "choix": [
+    "Le GRADeS",
+    "La CPAM",
+    "L'URPS",
+    "Le DAC"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le GRADeS (Groupement régional d'appui au développement de la e-santé) assure notamment l'animation territoriale de la e-santé.",
+   "source": "prs",
+   "niveau": 3
+  },
+  {
+   "id": "prs09",
+   "theme": "prs",
+   "type": "vf",
+   "question": "Le PRS Grand Est a été construit avec plus de 600 experts de la région.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Les travaux ont démarré dès 2016 et associé plus de 600 experts.",
+   "source": "prs",
+   "niveau": 2
+  },
+  {
+   "id": "prs10",
+   "theme": "prs",
+   "type": "qcm",
+   "question": "Selon le PRS, quels services socles l'écosystème numérique de santé doit-il utiliser en priorité ?",
+   "choix": [
+    "Le DMP et la messagerie sécurisée de santé (MSS)",
+    "Les réseaux sociaux",
+    "Le courrier postal",
+    "Le fax"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le DMP et la MSS sont les services socles prioritaires.",
+   "source": "prs",
+   "niveau": 2
+  },
+  {
+   "id": "prs11",
+   "theme": "prs",
+   "type": "qcm",
+   "question": "Le PRS vise à accompagner la constitution de quelles organisations pour l'exercice coordonné ?",
+   "choix": [
+    "CPTS",
+    "Plateformes territoriales d'appui (PTA) pour les cas complexes",
+    "MSP / équipes de soins primaires",
+    "Cliniques privées"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Le SRS mise sur l'exercice collectif et coordonné ; les PTA ont depuis été fusionnées dans les DAC.",
+   "source": "prs",
+   "niveau": 2
+  },
+  {
+   "id": "org01",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Quelle loi a créé les CPTS ?",
+   "choix": [
+    "Loi HPST de 2009",
+    "Loi de modernisation de notre système de santé du 26 janvier 2016",
+    "LFSS 2022",
+    "Loi Kouchner de 2002"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Créées par la loi du 26 janvier 2016, les CPTS sont intégrées au champ conventionnel à partir de 2019.",
+   "source": "msp-cpts",
+   "niveau": 1
+  },
+  {
+   "id": "org02",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Quelle est la principale différence entre une MSP et une CPTS ?",
+   "choix": [
+    "La MSP est une structure effectrice de soins ; la CPTS facilite la coordination territoriale et populationnelle",
+    "La CPTS soigne les patients, la MSP organise le territoire",
+    "Aucune différence",
+    "La CPTS est un service hospitalier"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Principe de subsidiarité : la MSP pour la coordination clinique et le soin, la CPTS pour la coordination territoriale et populationnelle.",
+   "source": "msp-cpts",
+   "niveau": 1
+  },
+  {
+   "id": "org03",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Composition minimale d'une MSP :",
+   "choix": [
+    "1 médecin",
+    "2 médecins et 1 professionnel paramédical",
+    "3 médecins",
+    "1 médecin et 1 pharmacien"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Au minimum deux médecins et un professionnel paramédical. Les MSP sont inscrites dans le Code de la santé publique depuis 2007 (art. L.6323-3).",
+   "source": "msp-cpts",
+   "niveau": 2
+  },
+  {
+   "id": "org04",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Quelles sont des missions des CPTS (art. L.1434-12-2 du CSP) ?",
+   "choix": [
+    "Améliorer l'accès aux soins (soins non programmés, médecin traitant)",
+    "Organiser des parcours de santé coordonnés",
+    "Développer la prévention et la promotion de la santé",
+    "Participer à la réponse aux crises sanitaires"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Aussi : qualité et pertinence des soins, accompagnement des professionnels et attractivité du territoire.",
+   "source": "msp-cpts",
+   "niveau": 2
+  },
+  {
+   "id": "org05",
+   "theme": "orga",
+   "type": "vf",
+   "question": "Une CPTS a besoin des données de santé individuelles des patients pour exercer ses missions.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Faux : elle utilise des données de diagnostic territorial. Exemple : pour l'accès au médecin traitant, elle recueille seulement des coordonnées, supprimées une fois l'usager orienté.",
+   "source": "msp-cpts",
+   "niveau": 2
+  },
+  {
+   "id": "org06",
+   "theme": "orga",
+   "type": "carte",
+   "question": "Qu'est-ce qu'un DAC ?",
+   "reponse": "Dispositif d'appui à la coordination : équipe territoriale pluriprofessionnelle (IDE coordinateurs, travailleurs sociaux, coordonnateurs de parcours, psychologues, médecins…) qui appuie la coordination des parcours complexes et fait le lien entre sanitaire, médico-social et social. Existe depuis 2022.",
+   "source": "dac",
+   "niveau": 1
+  },
+  {
+   "id": "org07",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Lesquelles de ces affirmations sur le DAC sont exactes ?",
+   "choix": [
+    "Il n'est pas un service de soins",
+    "Il ne remplace pas le médecin traitant",
+    "Il n'est pas un dispositif d'urgence",
+    "Il fait à la place de la médecine de ville"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Le DAC aide la médecine de ville à coordonner les parcours complexes, sans faire à sa place.",
+   "source": "dac",
+   "niveau": 1
+  },
+  {
+   "id": "org08",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Quelles situations justifient de solliciter le DAC ?",
+   "choix": [
+    "Retour à domicile complexe après hospitalisation",
+    "Personne âgée polypathologique",
+    "Aidant épuisé",
+    "Rhume simple chez un adulte autonome"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Aussi : patient isolé avec difficultés psychiques et sociales, handicap avec rupture de suivi, situations mêlant médical, social et médico-social.",
+   "source": "dac",
+   "niveau": 1
+  },
+  {
+   "id": "org09",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Comment solliciter un DAC ?",
+   "choix": [
+    "Par téléphone",
+    "En remplissant la fiche de demande d'appui",
+    "Par courriel",
+    "Uniquement via le 15"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Par téléphone, fiche de demande d'appui ou courriel (rubrique « solliciter le DAC » du site départemental).",
+   "source": "dac",
+   "niveau": 1
+  },
+  {
+   "id": "org10",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Que signifie ACI dans le contexte des CPTS ?",
+   "choix": [
+    "Accord conventionnel interprofessionnel",
+    "Agence de coordination intersectorielle",
+    "Action collective innovante",
+    "Assurance complémentaire individuelle"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "L'ACI encadre et finance les missions des CPTS ; la fiche action EPOF relève de l'item 2.2.",
+   "source": "fiche",
+   "niveau": 1
+  },
+  {
+   "id": "org11",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Quelles sont les 3 thématiques principales des actions ville-hôpital des CPTS selon la Grande Enquête ?",
+   "choix": [
+    "Personnes âgées (autonomie)",
+    "Insuffisance cardiaque",
+    "Santé mentale",
+    "Dermatologie"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "98 % des CPTS travaillent sur la thématique ville-hôpital, avec en moyenne 25 000 € par an consacrés à cette mission.",
+   "source": "enquete",
+   "niveau": 2
+  },
+  {
+   "id": "org12",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Quel est le principal frein à la coopération ville-hôpital identifié par les CPTS ?",
+   "choix": [
+    "Le manque de locaux",
+    "Les outils numériques (manque d'interopérabilité, outils mal ou non utilisés)",
+    "Le refus des patients",
+    "La distance géographique"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "49 % citent le manque d'interopérabilité et 49 % des outils mal ou non renseignés côté hôpital ; seules 22 % n'identifient aucune difficulté.",
+   "source": "enquete",
+   "niveau": 2
+  },
+  {
+   "id": "org13",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Selon l'URPS ML Grand Est, quel est le principal levier de stabilisation des CPTS ?",
+   "choix": [
+    "Recruter davantage de salariés",
+    "Clarifier les rôles entre gouvernance, direction et coordination",
+    "Multiplier les projets",
+    "Augmenter les cotisations"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Les difficultés viennent moins d'un manque d'implication que d'une répartition insuffisamment formalisée des rôles et des circuits de décision.",
+   "source": "urps-fiche",
+   "niveau": 2
+  },
+  {
+   "id": "org14",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Quel dispositif la CPTS du Pays-Haut a-t-elle créé pour l'accès aux soins ?",
+   "choix": [
+    "Un HUB médical (soins non programmés, consultations, téléconsultation assistée, prévention)",
+    "Un hôpital de jour",
+    "Un centre de dialyse",
+    "Un EHPAD"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Lieux fixes de soins non programmés accessibles par un numéro unique, articulés avec le SAS 54, avec un questionnaire patient numérique préalable.",
+   "source": "payshaut",
+   "niveau": 1
+  },
+  {
+   "id": "org15",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Selon le guide MSP-CPTS, une CPTS peut-elle salarier un professionnel pour réaliser des actes de soins ?",
+   "choix": [
+    "Oui, c'est sa mission principale",
+    "Non, elle n'a pas vocation à être effectrice de soins ni à financer l'effection de soins",
+    "Oui, uniquement des infirmiers",
+    "Oui, si l'ARS l'autorise"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "La CPTS n'a pas vocation à financer des professionnels pour l'effection de soins et d'actions de prévention (dépistage, vaccination, ETP…).",
+   "source": "msp-cpts",
+   "niveau": 2
+  },
+  {
+   "id": "org16",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Dans quel département se trouve la CPTS Cœur de Moselle ?",
+   "choix": [
+    "Meurthe-et-Moselle",
+    "Moselle",
+    "Meuse",
+    "Vosges"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Moselle, dans la région Grand Est. Son partenaire hospitalier pour l'action IC est le CHR Metz-Thionville (Mercy).",
+   "source": "fiche",
+   "niveau": 1
+  },
+  {
+   "id": "ter01",
+   "theme": "territoire",
+   "type": "qcm",
+   "question": "Combien de patients insuffisants cardiaques le diagnostic territorial a-t-il identifiés en 2021 ?",
+   "choix": [
+    "143",
+    "343",
+    "543",
+    "1 543"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "543 patients identifiés en 2021, suivis sur 2022-2023.",
+   "source": "odt",
+   "niveau": 1
+  },
+  {
+   "id": "ter02",
+   "theme": "territoire",
+   "type": "qcm",
+   "question": "Quel est l'âge moyen des patients IC de la cohorte ?",
+   "choix": [
+    "67,5 ans",
+    "72 ans",
+    "77,5 ans",
+    "85 ans"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "Âge moyen 77,5 ans, âge médian 80 ans ; environ 50 % de femmes.",
+   "source": "odt",
+   "niveau": 1
+  },
+  {
+   "id": "ter03",
+   "theme": "territoire",
+   "type": "qcm",
+   "question": "Combien de patients ont une FEVG < 40 %, situation où la quadrithérapie est un enjeu ?",
+   "choix": [
+    "12",
+    "52",
+    "92",
+    "192"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "Environ un tiers des patients ont une FEVG < 50 %, dont 92 avec une FEVG < 40 %.",
+   "source": "odt",
+   "niveau": 2
+  },
+  {
+   "id": "ter04",
+   "theme": "territoire",
+   "type": "qcm",
+   "question": "Quelle part des patients IC n'a eu aucun contact avec un cardiologue dans l'année ?",
+   "choix": [
+    "8 %",
+    "18 %",
+    "28 %",
+    "48 %"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "28 % ; 4 % ne consultent aucun médecin. Aucun cardiologue n'exerce en libéral sur le territoire (vacations à l'hôpital de Boulay).",
+   "source": "odt",
+   "niveau": 1
+  },
+  {
+   "id": "ter05",
+   "theme": "territoire",
+   "type": "qcm",
+   "question": "Quelle est la couverture vaccinale contre le pneumocoque des patients IC du territoire ?",
+   "choix": [
+    "18,2 %",
+    "45 %",
+    "67,9 %",
+    "90 %"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Pneumocoque 18,2 % ; grippe 67,9 %. La prévention vaccinale est un axe d'amélioration.",
+   "source": "odt",
+   "niveau": 1
+  },
+  {
+   "id": "ter06",
+   "theme": "territoire",
+   "type": "qcm",
+   "question": "Quelle part des patients consulte son médecin traitant dans les 14 jours suivant une hospitalisation ?",
+   "choix": [
+    "31 %",
+    "51 %",
+    "75 %",
+    "95 %"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "51 % seulement ; 31 % ont à la fois une consultation MG à 14 jours et un rendez-vous cardiologique dans les 2 mois.",
+   "source": "odt",
+   "niveau": 2
+  },
+  {
+   "id": "ter07",
+   "theme": "territoire",
+   "type": "qcm",
+   "question": "Quelle est la mortalité à deux ans chez les patients hospitalisés pour décompensation sur le territoire ?",
+   "choix": [
+    "Environ 10 %",
+    "Environ 25 %",
+    "Plus de 50 %",
+    "Plus de 90 %"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "Mortalité globale à 2 ans ≈ 25 %, plus de 50 % chez les patients hospitalisés pour décompensation. Environ un quart sont réhospitalisés dans les 3 mois.",
+   "source": "odt",
+   "niveau": 2
+  },
+  {
+   "id": "ter08",
+   "theme": "territoire",
+   "type": "qcm",
+   "question": "Quelles comorbidités sont fréquentes dans la cohorte ?",
+   "choix": [
+    "Diabète (≈ 31 %)",
+    "Maladies respiratoires (≈ 33 %)",
+    "Apnée du sommeil (≈ 20 %)",
+    "Cancers (≈ 19 %)"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Toutes, ainsi que la maladie coronarienne.",
+   "source": "odt",
+   "niveau": 2
+  },
+  {
+   "id": "ter09",
+   "theme": "territoire",
+   "type": "qcm",
+   "question": "Quel est l'objectif prioritaire de l'ACI 2026 pour le parcours IC ?",
+   "choix": [
+    "Obtenir immédiatement une baisse chiffrée des hospitalisations",
+    "Poser les bases : constituer un groupe de travail pluriprofessionnel, fédérer les acteurs et définir les actions",
+    "Ouvrir un service de cardiologie",
+    "Équiper tous les patients en télésurveillance"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "2026 : structurer la démarche ; déploiement progressif des actions vers les patients en 2027.",
+   "source": "odt",
+   "niveau": 1
+  },
+  {
+   "id": "ter10",
+   "theme": "territoire",
+   "type": "vf",
+   "question": "Environ deux tiers des patients avaient consulté leur médecin avant leur décompensation.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Et 53 % avaient vu leur cardiologue dans les 3 mois précédents, ce qui interroge sur la détection précoce des signes et l'information des patients.",
+   "source": "odt",
+   "niveau": 2
+  },
+  {
+   "id": "ter11",
+   "theme": "territoire",
+   "type": "qcm",
+   "question": "Quels formats d'action la fiche ACI 2.2 prévoit-elle ?",
+   "choix": [
+    "Sessions de formation pluriprofessionnelles sur les signes EPOF et les protocoles",
+    "Élaboration de supports pédagogiques",
+    "Formation aux techniques d'éducation thérapeutique",
+    "Création d'un service d'urgence"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Ainsi que le déploiement de la télésurveillance et la formation à ses outils ; public : MG, IDEL, pharmaciens.",
+   "source": "fiche",
+   "niveau": 1
+  },
+  {
+   "id": "ter12",
+   "theme": "territoire",
+   "type": "qcm",
+   "question": "Parmi ces indicateurs de résultat, lesquels figurent dans la fiche action ?",
+   "choix": [
+    "Nombre de patients pris en charge dans le protocole IC et troubles du rythme",
+    "Nombre de professionnels formés au dépistage et engagés dans le parcours",
+    "Nombre de séances de travail et taux de participation",
+    "Chiffre d'affaires de la CPTS"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Indicateurs de moyens : protocole réalisé, outils déployés, installation des outils et procédures de télésurveillance.",
+   "source": "fiche",
+   "niveau": 2
+  },
+  {
+   "id": "buc01",
+   "theme": "bucco",
+   "type": "qcm",
+   "question": "Lors de quelles situations les bactéries de la bouche peuvent-elles passer dans le sang ?",
+   "choix": [
+    "Brossage des dents",
+    "Mastication",
+    "Certains soins dentaires",
+    "Lavage des mains"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Brossage, mastication et certains soins dentaires.",
+   "source": "affiche-bouche",
+   "niveau": 1
+  },
+  {
+   "id": "buc02",
+   "theme": "bucco",
+   "type": "qcm",
+   "question": "Quelles conséquences cardiaques les infections bucco-dentaires peuvent-elles favoriser ?",
+   "choix": [
+    "Inflammation du cœur",
+    "Endocardite (infection des valves)",
+    "Athérosclérose",
+    "Aggravation de l'insuffisance cardiaque"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "D'où l'importance du suivi dentaire, surtout chez les patients cardiaques, plus exposés aux complications.",
+   "source": "affiche-bouche",
+   "niveau": 1
+  },
+  {
+   "id": "buc03",
+   "theme": "bucco",
+   "type": "qcm",
+   "question": "Quels bons réflexes l'affiche recommande-t-elle ?",
+   "choix": [
+    "Se brosser les dents 2 fois par jour avec un dentifrice fluoré",
+    "Nettoyer entre les dents chaque jour",
+    "Consulter son dentiste au moins 1 fois par an",
+    "Ne consulter qu'en cas de douleur"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Aussi : signaler tout problème (douleur, saignement des gencives, dent qui bouge) et limiter sucre, tabac et alcool.",
+   "source": "affiche-bouche",
+   "niveau": 1
+  },
+  {
+   "id": "buc04",
+   "theme": "bucco",
+   "type": "vf",
+   "question": "Les infections bucco-dentaires passent souvent inaperçues.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Elles peuvent pourtant avoir des conséquences sérieuses sur la santé, notamment cardiaque.",
+   "source": "affiche-bouche",
+   "niveau": 1
+  },
+  {
+   "id": "cas01",
+   "theme": "ic-alerte",
+   "type": "cas",
+   "question": "M. L., 78 ans, IC à FE altérée",
+   "contexte": "M. L., 78 ans, IC à FE altérée (FEVG 35 %), NYHA II, est rentré chez lui il y a 3 semaines après une décompensation, dans le cadre de Prado. Lors de la visite hebdomadaire, l'infirmière relève : poids 74,6 kg (72,3 kg il y a 3 jours), TA 118/70, pouls 82 régulier, œdèmes des chevilles cotés 1, et il dort avec 2 oreillers au lieu d'un.",
+   "etapes": [
+    {
+     "question": "Quelle variation de poids constatez-vous ?",
+     "choix": [
+      "Stable",
+      "+ 2,3 kg en 3 jours, au-dessus du seuil d'alerte",
+      "+ 0,5 kg, normal",
+      "Perte de poids"
+     ],
+     "bonnes": [
+      1
+     ],
+     "explication": "+ 2,3 kg en 3 jours : au-delà du seuil de 2 kg en 3 jours du carnet Prado."
+    },
+    {
+     "question": "Quels autres éléments vont dans le sens d'une décompensation débutante ?",
+     "choix": [
+      "Apparition d'œdèmes des chevilles",
+      "Orthopnée (oreiller supplémentaire)",
+      "Pouls à 82 régulier",
+      "TA à 118/70"
+     ],
+     "bonnes": [
+      0,
+      1
+     ],
+     "explication": "Œdèmes et orthopnée sont des signes congestifs. Le pouls (50-120, régulier) et la PAS (> 90) ne dépassent pas les seuils."
+    },
+    {
+     "question": "Quelle est la conduite à tenir ?",
+     "choix": [
+      "Attendre la prochaine visite",
+      "Alerter immédiatement le médecin traitant (à défaut le 15) et le noter dans le carnet",
+      "Doubler le diurétique sans avis",
+      "Conseiller de boire davantage"
+     ],
+     "bonnes": [
+      1
+     ],
+     "explication": "Le carnet impose d'alerter immédiatement le médecin traitant ; l'infirmier ne modifie pas le traitement sans prescription."
+    }
+   ],
+   "source": "prado",
+   "niveau": 2
+  },
+  {
+   "id": "cas02",
+   "theme": "ic-base",
+   "type": "cas",
+   "question": "Mme R., 81 ans, fatigue et confusion",
+   "contexte": "Mme R., 81 ans, hypertendue et diabétique, consulte pour une fatigue inhabituelle depuis 15 jours. Sa fille signale des épisodes de confusion et une chute. Elle a pris 3 kg en une semaine ; chevilles gonflées. Pas de signe de gravité, constantes stables.",
+   "etapes": [
+    {
+     "question": "Quelle hypothèse ne pas manquer ?",
+     "choix": [
+      "Un simple vieillissement",
+      "Une insuffisance cardiaque",
+      "Une gastro-entérite",
+      "Une entorse"
+     ],
+     "bonnes": [
+      1
+     ],
+     "explication": "Chez le sujet âgé, l'IC peut se révéler par des signes non spécifiques (asthénie, confusion, chutes) ; s'y ajoutent ici prise de poids rapide et œdèmes. Elle est à risque (HTA, diabète, âge)."
+    },
+    {
+     "question": "Quel examen biologique de première intention aide à orienter ?",
+     "choix": [
+      "BNP ou NT-proBNP",
+      "PSA",
+      "Sérologie hépatite",
+      "Vitamine D"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Un dosage normal élimine l'IC ; chez une patiente > 75 ans, NT-proBNP > 1 800 ng/L rend l'IC aiguë très probable."
+    },
+    {
+     "question": "Une fois les résultats en faveur d'une IC (sans critère d'hospitalisation), quelle suite ?",
+     "choix": [
+      "Consultation (idéalement rapide) chez le cardiologue avec échocardiographie, ou télé-expertise",
+      "Rien de plus",
+      "Hospitalisation systématique en réanimation",
+      "Coronarographie d'emblée"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "L'échocardiographie doppler mesure la FEVG et oriente le traitement ; la télé-expertise MG/cardiologue est une alternative."
+    }
+   ],
+   "source": "proto",
+   "niveau": 2
+  },
+  {
+   "id": "cas03",
+   "theme": "prado",
+   "type": "cas",
+   "question": "Sortie d'hospitalisation de M. B.",
+   "contexte": "M. B., 72 ans, sort de cardiologie après une décompensation cardiaque, en stade NYHA III. Il adhère à Prado.",
+   "etapes": [
+    {
+     "question": "Quels rendez-vous le conseiller de l'Assurance Maladie organise-t-il ?",
+     "choix": [
+      "Médecin traitant dans les 7 jours",
+      "Première visite infirmière",
+      "Cardiologue environ 1 mois après la sortie",
+      "Kinésithérapeute quotidien"
+     ],
+     "bonnes": [
+      0,
+      1,
+      2
+     ],
+     "explication": "Le conseiller organise MT, infirmier et cardiologue ; il peut aussi mettre en place aide à domicile ou portage de repas."
+    },
+    {
+     "question": "Combien de temps dureront les visites infirmières prises en charge ?",
+     "choix": [
+      "2 mois",
+      "6 mois au total (hebdomadaires 2 mois puis toutes les 2 semaines 4 mois)",
+      "1 an",
+      "1 mois"
+     ],
+     "bonnes": [
+      1
+     ],
+     "explication": "NYHA III ou IV : suivi prolongé jusqu'à 6 mois au total."
+    },
+    {
+     "question": "Qui coordonne sa prise en charge ?",
+     "choix": [
+      "Le conseiller de l'Assurance Maladie",
+      "Le médecin traitant",
+      "Le pharmacien",
+      "L'hôpital"
+     ],
+     "bonnes": [
+      1
+     ],
+     "explication": "Le médecin traitant coordonne ; le carnet de suivi sert d'outil de liaison."
+    }
+   ],
+   "source": "prado",
+   "niveau": 2
+  },
+  {
+   "id": "cas04",
+   "theme": "orga",
+   "type": "cas",
+   "question": "Une situation complexe à domicile",
+   "contexte": "Mme D., 84 ans, IC et troubles cognitifs débutants, vit seule. Son fils, unique aidant, se dit épuisé. Elle a été hospitalisée deux fois en 6 mois. Le médecin traitant se sent démuni pour organiser le maintien à domicile.",
+   "etapes": [
+    {
+     "question": "Quel dispositif peut l'appuyer dans la coordination de ce parcours complexe ?",
+     "choix": [
+      "Le DAC",
+      "Le SAMU",
+      "La CPAM uniquement",
+      "Aucun"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Le DAC évalue la situation globale, identifie les interlocuteurs, organise la coordination et construit un plan d'action partagé."
+    },
+    {
+     "question": "Le DAC va-t-il remplacer le médecin traitant dans le suivi médical ?",
+     "choix": [
+      "Oui",
+      "Non, il appuie la coordination sans faire à sa place"
+     ],
+     "bonnes": [
+      1
+     ],
+     "explication": "Le DAC n'est ni un service de soins, ni un dispositif d'urgence, et ne remplace pas le médecin traitant."
+    },
+    {
+     "question": "Quels autres leviers ville-hôpital envisager ?",
+     "choix": [
+      "Intégrer la patiente au parcours IC de la CPTS",
+      "Éducation thérapeutique (EPOF/EPON) avec patiente et aidant",
+      "Anticiper la sortie lors d'une prochaine hospitalisation (programmation des RDV, transmission)",
+      "Interdire toute hospitalisation"
+     ],
+     "bonnes": [
+      0,
+      1,
+      2
+     ],
+     "explication": "Ce sont les axes du diagnostic territorial : préparation des sorties, coordination, éducation des patients et des aidants."
+    }
+   ],
+   "source": "dac",
+   "niveau": 2
+  },
+  {
+   "id": "cas05",
+   "theme": "telesurv",
+   "type": "cas",
+   "question": "Mettre en place une télésurveillance",
+   "contexte": "Une équipe de cardiologie souhaite proposer la télésurveillance à des patients IC du territoire et la coordonner avec la CPTS.",
+   "etapes": [
+    {
+     "question": "Quelle démarche administrative l'opérateur doit-il réaliser pour être pris en charge dans le droit commun ?",
+     "choix": [
+      "Déclarer son activité à l'ARS et obtenir une attestation de dépôt",
+      "Demander une autorisation au préfet",
+      "Rien, c'est automatique",
+      "Obtenir l'accord de chaque mutuelle"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Déclaration unique à l'ARS ; engagement à respecter le référentiel de la pathologie."
+    },
+    {
+     "question": "Quel écueil le diagnostic territorial pointe-t-il ?",
+     "choix": [
+      "Des télésurveillances instaurées par l'hôpital sans coordination structurée avec la ville",
+      "Un excès de cardiologues libéraux",
+      "Trop de patients vaccinés",
+      "Aucun"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Il faut définir le partage d'informations, la répartition des rôles et l'intégration dans le parcours."
+    },
+    {
+     "question": "Quels outils numériques favorisent la coordination ville-hôpital selon le PRS et la Grande Enquête ?",
+     "choix": [
+      "Messagerie sécurisée de santé (MSS)",
+      "DMP / Mon espace santé",
+      "Outils de téléexpertise",
+      "Fax non sécurisé"
+     ],
+     "bonnes": [
+      0,
+      1,
+      2
+     ],
+     "explication": "MSS et DMP sont les services socles ; l'interopérabilité reste le frein principal."
+    }
+   ],
+   "source": "ts-loi",
+   "niveau": 3
+  }
+ ]
+}
