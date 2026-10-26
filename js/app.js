@@ -2,7 +2,7 @@ import { store, uid, mergeStates } from './store.js';
 import { syncNow, scheduleSync, syncStatus, onSyncStatus, syncConfigured, testToken } from './sync.js';
 import { parseImport, csvTemplate } from './io.js';
 
-const APP_VERSION = '1.0.0';
+const APP_VERSION = '1.1.0';
 const $ = (s, el = document) => el.querySelector(s);
 const view = () => $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -11,6 +11,7 @@ const pct = x => Math.round(x * 100) + ' %';
 const shuffle = a => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const TYPE_LABEL = { qcm: 'QCM', vf: 'Vrai/Faux', carte: 'Carte', cas: 'Cas clinique' };
 const MODES = {
+  sujet: { nom: 'Quiz sur un sujet', desc: 'Tapez un sujet : CPTS Cœur de Moselle, mortalité, PRADO…', ico: 'search' },
   quiz: { nom: 'Quiz libre', desc: 'Choisissez thèmes, formats et nombre de questions', ico: 'quiz' },
   revision: { nom: 'Révision espacée', desc: 'Les questions à revoir aujourd’hui, puis des nouvelles', ico: 'cal' },
   chrono: { nom: 'Contre la montre', desc: '15 questions, 3 minutes', ico: 'timer' },
@@ -31,6 +32,7 @@ const ICONS = {
   gear: '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>',
   play: '<path d="M7 4.5v15l12-7.5z"/>',
   link: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+  search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
   x: '<path d="M6 6l12 12M18 6 6 18"/>',
 };
 const icon = (n, cls = '') => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n] || ''}</svg>`;
@@ -55,7 +57,7 @@ let session = null; // session de quiz en cours
 let lastResult = null;
 const routes = {
   '': renderHome, 'config': renderConfig, 'session': renderSession, 'resultats': renderResults,
-  'biblio': renderBiblio, 'edit': renderEditor, 'progres': renderProgress, 'ressources': renderResources, 'reglages': renderSettings,
+  'biblio': renderBiblio, 'sujet': renderTopic, 'edit': renderEditor, 'progres': renderProgress, 'ressources': renderResources, 'reglages': renderSettings,
 };
 function go(hash) { if (location.hash === '#/' + hash) render(); else location.hash = '#/' + hash; }
 function render() {
@@ -119,6 +121,7 @@ function renderHome() {
     const mo = b.dataset.mode;
     if (mo === 'faibles') return startSession('faibles', {});
     if (mo === 'chrono') return go('config/chrono');
+    if (mo === 'sujet') return go('sujet');
     go('config/' + mo);
   });
   view().querySelectorAll('[data-theme]').forEach(r => r.onclick = () => go('config/quiz/' + encodeURIComponent(r.dataset.theme)));
@@ -173,7 +176,7 @@ function startSession(mode, cfg) {
   } else if (mode === 'faibles') {
     items = store.weakQuestions().slice(0, 15);
     if (!items.length) { toast('Pas encore de points faibles : entraînez-vous d’abord !'); return; }
-  } else if (mode === 'erreurs') {
+  } else if (mode === 'erreurs' || mode === 'sujet') {
     items = cfg.ids.map(id => store.question(id)).filter(Boolean);
   } else {
     items = shuffle(filterPool(all, cfg));
@@ -182,7 +185,7 @@ function startSession(mode, cfg) {
   if (!items.length) { toast('Aucune question ne correspond.'); return; }
   session = {
     id: uid('s'), mode, items, i: 0, step: 0, results: [], start: Date.now(), answered: false,
-    limit: mode === 'chrono' ? 180 : 0, cardMode: mode === 'cartes',
+    limit: mode === 'chrono' ? 180 : 0, cardMode: mode === 'cartes', topic: cfg.topic,
   };
   go('session');
 }
@@ -332,7 +335,7 @@ function finishSession(aborted) {
   const s = session; if (!s) return;
   const score = s.results.filter(r => r.ok).length;
   const h = { id: s.id, date: Date.now(), mode: s.mode, score, total: s.results.length, duree: Math.round((Date.now() - s.start) / 1000),
-    themes: [...new Set(s.items.map(q => q.theme))] };
+    themes: [...new Set(s.items.map(q => q.theme))], ...(s.topic ? { sujet: s.topic } : {}) };
   if (s.results.length) store.addHistory(h); else store.save();
   lastResult = { ...h, results: s.results, aborted };
   session = null;
@@ -353,7 +356,7 @@ function renderResults() {
         <circle cx="60" cy="60" r="52" fill="none" stroke="${ratio >= .7 ? 'var(--ok)' : ratio >= .5 ? 'var(--warn)' : 'var(--ko)'}" stroke-width="12" stroke-linecap="round" stroke-dasharray="${C * ratio} ${C}" transform="rotate(-90 60 60)"/>
         <text x="60" y="66" text-anchor="middle" font-size="24" font-weight="700" fill="var(--ink)" font-family="Georgia,serif">${r.score}/${r.total}</text></svg>
       <h1>${msg}</h1>
-      <p class="muted">${MODES[r.mode] ? MODES[r.mode].nom : 'Révision des erreurs'} · ${Math.floor(r.duree / 60)} min ${r.duree % 60} s${r.aborted ? ' · session interrompue' : ''}</p>
+      <p class="muted">${r.sujet ? 'Sujet : ' + esc(r.sujet) : MODES[r.mode] ? MODES[r.mode].nom : 'Révision des erreurs'} · ${Math.floor(r.duree / 60)} min ${r.duree % 60} s${r.aborted ? ' · session interrompue' : ''}</p>
       <div class="btn-row">${misses.length ? `<button class="btn" id="redo">Revoir mes ${misses.length} erreur${misses.length > 1 ? 's' : ''}</button>` : ''}<button class="btn secondary" onclick="location.hash='#/'">Accueil</button></div>
     </div>
     ${misses.length ? `<div class="section"><h2>À retenir</h2><div class="card">${misses.map(q => `
@@ -362,6 +365,97 @@ function renderResults() {
       <div class="small" style="margin-top:6px">${q.type === 'carte' ? nl2br(q.reponse) : q.type === 'cas' ? q.etapes.map(e => '✓ ' + e.bonnes.map(b => esc(e.choix[b])).join(' · ')).join('<br>') : '✓ ' + q.bonnes.map(b => esc(q.choix[b])).join(' · ')}</div>
       ${q.explication ? `<div class="small muted" style="margin-top:4px">${nl2br(q.explication)}</div>` : ''}</div>`).join('')}</div></div>` : ''}`;
   const redo = $('#redo'); if (redo) redo.onclick = () => startSession('erreurs', { ids: misses.map(q => q.id) });
+}
+
+// =============== QUIZ SUR UN SUJET ===============
+const norm = s => ' ' + String(s ?? '').toLowerCase().replace(/œ/g, 'oe').replace(/æ/g, 'ae').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9%]+/g, ' ').trim() + ' ';
+const STOP = new Set('le la les un une des de du d l et ou en au aux a sur pour par dans avec sans quiz quizz question questions chiffre chiffres sujet patient patients du des est ce ces qui que quoi quel quelle quels quelles son sa ses leur leurs texte textes chiffre'.split(' '));
+const SYN = { ic: ['insuffisance cardiaque', 'insuffisant cardiaque', 'insuffisants cardiaques'], irc: ['insuffisance renale', 'mrc', 'dialys'], ir: ['insuffisance renale'],
+  mortalite: ['mortalite', 'deces', 'mortalit', 'surmortalite', 'mourir'], deces: ['deces', 'mortalit'], rein: ['renal', 'rein', 'dialys', 'greffe'], renal: ['renal', 'renale', 'dialys'],
+  coeur: ['coeur', 'cardiaque', 'cardio'], tele: ['telesurveillance', 'telemedecine', 'teleconsultation', 'tele expertise', 'teleexpertise'], ts: ['telesurveillance'],
+  prado: ['prado', 'retour a domicile'], cpts: ['cpts', 'communaute professionnelle'], ars: ['ars', 'agence regionale'], bnp: ['bnp', 'nt probnp', 'peptide'],
+  vaccin: ['vaccin', 'grippe', 'pneumoco'], sel: ['sel', 'sodium', 'sale'], loi: ['loi', 'lfss', 'decret', 'arrete du', 'arrete ministeriel', 'code de la sante', 'legislat', 'reglementaire', 'droit commun', 'juridique'] };
+function topicTerms(query) {
+  let n = norm(query);
+  const terms = [];
+  for (const ph of ['grand est', 'coeur de moselle', 'insuffisance cardiaque', 'insuffisance renale', 'droit commun', 'education therapeutique']) {
+    if (n.includes(' ' + ph + ' ')) { terms.push([ph]); n = n.replace(' ' + ph + ' ', ' '); }
+  }
+  for (let w of n.trim().split(/\s+/)) {
+    if (!w || STOP.has(w) || (w.length < 2 && !/\d/.test(w))) continue;
+    const base = w.length > 4 ? w.replace(/(es|s|x)$/, '') : w;
+    terms.push([...new Set([base, ...(SYN[w] || SYN[base] || [])])]);
+  }
+  return terms;
+}
+function hay(q) {
+  if (q._hay) return q._hay;
+  const so = store.source(q.source);
+  const parts = [q.question, q.contexte, q.reponse, q.explication, ...(q.choix || []), ...(q.tags || []), store.theme(q.theme).nom, so ? so.titre : q.source,
+    ...(q.etapes || []).flatMap(e => [e.question, e.explication, ...e.choix])];
+  Object.defineProperty(q, '_hay', { value: norm(parts.join(' ')), enumerable: false });
+  return q._hay;
+}
+const hit = (h, alt) => alt.length <= 3 ? h.includes(' ' + alt + ' ') : h.includes(' ' + alt);
+export function searchTopic(query, pool = store.allQuestions()) {
+  const terms = topicTerms(query);
+  if (!terms.length) return { terms, list: [] };
+  const scored = pool.map(q => {
+    const h = hay(q), hq = norm(q.question + ' ' + (q.reponse || '') + ' ' + (q.choix || []).join(' '));
+    const sc = terms.filter(alts => alts.some(a => hit(h, a))).length;
+    return { q, sc, pr: terms.filter(alts => alts.some(a => hit(hq, a))).length };
+  }).filter(x => x.sc);
+  let list = scored.filter(x => x.sc === terms.length);
+  if (list.length < 5 && terms.length >= 3) list = scored.filter(x => x.sc >= terms.length - 1);
+  return { terms, list: list.sort((a, b) => (b.sc - a.sc) || (b.pr - a.pr)).map(x => x.q) };
+}
+const topicState = { query: '', source: '', types: new Set(['qcm', 'vf', 'cas', 'carte']), n: 0 };
+function renderTopic() {
+  const all = store.allQuestions();
+  const SUGG = ['CPTS Cœur de Moselle', 'Mortalité', 'Mortalité Grand Est', 'PRADO', 'NT-proBNP', 'NYHA', 'Télésurveillance', 'Dialyse', 'Sel', 'Vaccination', 'DAC', 'Textes de loi'];
+  const counts = new Map(); all.forEach(q => counts.set(q.source, (counts.get(q.source) || 0) + 1));
+  const draw = (keepFocus) => {
+    let pool = topicState.source ? all.filter(q => q.source === topicState.source) : all;
+    const res = topicState.query.trim() ? searchTopic(topicState.query, pool).list : (topicState.source ? pool : []);
+    const list = res.filter(q => topicState.types.has(q.type));
+    const n = topicState.n ? Math.min(topicState.n, list.length) : list.length;
+    const so = topicState.source && store.source(topicState.source);
+    const active = topicState.query.trim() || topicState.source;
+    $('#tres').innerHTML = !active ? '<p class="tiny">Choisissez une suggestion, un document, ou tapez librement un sujet.</p>'
+      : list.length ? `<p class="small"><b>${list.length} question${list.length > 1 ? 's' : ''}</b> trouvée${list.length > 1 ? 's' : ''}${so ? ' dans « ' + esc(so.titre) + ' »' : ''}.</p>
+        <div class="card" style="padding:0 14px">${list.slice(0, 8).map(q => `<div class="qrow" data-id="${esc(q.id)}"><span class="sw" style="background:${esc(store.theme(q.theme).couleur)}"></span><div style="flex:1;min-width:0"><div class="t">${esc(q.question)}</div><div class="m"><span class="badge">${TYPE_LABEL[q.type]}</span><span class="tiny">${esc(store.theme(q.theme).nom)}</span></div></div></div>`).join('')}
+        ${list.length > 8 ? `<p class="tiny" style="padding:10px 0">… et ${list.length - 8} autre(s)</p>` : ''}</div>`
+      : `<div class="feedback ko"><div class="verdict">Aucune question sur ce sujet pour l'instant</div>
+          <div class="small">Les questions ne portent que sur les supports déjà transformés en quiz. Pour couvrir ce sujet : envoyez le document ou le lien à Claude en demandant des questions sur « ${esc(topicState.query || so?.titre || '')} », puis importez le fichier reçu (Questions → Importer). Vous pouvez aussi créer vos questions vous-même.</div>
+          <div class="btn-row" style="margin-top:10px"><button class="btn sm secondary" onclick="location.hash='#/edit/new'">Créer une question</button></div></div>`;
+    $('#tgo').disabled = !list.length;
+    $('#tgo').innerHTML = `${icon('play')} Lancer le quiz (${n} question${n > 1 ? 's' : ''})`;
+    view().querySelectorAll('#tres .qrow').forEach(r => r.onclick = () => showQuestion(r.dataset.id));
+    view().querySelectorAll('[data-src]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.src === topicState.source)));
+    view().querySelectorAll('[data-ty]').forEach(b => b.setAttribute('aria-pressed', String(topicState.types.has(b.dataset.ty))));
+    view().querySelectorAll('[data-n]').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.n === topicState.n)));
+    $('#tgo').onclick = () => startSession('sujet', { ids: shuffle(list).slice(0, n).map(q => q.id), topic: topicState.query.trim() || (so ? so.titre : '') });
+  };
+  view().innerHTML = `
+    <button class="btn ghost sm" onclick="history.back()">← Retour</button>
+    <h1 style="margin-top:6px">Quiz sur un sujet</h1>
+    <p class="muted small">Tapez un sujet précis : l'application rassemble toutes les questions qui en parlent, quel que soit leur thème.</p>
+    <input class="input" id="tq" type="search" placeholder="Ex. CPTS Cœur de Moselle, mortalité IC, NT-proBNP…" value="${esc(topicState.query)}" autocomplete="off" style="font-size:1.05rem">
+    <div class="chips" style="margin-top:10px">${SUGG.map(t => `<button class="chip" data-sg="${esc(t)}">${esc(t)}</button>`).join('')}</div>
+    <div class="section" id="tres"></div>
+    <div class="section"><h3>Formats</h3><div class="chips">${Object.entries(TYPE_LABEL).map(([k, v]) => `<button class="chip" data-ty="${k}">${v}</button>`).join('')}</div>
+      <h3 style="margin-top:14px">Nombre de questions</h3><div class="seg">${[10, 20, 0].map(n => `<button data-n="${n}">${n || 'Toutes'}</button>`).join('')}</div></div>
+    <div class="section"><h3>Ou par document importé</h3>
+      <div class="chips">${store.sources.filter(s => counts.get(s.id)).map(s => `<button class="chip" style="text-align:left" data-src="${esc(s.id)}" aria-pressed="false" title="${esc(s.titre)}">${esc(s.titre.length > 38 ? s.titre.slice(0, 36) + '…' : s.titre)} <span class="tiny">${counts.get(s.id)}</span></button>`).join('')}</div></div>
+    <div class="sticky-actions"><button class="btn block" id="tgo" disabled></button></div>`;
+  $('#tq').oninput = e => { topicState.query = e.target.value; draw(); };
+  view().querySelectorAll('[data-sg]').forEach(b => b.onclick = () => {
+    topicState.query = b.dataset.sg === 'Textes de loi' ? 'loi' : b.dataset.sg; $('#tq').value = topicState.query; draw();
+  });
+  view().querySelectorAll('[data-src]').forEach(b => b.onclick = () => { topicState.source = topicState.source === b.dataset.src ? '' : b.dataset.src; draw(); });
+  view().querySelectorAll('[data-ty]').forEach(b => b.onclick = () => { const t = b.dataset.ty; topicState.types.has(t) ? topicState.types.delete(t) : topicState.types.add(t); draw(); });
+  view().querySelectorAll('[data-n]').forEach(b => b.onclick = () => { topicState.n = +b.dataset.n; draw(); });
+  draw();
 }
 
 // =============== BIBLIOTHÈQUE ===============

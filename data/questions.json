@@ -1,5 +1,5 @@
 {
- "version": 1,
+ "version": 2,
  "maj": "2026-10-26",
  "themes": [
   {
@@ -49,7 +49,7 @@
   },
   {
    "id": "territoire",
-   "nom": "Diagnostic territorial Cœur de Moselle",
+   "nom": "CPTS Cœur de Moselle – diagnostic territorial",
    "couleur": "#15803d"
   },
   {
@@ -71,7 +71,7 @@
   },
   {
    "id": "odt",
-   "titre": "Diagnostic territorial insuffisance cardiaque – principaux constats (ODT parcours IC)",
+   "titre": "Diagnostic territorial insuffisance cardiaque, CPTS Cœur de Moselle – principaux constats (ODT parcours IC)",
    "type": "docx"
   },
   {
@@ -574,7 +574,10 @@
    ],
    "explication": "Objectifs : renforcer les compétences des professionnels sur le diagnostic précoce et la gestion des signes d'alerte, réduire les hospitalisations évitables et les réhospitalisations à 30 jours.",
    "source": "fiche",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "CPTS Cœur de Moselle"
+   ]
   },
   {
    "id": "ica10",
@@ -1383,7 +1386,11 @@
    ],
    "explication": "Programme national d'expérimentations de télémédecine pour l'amélioration des parcours en santé, cité dans le PRS Grand Est.",
    "source": "prs",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "tls03",
@@ -1495,7 +1502,11 @@
    ],
    "explication": "Faux : la télémédecine ne déroge pas au parcours coordonné ; elle n'est pas une fin en soi mais une modalité d'organisation inscrite dans un projet de soins, et doit s'intégrer aux systèmes d'information des acteurs.",
    "source": "prs",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "tls09",
@@ -1514,7 +1525,11 @@
    ],
    "explication": "Le PRS cite explicitement la télésurveillance en cardiologie et dans l'insuffisance rénale.",
    "source": "prs",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "tls10",
@@ -1597,7 +1612,10 @@
    ],
    "explication": "La fiche prévoit de déployer la télésurveillance, de former les professionnels (formation Newcard le 27 octobre 2026) et d'installer outils et procédures de télésurveillance et d'expertise.",
    "source": "fiche",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "CPTS Cœur de Moselle"
+   ]
   },
   {
    "id": "tls15",
@@ -1631,7 +1649,11 @@
    ],
    "explication": "Objectif : diminuer d'au moins 50 % le nombre de personnes insuffisantes rénales dialysées en urgence, via repérage, dépistage et prise en charge précoce.",
    "source": "prs",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "ren02",
@@ -1649,7 +1671,11 @@
    ],
    "explication": "Entre 30 000 et 90 000 € par an selon les modalités de suppléance, en plus du coût humain.",
    "source": "prs",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "ren03",
@@ -1667,7 +1693,11 @@
    ],
    "explication": "Coopérations interprofessionnelles pour le suivi des patients insuffisants rénaux à partir du stade IIIb.",
    "source": "prs",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "ren04",
@@ -1687,7 +1717,11 @@
    ],
    "explication": "Objectif : augmenter le nombre de patients pris en charge hors centre lourd pour préserver leur autonomie.",
    "source": "prs",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "ren05",
@@ -1703,7 +1737,11 @@
    ],
    "explication": "Oui ; son coût, identique la 1re année à celui de l'hémodialyse en centre, décroît rapidement à partir de la 2e année.",
    "source": "prs",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "ren06",
@@ -1721,7 +1759,11 @@
    ],
    "explication": "La biologie médicale est l'élément clé ; mieux coordonner biologistes, MG et pharmaciens permettrait un repérage plus efficient.",
    "source": "prs",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "ren07",
@@ -1739,7 +1781,11 @@
    ],
    "explication": "Objectif : prévenir et limiter les complications du diabète, en particulier l'insuffisance rénale chronique.",
    "source": "prs",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "ren08",
@@ -1793,7 +1839,11 @@
    ],
    "explication": "COS à 10 ans, SRS à 5 ans et PRAPS (accès à la prévention et aux soins des plus démunis). Un 3e volume porte sur les objectifs quantifiés de l'offre de soins (OQOS). Deux SRS se succèdent sur 2018-2028.",
    "source": "prs",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "prs02",
@@ -1811,7 +1861,11 @@
    ],
    "explication": "Programme spécifique intégré au schéma régional de santé.",
    "source": "prs",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "prs03",
@@ -1829,7 +1883,11 @@
    ],
    "explication": "7 axes : prévention, offre de soins de proximité, ressources humaines, logique de parcours, accès aux soins et autonomie, qualité/pertinence/efficience, innovation.",
    "source": "prs",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "prs04",
@@ -1838,7 +1896,11 @@
    "question": "Les 7 axes stratégiques du PRS Grand Est",
    "reponse": "1. Orienter la politique de santé vers la prévention\n2. Renforcer et structurer l'offre de soins de proximité\n3. Adapter la politique de ressources humaines en santé\n4. Faire évoluer le système de santé dans une logique de parcours\n5. Améliorer l'accès aux soins et l'autonomie des personnes\n6. Qualité, pertinence et efficience\n7. Politique d'innovation",
    "source": "prs",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "prs05",
@@ -1856,7 +1918,11 @@
    ],
    "explication": "Objectif 5 de l'axe parcours : coopérations MG-IDE (type Asalée), éducation thérapeutique, suivi médical régulier à domicile.",
    "source": "prs",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "prs06",
@@ -1874,7 +1940,11 @@
    ],
    "explication": "L'allongement de la survie après infarctus augmente mécaniquement le nombre de patients IC (de même que le vieillissement).",
    "source": "prs",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "prs07",
@@ -1892,7 +1962,11 @@
    ],
    "explication": "Diagnostic régional et territorial du parcours, puis plan d'actions visant les réhospitalisations évitables.",
    "source": "prs",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "prs08",
@@ -1910,7 +1984,11 @@
    ],
    "explication": "Le GRADeS (Groupement régional d'appui au développement de la e-santé) assure notamment l'animation territoriale de la e-santé.",
    "source": "prs",
-   "niveau": 3
+   "niveau": 3,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "prs09",
@@ -1926,7 +2004,11 @@
    ],
    "explication": "Les travaux ont démarré dès 2016 et associé plus de 600 experts.",
    "source": "prs",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "prs10",
@@ -1944,7 +2026,11 @@
    ],
    "explication": "Le DMP et la MSS sont les services socles prioritaires.",
    "source": "prs",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "prs11",
@@ -1964,7 +2050,11 @@
    ],
    "explication": "Le SRS mise sur l'exercice collectif et coordonné ; les PTA ont depuis été fusionnées dans les DAC.",
    "source": "prs",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "org01",
@@ -2142,7 +2232,10 @@
    ],
    "explication": "L'ACI encadre et finance les missions des CPTS ; la fiche action EPOF relève de l'item 2.2.",
    "source": "fiche",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "CPTS Cœur de Moselle"
+   ]
   },
   {
    "id": "org11",
@@ -2252,7 +2345,10 @@
    ],
    "explication": "Moselle, dans la région Grand Est. Son partenaire hospitalier pour l'action IC est le CHR Metz-Thionville (Mercy).",
    "source": "fiche",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "CPTS Cœur de Moselle"
+   ]
   },
   {
    "id": "ter01",
@@ -2270,7 +2366,10 @@
    ],
    "explication": "543 patients identifiés en 2021, suivis sur 2022-2023.",
    "source": "odt",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "CPTS Cœur de Moselle"
+   ]
   },
   {
    "id": "ter02",
@@ -2288,7 +2387,10 @@
    ],
    "explication": "Âge moyen 77,5 ans, âge médian 80 ans ; environ 50 % de femmes.",
    "source": "odt",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "CPTS Cœur de Moselle"
+   ]
   },
   {
    "id": "ter03",
@@ -2306,7 +2408,10 @@
    ],
    "explication": "Environ un tiers des patients ont une FEVG < 50 %, dont 92 avec une FEVG < 40 %.",
    "source": "odt",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "CPTS Cœur de Moselle"
+   ]
   },
   {
    "id": "ter04",
@@ -2324,7 +2429,10 @@
    ],
    "explication": "28 % ; 4 % ne consultent aucun médecin. Aucun cardiologue n'exerce en libéral sur le territoire (vacations à l'hôpital de Boulay).",
    "source": "odt",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "CPTS Cœur de Moselle"
+   ]
   },
   {
    "id": "ter05",
@@ -2342,7 +2450,10 @@
    ],
    "explication": "Pneumocoque 18,2 % ; grippe 67,9 %. La prévention vaccinale est un axe d'amélioration.",
    "source": "odt",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "CPTS Cœur de Moselle"
+   ]
   },
   {
    "id": "ter06",
@@ -2360,7 +2471,10 @@
    ],
    "explication": "51 % seulement ; 31 % ont à la fois une consultation MG à 14 jours et un rendez-vous cardiologique dans les 2 mois.",
    "source": "odt",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "CPTS Cœur de Moselle"
+   ]
   },
   {
    "id": "ter07",
@@ -2378,7 +2492,10 @@
    ],
    "explication": "Mortalité globale à 2 ans ≈ 25 %, plus de 50 % chez les patients hospitalisés pour décompensation. Environ un quart sont réhospitalisés dans les 3 mois.",
    "source": "odt",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "CPTS Cœur de Moselle"
+   ]
   },
   {
    "id": "ter08",
@@ -2399,7 +2516,10 @@
    ],
    "explication": "Toutes, ainsi que la maladie coronarienne.",
    "source": "odt",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "CPTS Cœur de Moselle"
+   ]
   },
   {
    "id": "ter09",
@@ -2417,7 +2537,10 @@
    ],
    "explication": "2026 : structurer la démarche ; déploiement progressif des actions vers les patients en 2027.",
    "source": "odt",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "CPTS Cœur de Moselle"
+   ]
   },
   {
    "id": "ter10",
@@ -2433,7 +2556,10 @@
    ],
    "explication": "Et 53 % avaient vu leur cardiologue dans les 3 mois précédents, ce qui interroge sur la détection précoce des signes et l'information des patients.",
    "source": "odt",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "CPTS Cœur de Moselle"
+   ]
   },
   {
    "id": "ter11",
@@ -2453,7 +2579,10 @@
    ],
    "explication": "Ainsi que le déploiement de la télésurveillance et la formation à ses outils ; public : MG, IDEL, pharmaciens.",
    "source": "fiche",
-   "niveau": 1
+   "niveau": 1,
+   "tags": [
+    "CPTS Cœur de Moselle"
+   ]
   },
   {
    "id": "ter12",
@@ -2473,7 +2602,10 @@
    ],
    "explication": "Indicateurs de moyens : protocole réalisé, outils déployés, installation des outils et procédures de télésurveillance.",
    "source": "fiche",
-   "niveau": 2
+   "niveau": 2,
+   "tags": [
+    "CPTS Cœur de Moselle"
+   ]
   },
   {
    "id": "buc01",
@@ -2551,6 +2683,116 @@
    "explication": "Elles peuvent pourtant avoir des conséquences sérieuses sur la santé, notamment cardiaque.",
    "source": "affiche-bouche",
    "niveau": 1
+  },
+  {
+   "id": "prs12",
+   "theme": "prs",
+   "type": "qcm",
+   "question": "Combien de décès par an les maladies cardiovasculaires causent-elles dans le Grand Est selon le PRS ?",
+   "choix": [
+    "2 500",
+    "6 000",
+    "12 500",
+    "40 000"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "Environ 12 500 décès par an, soit 25 % des décès : c'est la deuxième cause de mortalité dans la région, comme au niveau national.",
+   "source": "prs",
+   "niveau": 2,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
+  },
+  {
+   "id": "prs13",
+   "theme": "prs",
+   "type": "qcm",
+   "question": "Quelle part des décès du Grand Est est due aux maladies cardiovasculaires ?",
+   "choix": [
+    "10 %",
+    "25 %",
+    "40 %",
+    "60 %"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "25 % des décès (12 500 par an). Ces pathologies traduisent un gradient social net : c'est une manifestation des inégalités sociales de santé.",
+   "source": "prs",
+   "niveau": 2,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
+  },
+  {
+   "id": "prs14",
+   "theme": "prs",
+   "type": "qcm",
+   "question": "Selon le PRS, à quelles pathologies est due la surmortalité cardio-neurovasculaire observée dans certaines parties du Grand Est ?",
+   "choix": [
+    "Cardiopathies ischémiques",
+    "Maladies vasculaires cérébrales",
+    "Troubles du rythme",
+    "Valvulopathies congénitales"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Le PRS cite une surmortalité par rapport aux moyennes nationales due aux cardiopathies ischémiques, aux maladies vasculaires cérébrales et aux troubles du rythme.",
+   "source": "prs",
+   "niveau": 3,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
+  },
+  {
+   "id": "prs15",
+   "theme": "prs",
+   "type": "vf",
+   "question": "Le Grand Est est la région de France qui connaît la plus forte mortalité liée au diabète.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Plus de 4 000 décès annuels, dus au diabète lui-même ou à une cause associée, dont l'insuffisance rénale.",
+   "source": "prs",
+   "niveau": 2,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
+  },
+  {
+   "id": "prs16",
+   "theme": "prs",
+   "type": "qcm",
+   "question": "De combien la mortalité par maladies de l'appareil respiratoire du Grand Est dépasse-t-elle la moyenne nationale ?",
+   "choix": [
+    "+ 4 %",
+    "+ 14 %",
+    "+ 40 %",
+    "Elle est inférieure"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "+ 14 % ; le sillon lorrain et les Ardennes présentent les situations les plus préoccupantes.",
+   "source": "prs",
+   "niveau": 3,
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
   },
   {
    "id": "cas01",

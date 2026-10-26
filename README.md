@@ -2,7 +2,8 @@
 
 Application web installable (PWA) pour réviser la télésurveillance cardiaque et rénale, le parcours insuffisance cardiaque, PRADO, le PRS Grand Est, les CPTS/MSP/DAC.
 
-- **6 modes** : quiz libre, révision espacée (méthode Leitner), contre la montre, points faibles, cartes recto/verso, cas cliniques pas à pas
+- **Quiz sur un sujet** : tapez « CPTS Cœur de Moselle », « mortalité », « NT-proBNP »… ou choisissez un document importé : l'application rassemble toutes les questions qui en parlent
+- **6 autres modes** : quiz libre, révision espacée (méthode Leitner), contre la montre, points faibles, cartes recto/verso, cas cliniques pas à pas
 - **Bibliothèque** : recherche, ajout, modification, suppression de questions ; import JSON ou CSV (Excel) ; export
 - **Progression** : maîtrise par thème, historique des scores, série de jours
 - **Synchronisation** entre ordinateur, téléphone et tablette via un Gist privé de votre compte GitHub
@@ -39,6 +40,8 @@ Dans l'application : **Réglages → Synchronisation**. Créez un jeton GitHub (
 Tout ce qui est ajouté ainsi est synchronisé sur vos appareils.
 
 **Option B – avec Claude**
+Astuce : ajoutez des mots-clés dans un champ `"tags": ["…"]` pour qu'une question ressorte dans le quiz sur un sujet.
+
 Envoyez à Claude vos nouveaux PDF, Word ou liens en demandant :
 > « Génère de nouvelles questions au format JSON de mon application Télésurveillance Quiz à partir de ces documents (QCM, vrai/faux, cartes et un cas clinique), avec explication et source. »
 
