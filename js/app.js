@@ -3,7 +3,7 @@ import { syncNow, scheduleSync, syncStatus, onSyncStatus, syncConfigured, testTo
 import { parseImport, csvTemplate } from './io.js';
 import { matchFilter, renderFilterPanel, describeFilter, normalizeFilter, isEmpty, emptyFilter, zoneTree, zoneLabel, NATIONAL } from './filters.js';
 
-const APP_VERSION = '1.4.0';
+const APP_VERSION = '1.5.0';
 const $ = (s, el = document) => el.querySelector(s);
 const view = () => $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -458,7 +458,7 @@ const SYN = { ic: ['insuffisance cardiaque', 'insuffisant cardiaque', 'insuffisa
   mortalite: ['mortalite', 'deces', 'mortalit', 'surmortalite', 'mourir'], deces: ['deces', 'mortalit'], rein: ['renal', 'rein', 'dialys', 'greffe'], renal: ['renal', 'renale', 'dialys'],
   coeur: ['coeur', 'cardiaque', 'cardio'], tele: ['telesurveillance', 'telemedecine', 'teleconsultation', 'tele expertise', 'teleexpertise'], ts: ['telesurveillance'],
   prado: ['prado', 'retour a domicile'], cpts: ['cpts', 'communaute professionnelle'], ars: ['ars', 'agence regionale'], bnp: ['bnp', 'nt probnp', 'peptide'],
-  vaccin: ['vaccin', 'grippe', 'pneumoco'], sel: ['sel', 'sodium', 'sale'], loi: ['loi', 'lfss', 'decret', 'arrete du', 'arrete ministeriel', 'code de la sante', 'legislat', 'reglementaire', 'droit commun', 'juridique'] };
+  vaccin: ['vaccin', 'grippe', 'pneumoco'], sel: ['sel', 'sodium', 'sale'], coordinateur: ['coordinateur', 'coordinatrice'], coordinatrice: ['coordinateur', 'coordinatrice'], loi: ['loi', 'lfss', 'decret', 'arrete du', 'arrete ministeriel', 'code de la sante', 'legislat', 'reglementaire', 'droit commun', 'juridique'] };
 function topicTerms(query) {
   let n = norm(query);
   const terms = [];
@@ -468,7 +468,7 @@ function topicTerms(query) {
   for (let w of n.trim().split(/\s+/)) {
     if (!w || STOP.has(w) || (w.length < 2 && !/\d/.test(w))) continue;
     const base = w.length > 4 ? w.replace(/(es|s|x)$/, '') : w;
-    terms.push([...new Set([w.length >= 8 ? w.slice(0, 6) : base, ...(SYN[w] || SYN[base] || [])])]);
+    terms.push([...new Set(SYN[w] || SYN[base] ? [base, ...(SYN[w] || SYN[base])] : [w.length >= 8 ? w.slice(0, 6) : base])]);
   }
   return terms;
 }
@@ -490,13 +490,13 @@ export function searchTopic(query, pool = store.allQuestions()) {
     return { q, sc, pr: terms.filter(alts => alts.some(a => hit(hq, a))).length };
   }).filter(x => x.sc);
   let list = scored.filter(x => x.sc === terms.length);
-  if (list.length < 5 && terms.length >= 3) list = scored.filter(x => x.sc >= terms.length - 1);
+  if (list.length < 5 && terms.length >= 3) { const fb = scored.filter(x => x.sc >= terms.length - 1); if (fb.length <= 30) list = fb; }
   return { terms, list: list.sort((a, b) => (b.sc - a.sc) || (b.pr - a.pr)).map(x => x.q) };
 }
 const topicState = { query: '', source: '', types: new Set(['qcm', 'vf', 'cas', 'carte']), n: 0 };
 function renderTopic() {
   const all = store.allQuestions();
-  const SUGG = ['CPTS Cœur de Moselle', 'Newcard', 'Télésurveillance rénale', 'Éligibilité', 'Urgences RPU', 'CCMU', 'Moselle', 'Mortalité', 'Mortalité Grand Est', 'PRADO', 'NT-proBNP', 'NYHA', 'Télésurveillance', 'Dialyse', 'Sel', 'Vaccination', 'DAC', 'Textes de loi'];
+  const SUGG = ['CPTS Cœur de Moselle', 'Coordinateur', 'Rôle de la CPTS', 'Vallée de la Sarre', 'Newcard', 'Télésurveillance rénale', 'Éligibilité', 'Urgences RPU', 'CCMU', 'Moselle', 'Mortalité', 'Mortalité Grand Est', 'PRADO', 'NT-proBNP', 'NYHA', 'Télésurveillance', 'Dialyse', 'Sel', 'Vaccination', 'DAC', 'Textes de loi'];
   const counts = new Map(); all.forEach(q => counts.set(q.source, (counts.get(q.source) || 0) + 1));
   const draw = (keepFocus) => {
     let pool = topicState.source ? all.filter(q => q.source === topicState.source) : all;

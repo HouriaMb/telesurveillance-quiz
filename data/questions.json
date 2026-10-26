@@ -1,5 +1,5 @@
 {
- "version": 5,
+ "version": 6,
  "maj": "2026-10-26",
  "themes": [
   {
@@ -61,6 +61,11 @@
    "id": "urgences",
    "nom": "Urgences & soins non programmés (RPU par CPTS)",
    "couleur": "#b45309"
+  },
+  {
+   "id": "coord",
+   "nom": "CPTS, coordinateur & télésurveillance",
+   "couleur": "#7c3aed"
   }
  ],
  "pathos": [
@@ -223,6 +228,28 @@
    }
   },
   {
+   "id": "d-coord",
+   "nom": "CPTS, coordinateur & télésurveillance",
+   "desc": "Rôle de la CPTS et du coordinateur, organisation, financement",
+   "couleur": "#7c3aed",
+   "filtre": {
+    "themes": [
+     "coord"
+    ]
+   }
+  },
+  {
+   "id": "d-vds",
+   "nom": "CPTS Vallée de la Sarre",
+   "desc": "Parcours IC 2025-2026 et urgences du territoire",
+   "couleur": "#0369a1",
+   "filtre": {
+    "cpts": "Vallée de la Sarre",
+    "region": "Grand Est",
+    "dept": "Moselle"
+   }
+  },
+  {
    "id": "d-patient",
    "nom": "Éducation du patient",
    "desc": "Messages EPOF/EPON, sel, pesée, observance",
@@ -351,6 +378,51 @@
    "titre": "HAS – Télésurveillance médicale : référentiels des fonctions et organisations des soins",
    "type": "web",
    "url": "https://has-sante.fr/jcms/p_3311071/fr/telesurveillance-medicale-referentiels-des-fonctions-et-organisations-des-soins"
+  },
+  {
+   "id": "webinaire",
+   "titre": "Webinaire CPTS – Organisation de la télésurveillance dans le parcours IC (Newcard, oct. 2026)",
+   "type": "pptx"
+  },
+  {
+   "id": "vds",
+   "titre": "Parcours ville-hôpital des patients insuffisants cardiaques 2025-2026 – CPTS de la Vallée de la Sarre",
+   "type": "pdf"
+  },
+  {
+   "id": "occ-coord",
+   "titre": "Les besoins en formation des coordinateurs de CPTS (Occitanie, août 2023)",
+   "type": "pdf"
+  },
+  {
+   "id": "ehesp",
+   "titre": "EHESP – Coordinateur de regroupements pluriprofessionnels de soins primaires, mention CPTS (PACTE)",
+   "type": "web",
+   "url": "https://formation-continue.ehesp.fr/formation/coordinateur-de-regroupements-pluri-professionnels-de-soins-primaires-mention-cpts-pacte"
+  },
+  {
+   "id": "paps-hdf",
+   "titre": "PAPS Hauts-de-France – La coordination d'une CPTS",
+   "type": "web",
+   "url": "https://www.hauts-de-france.paps.sante.fr/la-coordination-dune-cpts"
+  },
+  {
+   "id": "cpts-pdl",
+   "titre": "Inter CPTS Pays de la Loire – Rôle du coordinateur",
+   "type": "web",
+   "url": "https://cpts-pdl.org/les-cpts-en-pays-de-la-loire/role-du-coordinateur/"
+  },
+  {
+   "id": "dh-cpts",
+   "titre": "Docteur House – Les CPTS, leur création et leur financement",
+   "type": "web",
+   "url": "https://www.docteur-house.fr/communautes-professionnelles-territoriales-sante/"
+  },
+  {
+   "id": "akeia",
+   "titre": "Akeia – La fonction de coordinateur en MSP et CPTS",
+   "type": "web",
+   "url": "https://akeia.fr/blog/la-fonction-de-coordinateur-en-msp-et-cpts"
   }
  ],
  "questions": [
@@ -4918,6 +4990,1607 @@
    "tags": [
     "Grand Est"
    ]
+  },
+  {
+   "id": "cts01",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Selon le webinaire, quels points de rupture du parcours IC justifient la télésurveillance dans une CPTS ?",
+   "choix": [
+    "La sortie d'hospitalisation pour décompensation",
+    "Les patients perdus de vue 2 à 3 mois après l'hospitalisation",
+    "Les difficultés d'accès à un médecin traitant ou à un cardiologue",
+    "Le manque de lits de réanimation"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Ces trois constats viennent du parcours IC de la CPTS. La télésurveillance complète le suivi présentiel sans le remplacer.",
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC",
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "cts02",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Quels sont les bénéfices attendus de la télésurveillance pour une CPTS ?",
+   "choix": [
+    "Réduire les hospitalisations évitables",
+    "Détecter plus tôt les décompensations",
+    "Améliorer l'observance et renforcer le lien patient-équipe",
+    "Sécuriser le maintien à domicile",
+    "Remplacer les consultations du cardiologue"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Le principe : la télésurveillance complète le suivi présentiel et renforce la sécurité, la continuité et la qualité des soins.",
+   "source": "webinaire",
+   "niveau": 1,
+   "patho": [
+    "IC",
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "cts03",
+   "theme": "coord",
+   "type": "carte",
+   "question": "Rôle de la CPTS dans la mise en place de la télésurveillance cardiaque",
+   "reponse": "• Inscrire la télésurveillance dans le parcours IC territorial (PRADO, IPA, IDEL, cardiologues)\n• Fédérer les adhérents autour du patient : chacun a sa place dans le « cercle de soins »\n• Repérer les patients éligibles avec la coordinatrice\n• Organiser le circuit des alertes et le retour d'information vers le terrain\n• Former les équipes, faire un retour d'expérience\n• Renforcer le lien ville-hôpital (télésurveillance souvent initiée par l'hôpital)\n• Suivre des indicateurs (hospitalisations, perdus de vue, consultations post-sortie)",
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC",
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "cts04",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Dans le « cercle de soins » de la CPTS présenté au webinaire, quel est le rôle de la coordinatrice CPTS ?",
+   "choix": [
+    "Fédérer les acteurs, informer et renforcer le lien ville-hôpital",
+    "Prescrire la télésurveillance",
+    "Traiter les alertes médicales",
+    "Paramétrer les seuils d'alerte"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "La coordinatrice ne soigne pas et ne traite pas les alertes : elle fédère, informe et fait le lien. Le cardiologue prescrit et décide ; l'IPA et l'IDEL assurent la proximité.",
+   "source": "webinaire",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "cts05",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Associez : qui prescrit la télésurveillance, paramètre les alertes et décide de la conduite à tenir ?",
+   "choix": [
+    "Le cardiologue",
+    "La coordinatrice CPTS",
+    "Le pharmacien",
+    "L'IDE de la plateforme"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le médecin traitant coordonne le suivi et gère les comorbidités ; l'IPA suit, gère les alertes, titre et peut renouveler la télésurveillance.",
+   "source": "webinaire",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "cts06",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Dans le cercle de soins de la CPTS, quel rôle est attribué au pharmacien en télésurveillance IC ?",
+   "choix": [
+    "Conciliation médicamenteuse, prévention de la iatrogénie, adhésion au traitement",
+    "Prescription initiale",
+    "Pose du kit au domicile",
+    "Facturation du forfait"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le biologiste réalise les bilans et transmet les résultats en sécurisé ; le diététicien travaille sel, poids et nutrition ; le psychologue soutient patient et aidants.",
+   "source": "webinaire",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "cts07",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Quelles sont les étapes proposées pour lancer la télésurveillance (webinaire, « Comment démarrer ? ») ?",
+   "choix": [
+    "Valider la stratégie de télésurveillance",
+    "Déclarer l'activité à l'ARS",
+    "Conventionner avec la solution et former les équipes",
+    "Inclure les premiers patients, faire un retour d'expérience, mettre en place la facturation"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Sept étapes : stratégie, déclaration ARS, convention, formation, premières inclusions, retour d'expérience, facturation. Dans la CPTS, on s'appuie sur le parcours IC et sur la coordinatrice pour repérer les patients éligibles.",
+   "source": "webinaire",
+   "niveau": 2,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "cts08",
+   "theme": "coord",
+   "type": "carte",
+   "question": "Rôle du coordinateur / de la coordinatrice dans la télésurveillance",
+   "reponse": "• Faire connaître le dispositif aux adhérents (MG, IDEL, pharmaciens, cardiologues, IPA)\n• Aider au repérage des patients éligibles (sorties d'hospitalisation, PRADO, IPA)\n• Organiser réunions, formations et webinaires, relayer les outils\n• Clarifier « qui fait quoi » et le circuit des alertes\n• Faire le lien avec l'hôpital, la CPAM, l'ARS et la solution choisie\n• Suivre les indicateurs et organiser le retour d'expérience\n→ Le coordinateur ne soigne pas et ne prend pas les décisions médicales.",
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "cts09",
+   "theme": "coord",
+   "type": "vf",
+   "question": "Le coordinateur de CPTS peut traiter lui-même les alertes médicales de télésurveillance.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Faux : les alertes médicales sont traitées par le médecin ou l'IPA. Le coordinateur agit à l'échelle populationnelle : il ne coordonne pas directement les soins des patients.",
+   "source": "paps-hdf",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "cts10",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Quels intérêts une CPTS trouve-t-elle à structurer la télésurveillance sur son territoire ?",
+   "choix": [
+    "Répondre aux ruptures de parcours identifiées dans son diagnostic",
+    "Valoriser ses missions ACI (parcours, accès aux soins)",
+    "Mobiliser IDEL, IPA et pharmaciens autour d'un projet concret",
+    "Disposer des données de santé individuelles de tous les patients"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "La CPTS n'a pas besoin des données de santé individuelles : elle organise, fédère et évalue avec des indicateurs territoriaux.",
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "cts11",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Selon le diagnostic territorial de Cœur de Moselle, quel écueil la CPTS doit-elle corriger en matière de télésurveillance ?",
+   "choix": [
+    "Des télésurveillances instaurées par l'hôpital sans coordination structurée avec la ville",
+    "Un excès de patients télésurveillés",
+    "L'absence d'éligibilité des patients âgés",
+    "Un coût trop élevé pour les patients"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "D'où l'enjeu pour la CPTS : partage d'informations, répartition des rôles, intégration au parcours.",
+   "source": "odt",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "zone": {
+    "region": "Grand Est",
+    "dept": "Moselle",
+    "cpts": "Cœur de Moselle"
+   },
+   "nature": "parcours"
+  },
+  {
+   "id": "cts12",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Combien de temps dure une prescription de télésurveillance IC ?",
+   "choix": [
+    "1 mois",
+    "3 mois",
+    "6 mois maximum, renouvelable",
+    "1 an non renouvelable"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "Renouvelable tous les 6 mois après réévaluation, sans limite de durée, tant que les critères sont remplis.",
+   "source": "webinaire",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "cts13",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Quelles données sont obligatoires dans la télésurveillance IC (référentiel HAS) ?",
+   "choix": [
+    "Le poids",
+    "Les symptômes",
+    "La tension et la fréquence cardiaque",
+    "La glycémie"
+   ],
+   "bonnes": [
+    0,
+    1
+   ],
+   "explication": "Poids et symptômes sont obligatoires (quotidiens) ; tension et FC sont recommandées ; la biologie est un plus au-delà du référentiel.",
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "cts14",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Qui peut réaliser la primo-prescription de télésurveillance IC ?",
+   "choix": [
+    "Le cardiologue, ou un MG titulaire d'un DU d'IC (ou un gériatre) avec le médecin télésurveillant",
+    "N'importe quel infirmier",
+    "Le pharmacien",
+    "La coordinatrice CPTS"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "L'IPA peut renouveler la télésurveillance, mais l'inclusion initiale reste une prescription médicale.",
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "cts15",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Que vérifie la réévaluation avant chaque renouvellement de la télésurveillance ?",
+   "choix": [
+    "Le patient remplit toujours les critères",
+    "Il adhère au suivi (usage effectif, satisfaction)",
+    "La télésurveillance améliore sa qualité de vie",
+    "Il a moins de 80 ans"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "La réévaluation ne nécessite pas forcément de consultation ; si elle a lieu, elle est incluse dans le forfait. Si le prescripteur change, il informe le prescripteur initial.",
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "cts16",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Dans quels cas la télésurveillance peut-elle être suspendue ?",
+   "choix": [
+    "Hospitalisation",
+    "Voyage",
+    "Déménagement",
+    "Prise de poids"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Elle peut aussi être arrêtée à tout moment (décision partagée ou demande du patient) ou si l'usage du dispositif est insuffisant.",
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "cts17",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Forfait opérateur IC : quel montant mensuel pour un patient avec coefficient 2 (âge, comorbidités, hospitalisation < 30 jours) ?",
+   "choix": [
+    "28 €",
+    "42 €",
+    "56 €",
+    "70 €"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "Tarif socle 28 €/mois ; coefficient 2 = 56 € ; coefficient 2,5 = 70 € (IC sévère, amylose, attente de greffe). Exemple : 100 patients au tarif socle = 33 600 € par an pour l'opérateur.",
+   "source": "webinaire",
+   "niveau": 3,
+   "patho": [
+    "IC"
+   ],
+   "nature": "chiffres"
+  },
+  {
+   "id": "cts18",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Selon le webinaire, combien d'alertes médicales génèrent en moyenne 100 patients IC télésurveillés ?",
+   "choix": [
+    "10 par jour",
+    "1 tous les 2 jours",
+    "1 par mois",
+    "1 par an"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Environ 1 alerte tous les 2 jours pour 100 patients, 5 à 15 minutes par alerte, soit 1 h 15 à 4 h par mois. Une IDE à 60 % peut suivre 150 à 200 patients.",
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "chiffres"
+  },
+  {
+   "id": "cts19",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "PRADO IC ou télésurveillance : quelle affirmation est juste ?",
+   "choix": [
+    "Ils s'excluent mutuellement",
+    "Ils sont complémentaires : PRADO organise la sortie et les visites IDE, la télésurveillance suit les données chaque jour entre les visites et prend le relais à la fin du PRADO",
+    "La télésurveillance remplace le PRADO",
+    "Le PRADO est réservé aux patients télésurveillés"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "La télésurveillance est éligible dès la sortie d'hôpital. Synergie CPTS : un patient éduqué, responsabilisé et sécurisé à domicile.",
+   "source": "webinaire",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "cts20",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "IDEL, ISPIC, IPA : lequel agit par délégation dans le cadre d'un protocole de coopération avec un cardiologue ?",
+   "choix": [
+    "L'IDEL",
+    "L'ISPIC (infirmier spécialisé en IC)",
+    "L'IPA",
+    "L'IDE de la plateforme"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "IDEL : rôle propre. ISPIC : protocole de coopération (DIU IC). IPA : compétences propres élargies (diplôme d'État d'IPA, art. R. 4301-3 du CSP).",
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "cts21",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "En télésurveillance IC, que peut faire l'IPA ?",
+   "choix": [
+    "Analyser les alertes et contacter le patient puis le cardiologue selon le protocole",
+    "Titrer les traitements, prescrire des examens, assurer des consultations non programmées",
+    "Renouveler la télésurveillance",
+    "Faire la primo-prescription de télésurveillance"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "L'inclusion initiale reste une prescription du cardiologue.",
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "cts22",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Que reste-t-il à la charge du soignant quand la plateforme gère la logistique ?",
+   "choix": [
+    "Prescrire et paramétrer le suivi",
+    "La séance d'accompagnement thérapeutique du 1er mois",
+    "Traiter les alertes qualifiées et décider de la conduite à tenir",
+    "La livraison et le SAV du matériel"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "La plateforme prend en charge livraison, installation, formation au kit, SAV, observance, non-transmissions, préfiltrage et facturation.",
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "cts23",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Pour un patient peu autonome (aidé par un proche ou un IDEL), quelles adaptations sont proposées ?",
+   "choix": [
+    "Mesures accompagnées par l'aidant ou l'IDEL",
+    "Accompagnement téléphonique renforcé",
+    "Tensiomètre désactivable",
+    "Exclusion de la télésurveillance"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Patients âgés : 77 ans en moyenne, 36 % ont plus de 80 ans. L'équipement s'adapte : application, tablette 4G, balance à transmission automatique.",
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "cts24",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Étude STRONG-HF : quel bénéfice d'une prise en charge intensive après une IC aiguë ?",
+   "choix": [
+    "- 34 % de risque relatif de décès ou de réhospitalisation à 6 mois",
+    "- 5 % de mortalité à 10 ans",
+    "Aucun bénéfice",
+    "- 90 % d'hospitalisations"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Les recommandations ESC 2023 préconisent une titration rapide des « 4 fantastiques » et un suivi étroit après la sortie ; les données quotidiennes de télésurveillance y contribuent.",
+   "source": "webinaire",
+   "niveau": 3,
+   "patho": [
+    "IC"
+   ],
+   "nature": "traitement"
+  },
+  {
+   "id": "cts25",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Télésurveillance rénale : qu'est-ce qui change par rapport à l'IC ?",
+   "choix": [
+    "Biologie obligatoire (mensuelle à trimestrielle)",
+    "Mesures hebdomadaires (tension, poids, qualité de vie)",
+    "Forfait de télésurveillance cumulable avec le forfait du parcours MRC",
+    "Aucune consultation de néphrologue"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Éligibles : MRC stade 4 ou 5, dialysés, greffés depuis plus de 3 mois. Consultation annuelle du néphrologue obligatoire. Objectif : préserver la fonction rénale et éviter la dialyse en urgence.",
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IR"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "cts26",
+   "theme": "telesurv",
+   "type": "vf",
+   "question": "Une alerte de télésurveillance remplace un appel au 15 en cas d'urgence.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Faux : ces dispositifs ne sont pas des systèmes d'urgence. En cas de signe grave, le patient appelle le 15.",
+   "source": "webinaire",
+   "niveau": 1,
+   "patho": [
+    "IC",
+    "IR"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "cts27",
+   "theme": "telesurv",
+   "type": "carte",
+   "question": "Le circuit d'une alerte de télésurveillance",
+   "reponse": "1. Patient : mesures et questionnaires à domicile\n2. Algorithme : détecte une variation (poids, tension, symptômes)\n3. IDE de la plateforme : préfiltre, écarte les faux positifs, gère les non-transmissions\n4. Médecin / IPA : reçoit l'alerte qualifiée (mail ou SMS) et décide\n5. Équipe de terrain (MT, IDEL, IPA) : visite, consultation, ajustement\n6. Retour d'information à l'équipe",
+   "source": "webinaire",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "crd01",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Le coordinateur de CPTS coordonne-t-il directement les soins des patients ?",
+   "choix": [
+    "Oui, c'est sa mission principale",
+    "Non : il agit à l'échelle populationnelle, comme chef de projet de la CPTS",
+    "Oui, pour les patients complexes",
+    "Uniquement les sorties d'hospitalisation"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Ses missions : accompagner la définition du projet de santé, déployer et évaluer les missions, communiquer, être l'interlocuteur des instances territoriales, gérer l'administratif et le financier avec le bureau, assurer une veille.",
+   "source": "paps-hdf",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "crd02",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Sous l'autorité de qui le coordinateur de CPTS travaille-t-il ?",
+   "choix": [
+    "De l'ARS",
+    "Du bureau et du conseil d'administration de l'association (gouvernance de professionnels de santé)",
+    "De la CPAM",
+    "Du directeur de l'hôpital"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Il aligne ses actions sur la gouvernance associative ; il n'est ni « le chef » des professionnels, ni un décideur solitaire.",
+   "source": "paps-hdf",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "crd03",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Quelles sont les 2 grandes phases du travail du coordinateur selon l'étude Occitanie ?",
+   "choix": [
+    "Élaboration du projet de santé, puis déploiement de la CPTS",
+    "Recrutement, puis licenciement",
+    "Diagnostic, puis soins",
+    "Facturation, puis contrôle"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Phase 1 : diagnostic, animation de groupes de travail, communication, budget, gouvernance, rédaction du projet. Phase 2 : plan d'action, mobilisation des professionnels, gestion (vie associative, budget, RH), suivi des indicateurs et bilans.",
+   "source": "occ-coord",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "crd04",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Quelles « fonctions » du coordinateur l'étude Occitanie décrit-elle ?",
+   "choix": [
+    "Dirigeant opérationnel",
+    "Fonction managériale et gestionnaire",
+    "Appui stratégique (représentation, partenaires, financeurs)",
+    "Animation d'équipe (groupes de travail, circulation de l'information)",
+    "Effecteur de soins"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Le coordinateur permet aux professionnels de déléguer la réalisation opérationnelle du projet pour se concentrer sur leur exercice.",
+   "source": "occ-coord",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "crd05",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Qu'est-ce que la coordination « bicéphale » observée en Occitanie ?",
+   "choix": [
+    "Un duo : un profil administratif (gestion, institutions, conformité) et un profil de professionnel de santé (animation des équipes, actions)",
+    "Deux CPTS fusionnées",
+    "Un coordinateur pour deux départements",
+    "Un président et un vice-président"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "C'est un levier de stabilité, à condition d'une collaboration étroite, d'une communication claire et d'une confiance mutuelle.",
+   "source": "occ-coord",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "crd06",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Quels savoir-être sont attendus d'un coordinateur de CPTS ?",
+   "choix": [
+    "Esprit de collaboration et de partenariat",
+    "Aisance relationnelle et diplomatie",
+    "Rigueur, autonomie, polyvalence",
+    "Capacité à prescrire"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Savoirs : système de santé, gestion budgétaire et administrative. Savoir-faire : prioriser, animer des réunions, mener un projet du diagnostic à l'évaluation, synthétiser.",
+   "source": "occ-coord",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "crd07",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Quel constat l'étude Occitanie fait-elle sur les profils des coordinateurs ?",
+   "choix": [
+    "Ce sont surtout des professionnels du sanitaire, pas toujours formés à la gestion ou au management",
+    "Ce sont tous des diplômés d'école de commerce",
+    "Ce sont des médecins retraités",
+    "Ce sont des agents de l'ARS"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "D'où des besoins de formation : gestion budgétaire (EPRD, ERRD), management, conduite de projet, systèmes d'information.",
+   "source": "occ-coord",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "crd08",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Quelle formation l'EHESP propose-t-elle aux coordinateurs de CPTS ?",
+   "choix": [
+    "Le diplôme d'établissement « Coordinateur de regroupements pluriprofessionnels de soins primaires, mention CPTS » (PACTE)",
+    "Un master de cardiologie",
+    "Le DU d'insuffisance cardiaque",
+    "Le diplôme d'IPA"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "18 jours (124 h en présentiel + 50 h en e-learning), répartis sur environ 18 mois selon les régions, calendrier fixé avec l'ARS ; prise en charge par l'ARS ; 25 participants maximum ; mémoire et soutenance.",
+   "source": "ehesp",
+   "niveau": 1,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "crd09",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Quels modules composent la formation PACTE de l'EHESP ?",
+   "choix": [
+    "Décryptage de l'écosystème de santé",
+    "Prise de fonction (gouvernance, vie associative, budget, RH)",
+    "Projet de santé et dynamique collective",
+    "Mise en œuvre des missions (soins non programmés, parcours, prévention, crise)",
+    "Pharmacologie clinique"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Cinq modules obligatoires ; candidature auprès de l'ARS avec CV et lettre de motivation ; il faut être intégré à une équipe de CPTS.",
+   "source": "ehesp",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "crd10",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Selon le PAPS Hauts-de-France, quel profil est recommandé pour un coordinateur de CPTS ?",
+   "choix": [
+    "Aucun profil imposé ; souvent bac+5 (santé publique, gestion de projet, management, sociologie)",
+    "Obligatoirement médecin",
+    "Obligatoirement infirmier",
+    "Bac uniquement"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "L'adéquation entre compétences et missions prime. À terme, un temps plein est recommandé, idéalement dès la phase de création.",
+   "source": "paps-hdf",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "crd11",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Quelle aide de l'ARS (Hauts-de-France) finance le recrutement d'un coordinateur au démarrage ?",
+   "choix": [
+    "Un forfait de 24 000 € pour 0,5 ETP pendant un an",
+    "1 000 € par mois",
+    "Rien",
+    "100 000 €"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "S'y ajoute une indemnisation des professionnels (10 000 à 20 000 € selon la taille). Conditions : lettre d'intention validée, réunion de concertation, association déclarée (SIRET).",
+   "source": "paps-hdf",
+   "niveau": 3,
+   "nature": "chiffres",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "crd12",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Selon Akeia, quelle fourchette de salaire brut mensuel pour un coordinateur selon la convention collective ?",
+   "choix": [
+    "De 1 200 à 1 500 €",
+    "De 2 400 € à plus de 4 000 €",
+    "Plus de 8 000 €",
+    "Il est toujours bénévole"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Le salaire dépend du statut, du temps de travail et des responsabilités. L'indicateur coordination de l'ACI finance rarement entièrement le poste (autres sources : FIR, collectivités).",
+   "source": "akeia",
+   "niveau": 2,
+   "nature": "chiffres",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "crd13",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Que n'est PAS le coordinateur de CPTS, selon l'Inter CPTS Pays de la Loire ?",
+   "choix": [
+    "Quelqu'un qui mène et réalise seul les projets de la structure",
+    "Le chef des professionnels de santé",
+    "Le chef d'orchestre qui fait travailler les acteurs ensemble",
+    "Le porte-parole auprès des institutions"
+   ],
+   "bonnes": [
+    0,
+    1
+   ],
+   "explication": "C'est un « chef d'orchestre » et une personne ressource qui permet aux professionnels de se concentrer sur leur exercice.",
+   "source": "cpts-pdl",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "crd14",
+   "theme": "coord",
+   "type": "qcm",
+   "question": "Quelles tâches administratives incombent au coordinateur ?",
+   "choix": [
+    "Campagnes d'adhésion",
+    "Logistique des CA, AG et groupes de travail",
+    "Budget : demandes de subvention, comptabilité, lien avec l'expert-comptable",
+    "Prescriptions médicales"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Côté projet : actualiser le diagnostic, co-construire le plan stratégique, suivre les actions. Côté réseau : aller vers les professionnels, produire des outils de communication.",
+   "source": "cpts-pdl",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "crd15",
+   "theme": "coord",
+   "type": "cas",
+   "question": "Mise en situation : la coordinatrice lance la télésurveillance IC",
+   "contexte": "Vous êtes coordinatrice d'une CPTS. Le groupe de travail IC a identifié les patients perdus de vue après hospitalisation. Le bureau valide l'idée de structurer la télésurveillance IC sur le territoire, avec des cardiologues de ville volontaires.",
+   "etapes": [
+    {
+     "question": "Quelle est votre première étape ?",
+     "choix": [
+      "Valider avec le bureau et le groupe de travail la stratégie et le périmètre (patients, acteurs, solution)",
+      "Inclure des patients vous-même",
+      "Commander des balances",
+      "Paramétrer les seuils d'alerte"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Le coordinateur agit dans le cadre fixé par la gouvernance ; la stratégie précède le choix de l'outil."
+    },
+    {
+     "question": "Qui doit déclarer l'activité de télésurveillance à l'ARS ?",
+     "choix": [
+      "L'opérateur de télésurveillance (les professionnels médicaux qui surveillent)",
+      "La coordinatrice au nom de la CPTS",
+      "Le patient",
+      "La CPAM"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "La CPTS facilite, mais l'opérateur est l'équipe médicale qui assure la surveillance et facture le forfait."
+    },
+    {
+     "question": "Comment mobiliser les adhérents ?",
+     "choix": [
+      "Organiser une réunion ou un webinaire de présentation (rôles, circuit des alertes, financement)",
+      "Diffuser un « qui fait quoi » à l'IDEL, l'IPA, les pharmaciens et les MG",
+      "Prévoir un retour d'expérience après les premières inclusions",
+      "Imposer le dispositif à tous les médecins"
+     ],
+     "bonnes": [
+      0,
+      1,
+      2
+     ],
+     "explication": "L'adhésion à une CPTS est volontaire : on convainc, on outille, on évalue."
+    },
+    {
+     "question": "Quels indicateurs proposer au groupe de travail ?",
+     "choix": [
+      "Nombre de patients inclus",
+      "Part des patients vus en consultation dans les 2 mois après la sortie",
+      "Hospitalisations pour décompensation",
+      "Nombre de likes sur les réseaux sociaux"
+     ],
+     "bonnes": [
+      0,
+      1,
+      2
+     ],
+     "explication": "Ces indicateurs rejoignent ceux des parcours IC de Cœur de Moselle et de la Vallée de la Sarre."
+    }
+   ],
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC",
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "crd16",
+   "theme": "coord",
+   "type": "cas",
+   "question": "Mise en situation : un médecin traitant inquiet de sa charge de travail",
+   "contexte": "Lors d'une réunion de la CPTS, un médecin généraliste déclare : « La télésurveillance, c'est encore des alertes à gérer, je n'ai pas le temps. »",
+   "etapes": [
+    {
+     "question": "Quel élément factuel pouvez-vous lui apporter ?",
+     "choix": [
+      "Pour 100 patients IC, environ 1 alerte tous les 2 jours, soit 1 h 15 à 4 h par mois, après préfiltrage",
+      "Il recevra 50 alertes par jour",
+      "Aucune alerte n'existe",
+      "Il devra gérer le SAV"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Les alertes techniques et les non-transmissions sont gérées par la plateforme ; seules les alertes médicales qualifiées arrivent au médecin."
+    },
+    {
+     "question": "Qui reçoit et traite les alertes médicales ?",
+     "choix": [
+      "Le médecin prescripteur ou l'IPA, selon le protocole",
+      "La coordinatrice",
+      "Le pharmacien",
+      "Personne"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Le médecin reste le pilote ; l'IPA peut gérer les alertes et titrer."
+    },
+    {
+     "question": "Quel rôle pour le médecin traitant dans ce parcours ?",
+     "choix": [
+      "Coordonner le suivi, adapter, gérer les comorbidités, intervenir sur le terrain si besoin",
+      "Aucun",
+      "Facturer le forfait opérateur",
+      "Installer le kit"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Le cercle de soins de la CPTS : cardiologue, MT, IPA, IDEL, pharmacien, biologiste, diététicien, psychologue, coordinatrice."
+    }
+   ],
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC",
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "crf01",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Dans quel ordre se déroulent les étapes de création d'une CPTS ?",
+   "choix": [
+    "Lettre d'intention → projet de santé → signature de l'ACI",
+    "ACI → lettre d'intention → projet de santé",
+    "Projet de santé → ACI → lettre d'intention",
+    "Il n'y a aucune étape"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "1. Faire émerger le projet (périmètre, structure juridique, contact ARS/CPAM) ; 2. Lettre d'intention à l'ARS ; 3. Mobiliser les professionnels ; 4. Projet de santé co-instruit par l'ARS et la CPAM ; 5. Signature de l'ACI.",
+   "source": "dh-cpts",
+   "niveau": 1,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "crf02",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Qui signe l'Accord conventionnel interprofessionnel (ACI) d'une CPTS ?",
+   "choix": [
+    "La CPTS, l'ARS et la CPAM (contrat tripartite)",
+    "La CPTS seule",
+    "Le ministère",
+    "L'URPS"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "L'ACI donne accès aux financements dédiés ; il est conclu pour 5 ans, renouvelable.",
+   "source": "dh-cpts",
+   "niveau": 1,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "crf03",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Comment le financement ACI d'une CPTS est-il structuré ?",
+   "choix": [
+    "Un volet fixe (fonctionnement : temps de coordination, outils) et un volet variable (missions, selon les indicateurs)",
+    "Un paiement unique à la création",
+    "Uniquement des dons",
+    "Un financement par patient soigné"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le montant dépend de la taille de la population couverte. Versement annuel : 75 % en avance en début d'année, solde en fin d'année.",
+   "source": "dh-cpts",
+   "niveau": 2,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "crf04",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Quelles missions sont prioritaires (socles) pour une CPTS ?",
+   "choix": [
+    "Améliorer l'accès aux soins",
+    "Organiser des parcours pluriprofessionnels",
+    "Développer la prévention",
+    "Gérer un service d'urgences"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Missions complémentaires : qualité et pertinence des soins, accompagnement des professionnels. La réponse aux crises sanitaires a été ajoutée depuis.",
+   "source": "dh-cpts",
+   "niveau": 1,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "crf05",
+   "theme": "orga",
+   "type": "vf",
+   "question": "Une CPTS doit compter au moins un médecin généraliste et ne peut exclure aucun professionnel du territoire.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "L'adhésion est volontaire, sans nombre maximal. Il n'y a pas de taille imposée : le périmètre est fixé par les professionnels selon les besoins.",
+   "source": "dh-cpts",
+   "niveau": 2,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "crf06",
+   "theme": "orga",
+   "type": "qcm",
+   "question": "Quand faut-il demander l'aide de l'ARS au démarrage d'une CPTS ?",
+   "choix": [
+    "Au moment du dépôt de la lettre d'intention",
+    "Après 5 ans d'ACI",
+    "Jamais",
+    "Lors de la dissolution"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Elle peut financer un appui (consultant, juriste, coordinateur) pour le diagnostic, le projet de santé, la réunion territoriale ; le montant varie selon les régions.",
+   "source": "dh-cpts",
+   "niveau": 2,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "vds01",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Vallée de la Sarre : quelle part de la population est en ALD pour insuffisance cardiaque ?",
+   "choix": [
+    "1,2 %",
+    "2,4 %",
+    "3,2 %",
+    "8,5 %"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "3,2 % (1 562 patients), plus que la Moselle (2,4 %) et la région (2,5 %). L'IC y est la 4e cause d'ALD ; âge médian 79 ans.",
+   "source": "vds",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "chiffres",
+   "zone": {
+    "region": "Grand Est",
+    "dept": "Moselle",
+    "cpts": "Vallée de la Sarre"
+   }
+  },
+  {
+   "id": "vds02",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Selon l'ODT de la CPAM, quelles ruptures de parcours la CPTS de la Vallée de la Sarre a-t-elle identifiées ?",
+   "choix": [
+    "30 % des patients IC ne sont pas suivis par un cardiologue de ville",
+    "Des patients perdus de vue 2 à 3 mois après la sortie",
+    "Une couverture vaccinale insuffisante (grippe, pneumocoque)",
+    "Un excès de consultations de cardiologie"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Autres fragilités : suivi en ville insuffisant, coordination ville-hôpital perfectible, pratiques hétérogènes.",
+   "source": "vds",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "chiffres",
+   "zone": {
+    "region": "Grand Est",
+    "dept": "Moselle",
+    "cpts": "Vallée de la Sarre"
+   }
+  },
+  {
+   "id": "vds03",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Quels sont les objectifs spécifiques du parcours IC de la Vallée de la Sarre ?",
+   "choix": [
+    "Renforcer la communication entre acteurs",
+    "Favoriser le dépistage précoce",
+    "Sécuriser la sortie d'hospitalisation, éviter les ruptures à 2-3 mois",
+    "Prévenir les décompensations et augmenter la couverture vaccinale"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Objectif général : renforcer le parcours ville-hôpital des patients IC.",
+   "source": "vds",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "zone": {
+    "region": "Grand Est",
+    "dept": "Moselle",
+    "cpts": "Vallée de la Sarre"
+   },
+   "nature": "parcours"
+  },
+  {
+   "id": "vds04",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Dans le parcours de la Vallée de la Sarre, quel est le rôle de la CPTS ?",
+   "choix": [
+    "Coordination globale, avec la CPAM : analyse des données territoriales, diffusion des outils, organisation d'événements",
+    "Prescription des traitements",
+    "Gestion de l'hôpital de jour",
+    "Réalisation des tests NT-proBNP"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le parcours est piloté par un binôme de cardiologues référents avec l'appui d'une IPA spécialisée IC ; une coordinatrice de parcours CPTS et une coordinatrice de parcours CH participent à la gouvernance.",
+   "source": "vds",
+   "niveau": 1,
+   "patho": [
+    "IC",
+    "Transversal"
+   ],
+   "zone": {
+    "region": "Grand Est",
+    "dept": "Moselle",
+    "cpts": "Vallée de la Sarre"
+   },
+   "nature": "parcours"
+  },
+  {
+   "id": "vds05",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Comment se déroule la campagne de dépistage de l'IC organisée par la CPTS de la Vallée de la Sarre ?",
+   "choix": [
+    "Pré-diagnostic EPOF par un score, puis test capillaire NT-proBNP si le score est positif (> 5)",
+    "Échographie pour tous",
+    "Coronarographie systématique",
+    "Simple prise de tension"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Organisée le samedi 7 février 2026 à l'hôpital Robert Pax de Sarreguemines, ouverte au grand public.",
+   "source": "vds",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "clinique",
+   "zone": {
+    "region": "Grand Est",
+    "dept": "Moselle",
+    "cpts": "Vallée de la Sarre"
+   }
+  },
+  {
+   "id": "vds06",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Que contient la lettre de sortie standardisée IC du parcours Vallée de la Sarre ?",
+   "choix": [
+    "Le diagnostic et les traitements optimisés",
+    "Les dates recommandées : MT sous 14 jours, cardiologue sous 2 mois",
+    "Une ordonnance biologique de référence (iono, créatinine, bilan martial, peptides natriurétiques)",
+    "Le code de facturation de télésurveillance"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "C'est l'un des outils communs du parcours, avec Parceo, le questionnaire EPOF et le répertoire de l'offre.",
+   "source": "vds",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "zone": {
+    "region": "Grand Est",
+    "dept": "Moselle",
+    "cpts": "Vallée de la Sarre"
+   },
+   "nature": "parcours"
+  },
+  {
+   "id": "vds07",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Quelle solution la CPTS de la Vallée de la Sarre met-elle en place pour les patients sans cardiologue après hospitalisation ?",
+   "choix": [
+    "Une consultation dédiée avec une IPA spécialisée IC au CH Robert Pax",
+    "Une hospitalisation systématique",
+    "Un renvoi vers les urgences",
+    "Rien"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "L'IPA cible les patients autonomes, sans troubles cognitifs et stables : titration, ECG de contrôle, adaptation des traitements. Limites : temps partiel, activité partagée avec le diabète, encadrement médical nécessaire.",
+   "source": "vds",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "zone": {
+    "region": "Grand Est",
+    "dept": "Moselle",
+    "cpts": "Vallée de la Sarre"
+   },
+   "nature": "parcours"
+  },
+  {
+   "id": "vds08",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Quels outils de télésurveillance sont utilisés sur le territoire de la Vallée de la Sarre ?",
+   "choix": [
+    "Implicity à l'hôpital Robert Pax",
+    "Newcard au cabinet de ville des cardiologues référents",
+    "Aucun",
+    "Uniquement le téléphone"
+   ],
+   "bonnes": [
+    0,
+    1
+   ],
+   "explication": "La télésurveillance est présentée comme un outil complémentaire au suivi présentiel.",
+   "source": "vds",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "zone": {
+    "region": "Grand Est",
+    "dept": "Moselle",
+    "cpts": "Vallée de la Sarre"
+   },
+   "nature": "parcours"
+  },
+  {
+   "id": "vds09",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Quelle plateforme de communication sécurisée le parcours de la Vallée de la Sarre utilise-t-il ?",
+   "choix": [
+    "Parceo",
+    "WhatsApp",
+    "Facebook",
+    "Le fax"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Parceo (Pulsy) facilite le partage d'informations, en complément du DMP.",
+   "source": "vds",
+   "niveau": 1,
+   "zone": {
+    "region": "Grand Est",
+    "dept": "Moselle",
+    "cpts": "Vallée de la Sarre"
+   },
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "vds10",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Quelles ressources de prévention et d'accompagnement le parcours mobilise-t-il ?",
+   "choix": [
+    "ET3P de la MSA à la MSP de Herbitzheim (patients polypathologiques)",
+    "Pôle APSA (ETP sur un an)",
+    "Prescri'mouv (activité physique adaptée) et associations (Je t'aime mon cœur, Club Cœur et Santé)",
+    "Un centre de thalassothérapie"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Le DAC (antennes 57 et 67) tient aussi des permanences mensuelles à la MSP de Herbitzheim.",
+   "source": "vds",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "education",
+   "zone": {
+    "region": "Grand Est",
+    "dept": "Moselle",
+    "cpts": "Vallée de la Sarre"
+   }
+  },
+  {
+   "id": "vds11",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Quand la campagne de vaccination du parcours IC Vallée de la Sarre a-t-elle lieu ?",
+   "choix": [
+    "En octobre-novembre, couplant pneumocoque et grippe (+ COVID-19 et VRS chez les plus de 65 ans)",
+    "En juillet",
+    "Tous les 5 ans",
+    "Il n'y en a pas"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "En complémentarité avec la campagne nationale de l'Assurance Maladie.",
+   "source": "vds",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "education",
+   "zone": {
+    "region": "Grand Est",
+    "dept": "Moselle",
+    "cpts": "Vallée de la Sarre"
+   }
+  },
+  {
+   "id": "vds12",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Quels indicateurs de résultats le parcours de la Vallée de la Sarre suit-il ?",
+   "choix": [
+    "Patients dépistés IC chaque année",
+    "Part des patients IC vaccinés",
+    "Patients vus en consultation de cardiologie (cardiologue ou IPA) 2 mois après la sortie",
+    "Hospitalisations pour décompensation et entrées en ETP"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Indicateurs de moyens : recensement de l'offre sur le site de la CPTS, réunions du groupe de travail, réunion annuelle d'évaluation, articulation avec l'IPA et les cardiologues.",
+   "source": "vds",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "chiffres",
+   "zone": {
+    "region": "Grand Est",
+    "dept": "Moselle",
+    "cpts": "Vallée de la Sarre"
+   }
+  },
+  {
+   "id": "vds13",
+   "theme": "ic-suivi",
+   "type": "qcm",
+   "question": "Selon le parcours de la Vallée de la Sarre, combien de séances infirmières Prado au maximum pour un patient NYHA III-IV ?",
+   "choix": [
+    "8",
+    "15",
+    "24",
+    "Illimité"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Une séance hebdomadaire pendant 2 mois pour tous, puis tous les 15 jours pendant 4 mois pour les NYHA III-IV, dans la limite de 15 séances. La 1re séance a lieu entre le lendemain et le 7e jour après la sortie.",
+   "source": "vds",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "zone": {
+    "region": "Grand Est",
+    "dept": "Moselle",
+    "cpts": "Vallée de la Sarre"
+   },
+   "nature": "parcours"
+  },
+  {
+   "id": "vds14",
+   "theme": "ic-suivi",
+   "type": "cas",
+   "question": "Comparer deux parcours IC de Moselle",
+   "contexte": "Vous comparez le parcours IC de la CPTS de la Vallée de la Sarre (2025-2026) avec la démarche engagée par la CPTS Cœur de Moselle (ACI 2026).",
+   "etapes": [
+    {
+     "question": "Quel constat partagent les deux territoires ?",
+     "choix": [
+      "Une période post-hospitalisation critique, avec des patients mal suivis en cardiologie",
+      "Un excès de cardiologues libéraux",
+      "Une couverture vaccinale parfaite",
+      "Aucune hospitalisation"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Cœur de Moselle : 51 % des patients voient leur MT dans les 14 jours, 28 % sans contact cardiologue. Vallée de la Sarre : 30 % sans cardiologue de ville, perdus de vue à 2-3 mois."
+    },
+    {
+     "question": "Quelle action de la Vallée de la Sarre pourrait inspirer Cœur de Moselle ?",
+     "choix": [
+      "Une lettre de sortie standardisée avec RDV MT à 14 jours et cardiologue à 2 mois",
+      "Une consultation IPA dédiée pour les patients sans cardiologue",
+      "Une campagne vaccinale ciblée IC en octobre-novembre",
+      "Supprimer le Prado"
+     ],
+     "bonnes": [
+      0,
+      1,
+      2
+     ],
+     "explication": "Cœur de Moselle travaille avec une IPA et le CHR Metz-Thionville ; ces outils répondent à ses constats."
+    },
+    {
+     "question": "Où en est la CPTS Cœur de Moselle selon son ACI 2026 ?",
+     "choix": [
+      "Constitution d'un groupe de travail pluriprofessionnel pour poser les bases, actions vers les patients en 2027",
+      "Parcours entièrement déployé",
+      "Parcours abandonné",
+      "Fusion avec la Vallée de la Sarre"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "L'objectif 2026 n'est pas une amélioration chiffrée immédiate mais une démarche structurée et pérenne."
+    }
+   ],
+   "source": "vds",
+   "niveau": 3,
+   "patho": [
+    "IC"
+   ],
+   "zone": {
+    "region": "Grand Est",
+    "dept": "Moselle"
+   },
+   "nature": "parcours"
   },
   {
    "id": "cas01",
