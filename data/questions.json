@@ -1,5 +1,5 @@
 {
- "version": 7,
+ "version": 8,
  "maj": "2026-10-26",
  "themes": [
   {
@@ -71,6 +71,11 @@
    "id": "idel",
    "nom": "IDEL : rôle, BSI & rémunération",
    "couleur": "#db2777"
+  },
+  {
+   "id": "infirmiers",
+   "nom": "Infirmiers : statuts, rôles et missions",
+   "couleur": "#be123c"
   }
  ],
  "pathos": [
@@ -252,6 +257,18 @@
     "cpts": "Vallée de la Sarre",
     "region": "Grand Est",
     "dept": "Moselle"
+   }
+  },
+  {
+   "id": "d-inf",
+   "nom": "Infirmiers : statuts, rôles et missions",
+   "desc": "IDE, IDEL, IDEC, ISPIC, IPA, IPAL, Asalée",
+   "couleur": "#be123c",
+   "filtre": {
+    "themes": [
+     "infirmiers",
+     "idel"
+    ]
    }
   },
   {
@@ -486,6 +503,42 @@
    "titre": "HAS – Avis CNEDiMTS télésurveillance de l'insuffisance rénale chronique (21 mars 2023)",
    "type": "web",
    "url": "https://www.has-sante.fr/upload/docs/application/pdf/2023-03/tls_insuffisance_renale_chronique_dm_eval-320_avis_du_21_03_2023.pdf"
+  },
+  {
+   "id": "laruche-ipa",
+   "titre": "La Ruche (CBA) – Infirmière en pratique avancée : rôle, formation, libéral et facturation (2026)",
+   "type": "web",
+   "url": "https://laruche.cbainfo.fr/actualites/infirmiere-en-pratique-avancee/"
+  },
+  {
+   "id": "fhf-ipa",
+   "titre": "FHF – IPA : décret sur l'accès direct et la primo-prescription (janvier 2025)",
+   "type": "web",
+   "url": "https://www.fhf.fr/expertises/ressources-humaines/personnel-non-medical/ipa-publication-du-decret-sur-lacces-direct-et-la-primo-prescription"
+  },
+  {
+   "id": "ars-asalee",
+   "titre": "ARS PACA – Protocole de coopération Asalée",
+   "type": "web",
+   "url": "https://www.paca.ars.sante.fr/protocole-de-cooperation-asalee-3"
+  },
+  {
+   "id": "qdm-asalee",
+   "titre": "Le Quotidien du médecin – Infirmiers Asalée : convention Cnam de juin 2024",
+   "type": "web",
+   "url": "https://diabetologie-endocrinologie.lequotidiendumedecin.fr/liberal-soins-de-ville/exercice/infirmiers-asalee-la-cnam-met-sur-la-table-105-millions-deuros-par"
+  },
+  {
+   "id": "aphp-coop",
+   "titre": "AP-HP – Expérimentation pour le parcours des insuffisants cardiaques sévères (protocole de coopération du 27/12/2019)",
+   "type": "web",
+   "url": "https://www.aphp.fr/contenu/ap-hp-une-experimentation-pour-ameliorer-le-parcours-des-insuffisants-cardiaques-severes"
+  },
+  {
+   "id": "sfc-param",
+   "titre": "Société française de cardiologie – Les paramédicaux en cardiologie (2025)",
+   "type": "web",
+   "url": "https://sfcardio.fr/wp-content/uploads/2025/01/Paramedicaux-Article-2401.pdf"
   }
  ],
  "questions": [
@@ -7705,6 +7758,606 @@
    "niveau": 2,
    "patho": [
     "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "inf01",
+   "theme": "infirmiers",
+   "type": "carte",
+   "question": "Les infirmiers du parcours IC : qui est qui ?",
+   "reponse": "• IDE : infirmier diplômé d'État (salarié à l'hôpital, en EHPAD, en centre de santé…), rôle propre + soins sur prescription\n• IDEL : IDE libéral, au domicile ou en cabinet, rémunéré à l'acte (NGAP) et au forfait (BSI)\n• IDEC : IDE coordinateur (hôpital, HAD, DAC, cellules IC…)\n• ISPIC / IDE délégué : IDE spécialisé en IC exerçant par délégation dans un protocole de coopération avec un cardiologue\n• IPA : infirmier en pratique avancée (diplôme d'État de niveau master), compétences élargies\n• IPAL : IPA exerçant en libéral, rémunérée par forfaits (PAI)\n• Infirmier Asalée : IDE employé par l'association Asalée, travaillant en binôme avec des médecins généralistes (protocole de coopération)\n• IDE de la plateforme de télésurveillance : à distance, préfiltre les alertes",
+   "source": "laruche-ipa",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "inf02",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Quelle est la différence fondamentale entre IDEL, IDE délégué (ISPIC) et IPA ?",
+   "choix": [
+    "IDEL : rôle propre et prescription ; IDE délégué : actes dérogatoires par protocole de coopération ; IPA : compétences propres élargies par la loi",
+    "Aucune, ce sont trois noms du même métier",
+    "L'IDEL peut prescrire tout médicament",
+    "L'IPA ne peut exercer qu'à l'hôpital"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Même socle (proximité, réactivité, éducation thérapeutique), mais trois niveaux d'autonomie : rôle propre, délégation, pratique avancée.",
+   "source": "webinaire",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "inf03",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Sur quoi repose le « rôle propre » de l'infirmier ?",
+   "choix": [
+    "Les soins et actes qu'il réalise de sa propre initiative (surveillance, éducation, prévention, hygiène…)",
+    "Les actes délégués par un médecin dans un protocole",
+    "La prescription de tous les médicaments",
+    "Le diagnostic médical"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Les textes de 2025-2026 reconnaissent aussi explicitement la consultation infirmière, le diagnostic infirmier (distinct du diagnostic médical) et la coordination.",
+   "source": "pfs-comp",
+   "niveau": 1,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "inf04",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Comment l'IDEL est-elle principalement rémunérée ?",
+   "choix": [
+    "À l'acte (NGAP : AMI, AMX…) et au forfait pour les patients dépendants (BSI : BSA, BSB, BSC), plus déplacements",
+    "Par un salaire de la CPAM",
+    "Par le forfait opérateur de télésurveillance uniquement",
+    "Par l'association Asalée"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Exemple dans l'IC : AMI 5,8 pour les séances après décompensation. La télésurveillance n'a pas de cotation NGAP dédiée.",
+   "source": "laruche-bsi",
+   "niveau": 1,
+   "patho": [
+    "IC",
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "inf05",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Qu'est-ce qu'un IDEC ?",
+   "choix": [
+    "Un infirmier diplômé d'État coordinateur (parcours, HAD, DAC, cellules IC…)",
+    "Un infirmier en dialyse",
+    "Un infirmier de l'Assurance Maladie",
+    "Un étudiant infirmier"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "À l'AP-HP, des IDEC des cellules IC agissent comme délégués des cardiologues pour la télésurveillance, la titration et les consultations non programmées.",
+   "source": "aphp-coop",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "inf06",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Qu'est-ce qu'un protocole de coopération entre professionnels de santé ?",
+   "choix": [
+    "Un cadre autorisé qui permet à un professionnel « délégué » (ex. IDE) de réaliser des actes dérogatoires confiés par un « délégant » (ex. cardiologue)",
+    "Un contrat de travail",
+    "Une convention avec la CPAM sur les tarifs",
+    "Un simple accord oral"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Exemples : Asalée (médecins généralistes / IDE), protocole national de télésurveillance, titration et consultation non programmée en IC (cardiologues / IDE).",
+   "source": "aphp-coop",
+   "niveau": 1,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "inf07",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Quel protocole de coopération national concerne les infirmiers en insuffisance cardiaque ?",
+   "choix": [
+    "« Télésurveillance, consultation de titration et consultation non programmée, avec ou sans télémédecine », autorisé par arrêté du 27/12/2019",
+    "Le protocole Asalée",
+    "Le PRADO",
+    "L'avenant 11"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Les IDE délégués y assurent la télésurveillance des décompensations et/ou des prothèses rythmiques, des consultations de titration et des consultations non programmées.",
+   "source": "aphp-coop",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "inf08",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Dans le protocole de coopération IC, quels actes l'IDE délégué peut-il réaliser ?",
+   "choix": [
+    "Télésurveillance des décompensations cardiaques et/ou d'une prothèse rythmique",
+    "Consultations de titration du traitement de fond",
+    "Consultations non programmées",
+    "Pose d'un défibrillateur implantable"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Le délégant reste le cardiologue ; l'IDE reçoit une formation pratique et théorique pour répondre aux attendus du protocole.",
+   "source": "aphp-coop",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "inf09",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Quelle formation est souvent attendue d'un infirmier spécialisé en IC (ISPIC) ?",
+   "choix": [
+    "Le DIU insuffisance cardiaque, avec une pratique en cardiologie",
+    "Aucune",
+    "Un master de droit",
+    "Le diplôme d'IPA obligatoirement"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "La SFC souhaite aussi des protocoles rattachés à un poste plutôt qu'à une personne, pour sécuriser ces organisations.",
+   "source": "sfc-param",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "inf10",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Quelle formation faut-il pour devenir IPA ?",
+   "choix": [
+    "Un diplôme d'État d'IPA de niveau master, en 2 ans (tronc commun puis spécialisation)",
+    "Un DU de 3 mois",
+    "Aucune, l'ancienneté suffit",
+    "Le diplôme de médecine"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Une VAE peut alléger le parcours.",
+   "source": "laruche-ipa",
+   "niveau": 1,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "inf11",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Dans quels domaines un IPA peut-il exercer ?",
+   "choix": [
+    "Pathologies chroniques stabilisées, prévention et polypathologies courantes en soins primaires",
+    "Oncologie et hémato-oncologie",
+    "Maladie rénale chronique, dialyse, transplantation rénale",
+    "Psychiatrie et santé mentale, urgences",
+    "Chirurgie cardiaque"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Pour l'IC, c'est la mention « pathologies chroniques stabilisées » ; pour l'insuffisance rénale, la mention « MRC, dialyse, transplantation rénale ».",
+   "source": "laruche-ipa",
+   "niveau": 2,
+   "patho": [
+    "IC",
+    "IR",
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "inf12",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Quelles compétences élargies l'IPA possède-t-elle ?",
+   "choix": [
+    "Entretien et examen clinique",
+    "Actes techniques sans prescription et interprétation des résultats",
+    "Prescription de médicaments non soumis à prescription, de dispositifs médicaux et d'examens de biologie ; renouvellement de prescriptions",
+    "Diagnostic et choix thérapeutiques à la place du médecin"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "La conduite diagnostique et les choix thérapeutiques restent à la main du médecin qui a confié le suivi du patient.",
+   "source": "laruche-ipa",
+   "niveau": 2,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "inf13",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Quel texte a ouvert l'accès direct aux IPA, et quand est-il entré en vigueur ?",
+   "choix": [
+    "Loi Rist du 19 mai 2023, appliquée par le décret n° 2025-55 du 20 janvier 2025 (en vigueur le 22 janvier 2025)",
+    "Loi HPST de 2009",
+    "Avenant 7 de 2020",
+    "Arrêté du 16 mai 2023"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Un arrêté du 25 avril 2025 (JO du 30 avril) fixe la liste des produits que les IPA peuvent prescrire en primo-prescription ; le renouvellement ne peut se faire sans concertation médicale.",
+   "source": "fhf-ipa",
+   "niveau": 2,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "inf14",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Où l'accès direct et la primo-prescription des IPA s'appliquent-ils ?",
+   "choix": [
+    "Établissements de santé, établissements médico-sociaux, centres de santé, maisons de santé",
+    "Partout, y compris pour les IPA libérales isolées",
+    "Uniquement en pharmacie",
+    "Nulle part encore"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Les IPA libérales exerçant hors structure d'exercice coordonné sont exclues du dispositif.",
+   "source": "fhf-ipa",
+   "niveau": 3,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "inf15",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "En télésurveillance IC, quel acte l'IPA peut-elle réaliser que l'IDEL ne peut pas ?",
+   "choix": [
+    "Renouveler la télésurveillance et titrer les traitements",
+    "Faire la primo-prescription de télésurveillance",
+    "Facturer l'AMI 5,8",
+    "Rien de plus"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Cadre : compétences propres de l'IPA (art. R. 4301-3 du CSP). L'inclusion initiale reste une prescription médicale (cardiologue, ou MG avec DU d'IC).",
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "inf16",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Comment l'IPA libérale (IPAL) est-elle rémunérée pour le suivi d'un patient ?",
+   "choix": [
+    "Par des forfaits PAI : éligibilité (PAI 0,62), initial (PAI 1,8), suivi trimestriel (PAI 1)",
+    "À l'acte AMI uniquement",
+    "Par un salaire de l'ARS",
+    "Par le patient sans remboursement"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Majoration MIP (+ 3,90 €) pour les moins de 7 ans et les 80 ans et plus ; déplacements en IFI 1. Les majorations de nuit, dimanche et jour férié ne se cumulent pas avec ces forfaits.",
+   "source": "laruche-ipa",
+   "niveau": 2,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "inf17",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Quelle aide au démarrage existe pour une IPA en activité libérale exclusive ?",
+   "choix": [
+    "40 000 € sur 2 ans, si elle suit au moins 50 patients la 1re année et 150 la 2e",
+    "5 000 € une seule fois",
+    "Aucune aide",
+    "100 000 € par an"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "L'avenant 9 (27 juillet 2022) a revalorisé les forfaits de plus de 20 % et porté cette aide de 27 000 à 40 000 €. L'activité exclusive IPA est dispensée des règles d'installation en zone sur-dotée.",
+   "source": "laruche-ipa",
+   "niveau": 3,
+   "nature": "chiffres",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "inf18",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Une infirmière peut-elle exercer à la fois comme IDEL et comme IPA ?",
+   "choix": [
+    "Oui, en exercice mixte, avec une aide à l'installation CPAM progressive selon la part IPA (25 %, 50 %, 85 %)",
+    "Non, c'est interdit",
+    "Oui, mais uniquement à l'hôpital",
+    "Oui, sans aucune règle"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "En exercice mixte, les règles d'installation s'appliquent et l'aide au démarrage réservée à l'activité exclusive IPA ne s'applique pas.",
+   "source": "laruche-ipa",
+   "niveau": 3,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "inf19",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Qu'est-ce qu'une infirmière Asalée ?",
+   "choix": [
+    "Une IDE qui travaille en binôme avec des médecins généralistes dans le cadre du protocole de coopération Asalée, employée par l'association",
+    "Une infirmière hospitalière de réanimation",
+    "Une IPA libérale",
+    "Une infirmière de la CPAM"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "L'association gère le recrutement et la formation des infirmiers pour les médecins généralistes libéraux ; ses protocoles existent depuis une vingtaine d'années.",
+   "source": "qdm-asalee",
+   "niveau": 1,
+   "nature": "parcours",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "inf20",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Quels dépistages et suivis le protocole Asalée confie-t-il aux infirmiers ?",
+   "choix": [
+    "Suivi du diabète de type 2 (prescriptions d'examens, ECG, examen des pieds)",
+    "Suivi du risque cardiovasculaire (ECG)",
+    "Repérage de la BPCO chez le fumeur (spirométrie) et des troubles cognitifs (tests mémoire)",
+    "Pose de stents"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Deux dépistages et deux suivis de pathologies chroniques, de préférence dans des zones d'accès difficile aux soins ou de précarité.",
+   "source": "ars-asalee",
+   "niveau": 2,
+   "patho": [
+    "Diabète",
+    "Cardiovasculaire",
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "inf21",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Comment le dispositif Asalée est-il financé ?",
+   "choix": [
+    "Par l'Assurance Maladie, via une convention avec l'association (105 M€ par an, 1 550 ETP d'infirmiers selon la convention de juin 2024)",
+    "Par les patients",
+    "Par les mutuelles uniquement",
+    "Par les CPTS"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "L'association, subventionnée à 95 % par l'Assurance Maladie, prend en charge la mise en œuvre du protocole et la rémunération des infirmiers. Des difficultés de financement ont été signalées en 2024.",
+   "source": "qdm-asalee",
+   "niveau": 2,
+   "nature": "chiffres",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "inf22",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Selon le PRS Grand Est, quel lien entre Asalée et l'insuffisance cardiaque ?",
+   "choix": [
+    "Objectif : au moins 50 % des patients IC en ALD inclus dans un protocole de coopération type Asalée ou un protocole de suivi à domicile",
+    "Asalée est interdit dans le Grand Est",
+    "Asalée ne concerne que la pédiatrie",
+    "Aucun lien"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le PRS jugeait utile de déployer ce protocole sur toute la région et de l'appliquer en particulier aux patients IC.",
+   "source": "prs",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "zone": {
+    "region": "Grand Est"
+   },
+   "nature": "reglementation",
+   "tags": [
+    "Grand Est",
+    "ARS Grand Est"
+   ]
+  },
+  {
+   "id": "inf23",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Qui fait quoi en télésurveillance IC ? Associez correctement.",
+   "choix": [
+    "IDE plateforme : préfiltre les alertes à distance ; IDEL : constat clinique et aide aux mesures au domicile ; IPA : gère les alertes, titre, renouvelle",
+    "IDEL : prescrit la télésurveillance",
+    "IPA : livre le matériel",
+    "Asalée : facture le forfait opérateur"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "L'ISPIC (protocole de coopération) peut aussi gérer les alertes, titrer et assurer des consultations non programmées par délégation du cardiologue.",
+   "source": "webinaire",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "inf24",
+   "theme": "infirmiers",
+   "type": "qcm",
+   "question": "Dans les parcours IC de Cœur de Moselle et de la Vallée de la Sarre, quelle infirmière joue un rôle central après l'hospitalisation ?",
+   "choix": [
+    "L'IPA spécialisée en IC, pour le suivi des patients sans cardiologue et la titration",
+    "L'infirmière scolaire",
+    "L'IDE de bloc opératoire",
+    "Aucune"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Vallée de la Sarre : consultation IPA au CH Robert Pax. Cœur de Moselle : travail avec l'IPA sur la surveillance biologique et le suivi post-hospitalisation.",
+   "source": "vds",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "zone": {
+    "region": "Grand Est",
+    "dept": "Moselle"
+   },
+   "nature": "parcours"
+  },
+  {
+   "id": "inf25",
+   "theme": "infirmiers",
+   "type": "cas",
+   "question": "Mise en situation : orienter vers la bonne infirmière",
+   "contexte": "La CPTS reçoit plusieurs demandes : (1) un patient IC NYHA III sortant d'hospitalisation, dépendant, qui vit seul ; (2) un patient IC stable sans cardiologue de ville, dont le traitement n'est pas optimisé ; (3) un patient diabétique de type 2 suivi par un médecin généraliste en zone rurale.",
+   "etapes": [
+    {
+     "question": "Pour le patient (1), quelle infirmière intervient au domicile ?",
+     "choix": [
+      "L'IDEL : séances AMI 5,8 (Prado), BSI si dépendance, aide aux mesures de télésurveillance",
+      "L'IPA uniquement",
+      "L'infirmière Asalée",
+      "Personne"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Le DAC peut aussi être sollicité si le retour à domicile est complexe."
+    },
+    {
+     "question": "Pour le patient (2), qui peut assurer la titration ?",
+     "choix": [
+      "Une IPA (pratique avancée) ou un IDE délégué dans un protocole de coopération IC",
+      "L'IDEL dans son rôle propre",
+      "Le pharmacien",
+      "Le patient seul"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "La titration relève des compétences de l'IPA ou d'une délégation par le cardiologue."
+    },
+    {
+     "question": "Pour le patient (3), quel dispositif peut convenir ?",
+     "choix": [
+      "Une infirmière Asalée en binôme avec le médecin généraliste (suivi du diabète de type 2)",
+      "Le Prado IC",
+      "La télésurveillance IC",
+      "Une IPA en oncologie"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Asalée cible le diabète de type 2, le risque cardiovasculaire, la BPCO et les troubles cognitifs."
+    }
+   ],
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC",
+    "Diabète"
    ],
    "nature": "parcours"
   },
