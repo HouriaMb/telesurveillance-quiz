@@ -1,5 +1,5 @@
 {
- "version": 9,
+ "version": 10,
  "maj": "2026-10-26",
  "themes": [
   {
@@ -589,6 +589,12 @@
    "titre": "MedecinDirect – J'ai une maladie chronique et j'ai besoin d'un suivi régulier",
    "type": "web",
    "url": "https://www.medecindirect.fr/blog/jai-une-maladie-chronique-et-jai-besoin-dun-suivi-regulier"
+  },
+  {
+   "id": "sanofi",
+   "titre": "Sanofi Campus – Télésurveillance médicale, où en est-on ? (mise en ligne le 16/09/2025)",
+   "type": "web",
+   "url": "https://pro.campus.sanofi/fr/amelioration-des-systemes-de-sante/articles/telesurveillance-medicale-ou-en-est-on"
   }
  ],
  "questions": [
@@ -9009,6 +9015,218 @@
     "Transversal"
    ],
    "nature": "parcours"
+  },
+  {
+   "id": "snf01",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "En quelle année la France a-t-elle légiféré sur la télémédecine ?",
+   "choix": [
+    "1998",
+    "2009",
+    "2016",
+    "2023"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Avec la loi HPST de 2009. Le programme ETAPES a ensuite expérimenté la télésurveillance avant son entrée dans le droit commun le 1er juillet 2023.",
+   "source": "sanofi",
+   "niveau": 2,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "snf02",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Combien de patients étaient télésurveillés dans le cadre d'ETAPES, selon la DGOS ?",
+   "choix": [
+    "De 2 100 en 2019 à 8 500 en 2021",
+    "De 21 000 en 2019 à 85 000 en 2021",
+    "De 210 000 en 2019 à 850 000 en 2021",
+    "Aucun"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Une forte progression avant le passage au droit commun. À titre de comparaison, Newcard indique à lui seul plus de 20 000 patients inclus depuis 2016.",
+   "source": "sanofi",
+   "niveau": 2,
+   "nature": "chiffres",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "snf03",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Selon la Cour des comptes (2017), quelles économies la télésurveillance pourrait-elle permettre ?",
+   "choix": [
+    "Jusqu'à 2,6 milliards d'euros",
+    "26 millions d'euros",
+    "Aucune",
+    "260 milliards d'euros"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Estimation ancienne, citée par Sanofi Campus. L'étude NEWTS3 (données SNDS) montre un gain de mortalité mais une hausse des soins de ville et des hospitalisations, compensée en partie à 2 ans.",
+   "source": "sanofi",
+   "niveau": 3,
+   "nature": "chiffres",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "snf04",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Quels patients la télésurveillance cible-t-elle en priorité ?",
+   "choix": [
+    "Ceux qui ont besoin d'une période de surveillance : risque d'hospitalisation ou de complications",
+    "Toute la population",
+    "Uniquement les patients hospitalisés",
+    "Uniquement les enfants"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Exemples : maladies chroniques, retour à domicile après une hospitalisation, diabète.",
+   "source": "sanofi",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "snf05",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Quels prérequis encadrent la mise en place d'une télésurveillance ?",
+   "choix": [
+    "Avis favorable d'un professionnel de santé et consentement du patient",
+    "Traçabilité des actes et conformité au RGPD",
+    "Respect des référentiels HAS et ANS, marquage CE du dispositif",
+    "Accord de l'employeur du patient"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Les professionnels doivent aussi être formés à la télésurveillance, à la pathologie et à l'usage des dispositifs médicaux numériques.",
+   "source": "sanofi",
+   "niveau": 2,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "snf06",
+   "theme": "telesurv",
+   "type": "vf",
+   "question": "Les alertes de télésurveillance sont lues instantanément : le patient n'a pas besoin d'appeler le 15 en cas d'urgence.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Faux : la télésurveillance n'est pas un dispositif d'urgence et les alertes ne sont pas lues en temps réel. En cas d'urgence, le patient appelle le 15 (ou le 112).",
+   "source": "sanofi",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "snf07",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Télésurveillance du diabète : quels patients sont éligibles selon Sanofi Campus ?",
+   "choix": [
+    "Diabète de type 1 à partir de 12 ans",
+    "Diabète de type 2 sous insuline",
+    "Tous les prédiabétiques",
+    "Diabète gestationnel uniquement"
+   ],
+   "bonnes": [
+    0,
+    1
+   ],
+   "explication": "Le prescripteur fixe la durée, jusqu'à 3 mois renouvelables (contre 6 mois renouvelables pour l'IC).",
+   "source": "sanofi",
+   "niveau": 2,
+   "patho": [
+    "Diabète"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "snf08",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Combien de médecins pensent que la télémédecine fera partie de leur pratique quotidienne d'ici 2030 ?",
+   "choix": [
+    "Environ 1 sur 10",
+    "Près de 3 sur 4",
+    "Aucun",
+    "Tous"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "La télésurveillance est aussi une mesure du plan France 2030 pour l'innovation en santé.",
+   "source": "sanofi",
+   "niveau": 2,
+   "nature": "chiffres",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "snf09",
+   "theme": "telesurv",
+   "type": "qcm",
+   "question": "Sanofi Campus évoque un remboursement à 60 % en attente de décret. Qu'en est-il aujourd'hui pour l'IC ?",
+   "choix": [
+    "La télésurveillance est entrée dans le droit commun le 1er juillet 2023 ; pour les patients IC en ALD, elle est prise en charge à 100 %",
+    "Elle n'est toujours pas remboursée",
+    "Elle est remboursée à 30 %",
+    "Elle a été supprimée"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Cette partie de l'article date d'avant le droit commun. Forfait opérateur IC : 28 €/mois au tarif socle (arrêté du 16 mai 2023), plus un forfait technique pour le dispositif.",
+   "source": "ts-loi",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "snf10",
+   "theme": "telesurv",
+   "type": "carte",
+   "question": "Télésurveillance : les grandes dates",
+   "reponse": "• 1920 : premières assistances médicales par téléphone (croisières transatlantiques)\n• 2009 : la France légifère sur la télémédecine (loi HPST)\n• 2014-2018 : programme ETAPES, généralisé en 2018 pour 4 ans (5 pathologies)\n• 2019 → 2021 : de 21 000 à 85 000 patients télésurveillés\n• LFSS 2022 : passage dans le droit commun voté\n• 1er juillet 2023 : télésurveillance remboursée dans le droit commun\n• 2024 : droit commun pour l'IR stade 4-5 (selon Newcard)",
+   "source": "sanofi",
+   "niveau": 1,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
   },
   {
    "id": "cas01",

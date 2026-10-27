@@ -1,5 +1,5 @@
 // Service worker : fonctionnement hors ligne
-const VERSION = 'tsq-v1.8.0';
+const VERSION = 'tsq-v1.8.1';
 const SHELL = [
   './', 'index.html', 'css/app.css', 'js/app.js', 'js/store.js', 'js/sync.js', 'js/io.js', 'js/filters.js',
   'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png', 'data/questions.json',

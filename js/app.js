@@ -3,7 +3,7 @@ import { syncNow, scheduleSync, syncStatus, onSyncStatus, syncConfigured, testTo
 import { parseImport, csvTemplate } from './io.js';
 import { matchFilter, renderFilterPanel, describeFilter, normalizeFilter, isEmpty, emptyFilter, zoneTree, zoneLabel, NATIONAL } from './filters.js';
 
-const APP_VERSION = '1.8.0';
+const APP_VERSION = '1.8.1';
 const $ = (s, el = document) => el.querySelector(s);
 const view = () => $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
