@@ -1,5 +1,5 @@
 {
- "version": 6,
+ "version": 7,
  "maj": "2026-10-26",
  "themes": [
   {
@@ -66,6 +66,11 @@
    "id": "coord",
    "nom": "CPTS, coordinateur & télésurveillance",
    "couleur": "#7c3aed"
+  },
+  {
+   "id": "idel",
+   "nom": "IDEL : rôle, BSI & rémunération",
+   "couleur": "#db2777"
   }
  ],
  "pathos": [
@@ -250,6 +255,17 @@
    }
   },
   {
+   "id": "d-idel",
+   "nom": "IDEL : rôle, BSI & rémunération",
+   "desc": "Parcours IC, télésurveillance, AMI 5,8, BSI, avenant 11",
+   "couleur": "#db2777",
+   "filtre": {
+    "themes": [
+     "idel"
+    ]
+   }
+  },
+  {
    "id": "d-patient",
    "nom": "Éducation du patient",
    "desc": "Messages EPOF/EPON, sel, pesée, observance",
@@ -423,6 +439,53 @@
    "titre": "Akeia – La fonction de coordinateur en MSP et CPTS",
    "type": "web",
    "url": "https://akeia.fr/blog/la-fonction-de-coordinateur-en-msp-et-cpts"
+  },
+  {
+   "id": "bsi-guide",
+   "titre": "Guide complet sur le Bilan de soins infirmiers (BSI), édition 2025",
+   "type": "pdf"
+  },
+  {
+   "id": "laruche-bsi",
+   "titre": "La Ruche (CBA) – BSI infirmier : cotation, forfaits, cumul (2026)",
+   "type": "web",
+   "url": "https://laruche.cbainfo.fr/gerer-cabinet-infirmier/facturation-idel/bsi-infirmier/"
+  },
+  {
+   "id": "laruche-ami58",
+   "titre": "La Ruche (CBA) – AMI 5,8 : surveillance après décompensation cardiaque ou BPCO",
+   "type": "web",
+   "url": "https://laruche.cbainfo.fr/actualites/ami-58-nouvel-acte-infirmier-ngap"
+  },
+  {
+   "id": "laruche-av11",
+   "titre": "La Ruche (CBA) – Avenant 11 infirmier : mesures depuis le 21 juin 2026",
+   "type": "web",
+   "url": "https://laruche.cbainfo.fr/actualites/avenant-11-infirmier/"
+  },
+  {
+   "id": "pfs-comp",
+   "titre": "Pôle Formation Santé – Nouvelles compétences infirmières 2026",
+   "type": "web",
+   "url": "https://infirmiers.poleformation-sante.fr/nouvelles-competences-infirmieres-2026/"
+  },
+  {
+   "id": "pfs-bsi",
+   "titre": "Pôle Formation Santé – BSI et cumul d'actes",
+   "type": "web",
+   "url": "https://infirmiers.poleformation-sante.fr/bsi-cumul-actes/"
+  },
+  {
+   "id": "vidal-telesoin",
+   "titre": "VIDAL – Infirmiers libéraux et actes de télésanté (juillet 2023)",
+   "type": "web",
+   "url": "https://www.vidal.fr/actualites/30357-infirmiers-liberaux-et-actes-de-telesante-les-conditions-de-prise-en-charge.html"
+  },
+  {
+   "id": "has-irc",
+   "titre": "HAS – Avis CNEDiMTS télésurveillance de l'insuffisance rénale chronique (21 mars 2023)",
+   "type": "web",
+   "url": "https://www.has-sante.fr/upload/docs/application/pdf/2023-03/tls_insuffisance_renale_chronique_dm_eval-320_avis_du_21_03_2023.pdf"
   }
  ],
  "questions": [
@@ -6590,6 +6653,1059 @@
     "region": "Grand Est",
     "dept": "Moselle"
    },
+   "nature": "parcours"
+  },
+  {
+   "id": "idl01",
+   "theme": "idel",
+   "type": "carte",
+   "question": "« Et moi, IDEL, quel est mon rôle dans le parcours du patient IC ? »",
+   "reponse": "• Repérer les signes d'alerte EPOF à chaque passage (poids, œdèmes, dyspnée, fatigue)\n• Surveiller : poids, TA, FC, œdèmes, dyspnée, observance\n• Assurer les séances post-hospitalisation (Prado / AMI 5,8) et transmettre au médecin\n• Éduquer le patient et l'aidant (sel, pesée, traitement, signes d'alerte)\n• Préparer le pilulier, vérifier l'adaptation du traitement chez le patient décompensé\n• En télésurveillance : aider aux mesures si le patient n'est pas autonome, alerter, faire le retour terrain\n• Coordonner avec le MT, le cardiologue, l'IPA, le pharmacien (et la CPTS)",
+   "source": "webinaire",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "idl02",
+   "theme": "idel",
+   "type": "carte",
+   "question": "« Et comment suis-je rémunérée ? » – les principales voies pour l'IDEL dans le parcours IC",
+   "reponse": "• Séances de surveillance post-décompensation : AMI 5,8 (18,27 € ; 19,43 € à partir du 7/11/2026 si confirmé)\n• Patient dépendant : BSI (DI 2,5 / 1,2) puis forfait journalier BSA, BSB ou BSC, + actes techniques en AMX\n• Autres actes NGAP : prise de sang, injections, surveillance après changement de traitement (AMI 1), administration médicamenteuse (AMI 1,2)…\n• Déplacements (IFD/IFI, IK) et majorations\n• Télésoin (même tarif que l'acte en présentiel) et téléexpertise\n• Télésurveillance : pas de cotation NGAP dédiée ; la rémunération passe par le forfait opérateur, selon l'organisation convenue avec l'équipe qui télésurveille",
+   "source": "laruche-ami58",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "idl03",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Qu'est-ce que l'AMI 5,8 ?",
+   "choix": [
+    "Une séance à domicile de surveillance clinique et de prévention après une hospitalisation pour décompensation d'IC (ou exacerbation de BPCO)",
+    "Une simple prise de tension",
+    "Un acte de télésurveillance",
+    "Un forfait de dépendance"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "La simple prise de tension ne justifie pas l'AMI 5,8. C'est l'acte de la séance infirmière du Prado IC.",
+   "source": "laruche-ami58",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "idl04",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Quelles conditions encadrent la facturation de l'AMI 5,8 ?",
+   "choix": [
+    "Une hospitalisation récente pour décompensation d'IC (ou exacerbation de BPCO)",
+    "La prescription et le protocole de surveillance du document de sortie",
+    "Une formation continue de l'IDEL à ce suivi",
+    "Une fiche de surveillance transmise au MT sous 48 h par messagerie sécurisée",
+    "Une télésurveillance active"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "La télésurveillance n'est pas une condition. Les majorations de nuit et de jours fériés ne sont pas cotables avec l'AMI 5,8.",
+   "source": "laruche-ami58",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "idl05",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Quel rythme et quel plafond pour les séances AMI 5,8 dans l'IC ?",
+   "choix": [
+    "1re visite dans les 7 jours, puis au moins 1 par semaine pendant 2 mois, sur 4 à 6 mois, 15 séances maximum",
+    "1 séance par jour pendant 1 an",
+    "1 séance unique",
+    "1 séance par mois sans limite"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le rythme est ensuite adapté selon le protocole de sortie ; c'est le même schéma que le Prado IC.",
+   "source": "laruche-ami58",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "idl06",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Combien rapporte une séance AMI 5,8 ?",
+   "choix": [
+    "5,80 €",
+    "18,27 € (lettre-clé à 3,15 €), puis 19,43 € avec l'AMI à 3,35 € à partir du 7 novembre 2026",
+    "28 €",
+    "56 €"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Avenant 11 : AMI à 3,35 € au 7/11/2026 (sous réserve de confirmation), puis 3,45 € au 1/11/2027, soit 20,01 €. Plus les frais de déplacement.",
+   "source": "laruche-ami58",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "chiffres"
+  },
+  {
+   "id": "idl07",
+   "theme": "idel",
+   "type": "vf",
+   "question": "Une simple prise de tension chez un patient IC suffit pour coter l'AMI 5,8.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Faux : c'est une séance complète de surveillance clinique et de prévention après hospitalisation. En dehors de ce contexte, une surveillance après changement de traitement relève en général de l'AMI 1 (15 passages maximum).",
+   "source": "laruche-ami58",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "idl08",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Le patient IC n'a pas été hospitalisé, mais son traitement diurétique vient d'être modifié. Quelle cotation pour la surveillance ?",
+   "choix": [
+    "AMI 5,8",
+    "En général AMI 1 (surveillance après mise en route ou modification d'un traitement), avec fiche de surveillance, 15 passages maximum",
+    "Forfait BSC",
+    "Aucune"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "L'AMI 5,8 suppose une hospitalisation récente pour décompensation.",
+   "source": "laruche-ami58",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "idl09",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Quels actes infirmiers de suivi peuvent être réalisés en télésoin (vidéo) selon VIDAL ?",
+   "choix": [
+    "La surveillance post-hospitalisation de l'IC ou de la BPCO",
+    "L'accompagnement à la prise médicamenteuse",
+    "La surveillance de l'insulinothérapie",
+    "Le suivi des pansements (4 actes par mois maximum)",
+    "Les prises de sang"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explication": "Conditions : au moins un acte ou bilan en présentiel dans les 12 mois, même territoire, vidéo obligatoire, compte rendu archivé, 20 % maximum de l'activité. Tarif identique à l'acte en présentiel.",
+   "source": "vidal-telesoin",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "idl10",
+   "theme": "idel",
+   "type": "vf",
+   "question": "Le télésoin et la télésurveillance médicale, c'est la même chose.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Faux : le télésoin est un acte infirmier réalisé en vidéo (coté comme l'acte en présentiel). La télésurveillance est l'interprétation à distance de données recueillies par un dispositif médical numérique, rémunérée par un forfait opérateur.",
+   "source": "vidal-telesoin",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "idl11",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Combien l'IDEL perçoit-elle pour accompagner une téléconsultation au domicile du patient ?",
+   "choix": [
+    "10 €",
+    "12 €",
+    "15 €",
+    "28 €"
+   ],
+   "bonnes": [
+    2
+   ],
+   "explication": "10 € lors d'un soin déjà prévu, 12 € dans un lieu dédié, 15 € au domicile (VIDAL, 2023). La téléexpertise est rémunérée 10 €, 4 fois par an et par patient au maximum.",
+   "source": "vidal-telesoin",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "chiffres"
+  },
+  {
+   "id": "idl12",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Dans quels cadres un infirmier peut-il participer à une activité de télésurveillance selon la HAS ?",
+   "choix": [
+    "Dans le cadre de ses compétences propres",
+    "Dans le cadre d'un protocole de coopération entre professionnels de santé",
+    "En pratique avancée (IPA)",
+    "Comme prescripteur initial"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Avis HAS sur la télésurveillance de l'IRC ; la même logique figure dans le webinaire pour l'IC (IDEL : rôle propre, ISPIC : protocole de coopération, IPA : compétences élargies).",
+   "source": "has-irc",
+   "niveau": 2,
+   "patho": [
+    "IC",
+    "IR"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "idl13",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Qui réalise l'« accompagnement thérapeutique » prévu en télésurveillance ?",
+   "choix": [
+    "Un ou plusieurs professionnels de santé de l'équipe de télésurveillance (médecins, IDE, IPA), avec l'accord du patient",
+    "Uniquement le fabricant",
+    "Le pharmacien d'officine seul",
+    "La CPAM"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "La 1re séance suit l'initiation ; le 1er mois nécessite un accompagnement rapproché, puis la fréquence s'adapte. Séances en présentiel ou à distance.",
+   "source": "has-irc",
+   "niveau": 2,
+   "patho": [
+    "IC",
+    "IR"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "idl14",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Quels actes de télésurveillance l'IDEL peut-elle inscrire et facturer dans le BSI ?",
+   "choix": [
+    "Aucun : la télésurveillance n'est pas un acte NGAP. Elle est rémunérée par le forfait opérateur, hors BSI",
+    "Le forfait opérateur de 28 €",
+    "Une cotation « télésurveillance » en AMX",
+    "Le forfait technique du dispositif"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le BSI ne contient que des soins infirmiers. Ce que l'IDEL fait lors de ses passages (aide à la pesée et à la mesure de la tension, surveillance des œdèmes, pilulier, éducation, coordination) entre dans son plan de soins et dans le forfait journalier ; les actes techniques s'ajoutent en AMX.",
+   "source": "laruche-bsi",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "idl15",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Patient au forfait BSI et télésurveillé : que fait l'IDEL lors de son passage du matin, selon le protocole CPTS du webinaire ?",
+   "choix": [
+    "Elle réalise ou accompagne les mesures (poids, tension) transmises à la plateforme",
+    "Elle traite les alertes médicales",
+    "Elle facture le forfait opérateur",
+    "Elle modifie seule le traitement"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Ces interventions sont intégrées à son plan de soins (inclus dans le forfait BSI). En cas d'alerte, elle évalue au domicile et fait le retour terrain au médecin.",
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "idl16",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Comment une IDEL membre d'une équipe de télésurveillance peut-elle être rémunérée pour ce travail ?",
+   "choix": [
+    "Par une cotation NGAP « télésurveillance »",
+    "Par le forfait opérateur versé à l'opérateur déclaré à l'ARS, selon l'organisation et l'accord conclus au sein de l'équipe",
+    "Par le patient",
+    "Par le fabricant du dispositif, au titre de l'IDE de plateforme"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Il n'existe pas de cotation infirmière dédiée à la télésurveillance. L'opérateur (médecin, structure ou équipe) perçoit le forfait et organise sa répartition ; à préciser par écrit.",
+   "source": "ts-loi",
+   "niveau": 3,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "idl17",
+   "theme": "idel",
+   "type": "vf",
+   "question": "L'IDE de la plateforme de télésurveillance remplace l'IDEL au domicile.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Faux : l'IDE de plateforme agit à distance (kit, observance, préfiltrage, non-transmissions). L'IDEL évalue et agit au domicile. Les deux se complètent.",
+   "source": "webinaire",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "idl18",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Le patient sort de cardiologie avec Prado IC et télésurveillance. Peut-il bénéficier des deux ?",
+   "choix": [
+    "Oui : les visites IDEL (AMI 5,8) et la télésurveillance quotidienne se complètent ; la télésurveillance prend le relais à la fin du Prado",
+    "Non, c'est l'un ou l'autre",
+    "Seulement s'il est en BSI",
+    "Seulement s'il a moins de 75 ans"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "L'IDEL garde ses séances de surveillance ; la télésurveillance sécurise le recueil des données entre deux visites.",
+   "source": "webinaire",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "bsi01",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Qu'est-ce que le BSI ?",
+   "choix": [
+    "Un bilan de soins infirmiers qui évalue la dépendance d'un patient à domicile et détermine un forfait journalier",
+    "Une prescription médicale",
+    "Un acte de télésurveillance",
+    "Un bilan sanguin"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Il sert aussi de plan de soins et de support de coordination avec le médecin traitant. Il remplace la DSI depuis le 1er janvier 2020.",
+   "source": "laruche-bsi",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "bsi02",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Comment le BSI a-t-il été déployé ?",
+   "choix": [
+    "Janvier 2020 : 90 ans et plus ; septembre 2022 : 85 ans et plus ; 3 octobre 2023 : tous les patients dépendants à domicile",
+    "Uniquement pour les moins de 60 ans",
+    "Uniquement en EHPAD",
+    "Depuis 2026 seulement"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Il n'y a plus de critère d'âge : personnes âgées, adultes handicapés ou enfants dépendants.",
+   "source": "bsi-guide",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "bsi03",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Quels sont les montants des forfaits journaliers BSI ?",
+   "choix": [
+    "BSA 13 € · BSB 18,20 € · BSC 28,70 €",
+    "BSA 5 € · BSB 10 € · BSC 15 €",
+    "BSA 28 € · BSB 56 € · BSC 70 €",
+    "Un forfait unique de 20 €"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Léger, intermédiaire, lourd : le niveau est calculé automatiquement par l'outil d'amelipro. Le forfait est facturé une fois par jour, quel que soit le nombre de passages.",
+   "source": "bsi-guide",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "chiffres"
+  },
+  {
+   "id": "bsi04",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Comment est rémunérée la saisie du BSI ?",
+   "choix": [
+    "BSI initial DI 2,5 (25 €), renouvellement annuel DI 1,2 (12 €), BSI intermédiaire DI 1,2 (12 €, 2 maximum par an)",
+    "Gratuitement",
+    "AMI 5,8",
+    "28 € par mois"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "La lettre DI vaut 10 €. Le DI 2,5 n'est facturé qu'une fois dans la vie du patient.",
+   "source": "laruche-bsi",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "chiffres"
+  },
+  {
+   "id": "bsi05",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Faut-il une prescription médicale pour un BSI ?",
+   "choix": [
+    "Oui pour le BSI initial et pour chaque renouvellement annuel ; non pour un BSI intermédiaire",
+    "Jamais",
+    "Pour chaque passage",
+    "Uniquement pour le BSI intermédiaire"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Une ordonnance de soins infirmiers pour patient dépendant suffit (le mot « BSI » n'est pas obligatoire). Le BSI intermédiaire se fait à l'initiative de l'IDEL si l'état du patient évolue.",
+   "source": "bsi-guide",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "bsi06",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "L'ordonnance indique « soins infirmiers pendant 6 mois ». Quelle est la durée de validité du BSI ?",
+   "choix": [
+    "6 mois",
+    "1 an",
+    "3 mois",
+    "Illimitée"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Un BSI est valable 1 an, même si l'ordonnance mentionne 6 mois.",
+   "source": "bsi-guide",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "bsi07",
+   "theme": "idel",
+   "type": "vf",
+   "question": "Un BSI enregistré en mode brouillon permet déjà de facturer le forfait.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Faux : il faut clôturer le BSI dans l'outil pour facturer le bilan et le forfait. Une synthèse est alors transmise au médecin traitant, qui peut donner son avis.",
+   "source": "bsi-guide",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "bsi08",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Peut-on facturer des AMI en plus du forfait BSI ?",
+   "choix": [
+    "Oui, librement",
+    "Non : les actes techniques réalisés en plus du forfait se facturent en AMX",
+    "Oui, mais seulement le dimanche",
+    "Uniquement des AMI 5,8"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Coter un acte technique en AMI chez un patient au forfait est une erreur souvent relevée en contrôle. Exception notée par La Ruche : un seul AMI 1,2 d'administration médicamenteuse par passage (avenant 11).",
+   "source": "bsi-guide",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "bsi09",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Quels actes techniques sont cumulables avec le forfait BSI (en AMX) ?",
+   "choix": [
+    "Pansements lourds et complexes (AMX 4)",
+    "Perfusions (AMX 9, 10, 14 ou 15)",
+    "Prise de sang (AMX 1,5)",
+    "Soins d'hygiène et d'accompagnement"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Les soins d'hygiène et d'accompagnement sont inclus dans le forfait. En général l'AMX associé est facturé à 50 % ; la prise de sang et les séances de surveillance clinique hebdomadaires sont à taux plein (La Ruche).",
+   "source": "bsi-guide",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "bsi10",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Patient IC dépendant au forfait BSI, sorti d'hospitalisation pour décompensation : comment l'IDEL facture-t-elle la séance de surveillance post-hospitalisation ?",
+   "choix": [
+    "En AMX 5,8, en plus du forfait journalier",
+    "En AMI 5,8 en plus du forfait",
+    "Elle est incluse dans le forfait, non facturable",
+    "En DI 2,5"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Chez un patient au forfait, les actes techniques passent en AMX (l'AMI 5,8 s'écrit aussi AMX 5,8). Selon La Ruche, les séances de surveillance clinique hebdomadaires sont facturées à taux plein. À confirmer auprès de votre CPAM.",
+   "source": "laruche-bsi",
+   "niveau": 3,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "bsi11",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "La préparation du pilulier d'un patient au forfait BSI se facture-t-elle à part ?",
+   "choix": [
+    "Non, elle est incluse dans le forfait",
+    "Oui, en AMX 4",
+    "Oui, en AMI 5,8",
+    "Oui, en DI 1,2"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le pilulier et l'aide à la prise sont inclus dans le forfait (La Ruche).",
+   "source": "laruche-bsi",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "bsi12",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Quels items du BSI peuvent faire passer un patient de BSA à BSB ou BSC ?",
+   "choix": [
+    "Hygiène, élimination, mobilité (HEM)",
+    "Uniquement l'âge",
+    "Le nombre de médicaments",
+    "La présence d'une télésurveillance"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Ne cocher que les actions réalisées soi-même : si une auxiliaire de vie fait la toilette, ces actions ne doivent pas être cochées.",
+   "source": "pfs-bsi",
+   "niveau": 3,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "bsi13",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Comment facturer les déplacements pour un patient au forfait BSI ?",
+   "choix": [
+    "En IFI (2,75 €) à chaque passage, 4 par jour maximum, + IK",
+    "En IFA",
+    "Ils sont inclus dans le forfait",
+    "Une seule fois par mois"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Plusieurs patients dépendants au même domicile : IFI coefficient 1 pour le premier, 0,01 pour les suivants ; aucun déplacement facturé pour un patient hors BSI au même domicile.",
+   "source": "bsi-guide",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "chiffres"
+  },
+  {
+   "id": "bsi14",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Deux IDEL interviennent le même jour chez un patient au forfait BSI. Que se passe-t-il ?",
+   "choix": [
+    "Le forfait n'est facturé qu'une fois par jour, par une seule IDEL, qui reverse une partie aux autres",
+    "Chaque IDEL facture un forfait complet",
+    "Aucune ne peut facturer",
+    "Le patient paie la différence"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Chaque IDEL facture ses propres AMX, déplacements et majorations. Les règles de reversement doivent être écrites.",
+   "source": "bsi-guide",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "bsi15",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "L'état d'un patient au forfait BSI s'aggrave en cours d'année (nouvelle escarre, décompensation). Que faire ?",
+   "choix": [
+    "Réaliser un BSI intermédiaire (DI 1,2, sans nouvelle prescription) pour ajuster le forfait",
+    "Attendre la date anniversaire",
+    "Facturer des AMI en plus",
+    "Demander une nouvelle hospitalisation"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Jusqu'à 2 BSI intermédiaires par an. Un changement d'état non reporté peut fausser le niveau de forfait.",
+   "source": "bsi-guide",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "bsi16",
+   "theme": "idel",
+   "type": "vf",
+   "question": "Après un Prado, un BSI initial nécessite une prescription de soins pour patient dépendant ; à défaut, la facturation reste en AMI.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Un patient autonome qui n'a besoin que d'actes techniques reste en AMI, sans bilan.",
+   "source": "laruche-bsi",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "bsi17",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Quelle évolution concerne le BSI avec l'avenant 11 ?",
+   "choix": [
+    "Une majoration MSG de 3,10 € par jour pour les patients en BSC, à partir du 1er janvier 2028",
+    "La suppression du BSI",
+    "Un forfait BSD à 50 €",
+    "Aucune"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Les forfaits BSA/BSB/BSC n'ont pas changé en juin 2026. La lettre-clé AIS a été supprimée le 21 juin 2026.",
+   "source": "laruche-av11",
+   "niveau": 3,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "bsi18",
+   "theme": "idel",
+   "type": "cas",
+   "question": "Mise en situation : Mme L., IC, dépendante et télésurveillée",
+   "contexte": "Mme L., 86 ans, insuffisante cardiaque, rentre chez elle après une hospitalisation pour décompensation. Elle a besoin d'aide pour la toilette et les déplacements. Le cardiologue a prescrit une télésurveillance (balance et tensiomètre connectés) et une prescription de soins infirmiers pour patiente dépendante vous est remise.",
+   "etapes": [
+    {
+     "question": "Quel bilan réalisez-vous en premier ?",
+     "choix": [
+      "Un BSI initial sur amelipro (DI 2,5), à clôturer pour facturer le forfait",
+      "Aucun bilan",
+      "Un BSI intermédiaire",
+      "Une déclaration à l'ARS"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Le forfait (BSA, BSB ou BSC) s'affiche à la clôture ; la synthèse part au médecin traitant."
+    },
+    {
+     "question": "Comment facturez-vous la séance hebdomadaire de surveillance post-décompensation ?",
+     "choix": [
+      "En AMX 5,8 en plus du forfait",
+      "En AMI 5,8 à côté du forfait",
+      "Incluse dans le forfait",
+      "En télésurveillance"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Chez une patiente au forfait, l'acte technique passe en AMX. Selon La Ruche, la surveillance clinique hebdomadaire est à taux plein."
+    },
+    {
+     "question": "La balance connectée envoie une alerte de prise de poids : quel est votre rôle ?",
+     "choix": [
+      "Évaluer au domicile (œdèmes, dyspnée, observance) à la demande du médecin ou de l'IPA, puis faire le retour terrain",
+      "Doubler le diurétique de votre propre initiative",
+      "Ignorer l'alerte, la plateforme s'en charge",
+      "Facturer le forfait opérateur"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Le médecin ou l'IPA décide ; vous apportez le constat clinique de terrain."
+    },
+    {
+     "question": "Pouvez-vous facturer l'aide à la pesée quotidienne pour la télésurveillance ?",
+     "choix": [
+      "Non : c'est une intervention de votre plan de soins, incluse dans le forfait BSI",
+      "Oui, en AMX 1",
+      "Oui, en forfait opérateur",
+      "Oui, en AMI 5,8 chaque jour"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "La télésurveillance elle-même n'est pas un acte NGAP ; seuls les actes techniques s'ajoutent en AMX."
+    }
+   ],
+   "source": "laruche-bsi",
+   "niveau": 3,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "cmp01",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Quels textes redéfinissent les compétences infirmières ?",
+   "choix": [
+    "Loi du 27 juin 2025 sur la profession infirmière",
+    "Décret du 24 décembre 2025 sur les activités et compétences",
+    "Arrêté du 26 juin 2026 listant les actes et soins",
+    "Loi HPST de 2009"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Un autre arrêté du 26 juin 2026 porte sur la prescription infirmière de produits de santé et d'examens complémentaires.",
+   "source": "pfs-comp",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "cmp02",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Quelles missions les nouveaux textes reconnaissent-ils explicitement aux infirmiers ?",
+   "choix": [
+    "La consultation infirmière",
+    "Le diagnostic infirmier",
+    "La coordination (orientation, transmissions, RCP, retour à domicile)",
+    "Le diagnostic médical"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Le diagnostic infirmier identifie des besoins de soins relevant de la compétence infirmière ; il est distinct du diagnostic médical. La consultation infirmière est tracée dans le dossier du patient.",
+   "source": "pfs-comp",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "cmp03",
+   "theme": "idel",
+   "type": "vf",
+   "question": "L'arrêté du 26 juin 2026 crée à lui seul une cotation générale pour la consultation infirmière.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Faux : la rémunération relève de la convention avec l'Assurance Maladie. L'avenant 11 prévoit des consultations ciblées (CIA à 20 € pour le diabète de type 2 débutant l'insuline à partir du 7/11/2026, sous réserve de l'avis HAS).",
+   "source": "pfs-comp",
+   "niveau": 3,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "cmp04",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Selon les nouveaux textes, comment se déroule l'éducation thérapeutique menée par l'infirmier ?",
+   "choix": [
+    "Un cycle : identification des besoins, objectifs personnalisés, séances, évaluation",
+    "Une brochure remise une fois",
+    "Une seule consultation médicale",
+    "Elle est réservée aux médecins"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Prévention et éducation couvrent aussi addictions, tabac, nutrition, activité physique : des leviers essentiels dans l'IC (sel, pesée, observance).",
+   "source": "pfs-comp",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "education"
+  },
+  {
+   "id": "cmp05",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Que prévoit l'avenant 11 pour la valeur de l'AMI ?",
+   "choix": [
+    "3,15 € jusqu'au 6/11/2026, 3,35 € au 7/11/2026 (sous réserve), 3,45 € au 1/11/2027",
+    "Une baisse à 2,50 €",
+    "Aucun changement",
+    "5 € dès 2026"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "La date du soin, et non celle de la transmission, fixe le tarif applicable.",
+   "source": "laruche-av11",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "chiffres"
+  },
+  {
+   "id": "cmp06",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Quelles mesures de l'avenant 11 concernent le suivi des patients chroniques à domicile ?",
+   "choix": [
+    "Infirmier référent pour les patients en ALD, avec un parcours renforcé (visites mensuelles) à partir du 1er juillet 2027",
+    "Surveillance globale hebdomadaire (AMI 3,77) au 1er janvier 2028, non cumulable avec un forfait de soins",
+    "Surveillance des situations aiguës (AMI 1,49, 15 passages sur 3 mois) au 1er janvier 2028",
+    "Suppression de l'AMI 5,8"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "L'AMI 5,8 n'est pas supprimé. Ces mesures renforcent le rôle de l'IDEL dans le suivi des malades chroniques, dont les IC.",
+   "source": "laruche-av11",
+   "niveau": 3,
+   "patho": [
+    "IC",
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "cmp07",
+   "theme": "idel",
+   "type": "qcm",
+   "question": "Depuis le 21 juin 2026, que devient la lettre-clé AIS ?",
+   "choix": [
+    "Elle est supprimée : les soins aux patients dépendants passent par le BSI et ses forfaits",
+    "Elle est doublée",
+    "Elle remplace le BSI",
+    "Elle devient la cotation de la télésurveillance"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "La facturation en AIS a pris fin, y compris pour les patients en transition (avenant 11).",
+   "source": "laruche-av11",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "idl19",
+   "theme": "idel",
+   "type": "cas",
+   "question": "Mise en situation : « Et moi, IDEL, je fais quoi dans la télésurveillance ? »",
+   "contexte": "Vous êtes IDEL dans la CPTS. Lors d'une réunion, on vous annonce que plusieurs de vos patients IC vont être télésurveillés par une équipe de cardiologie. Vous vous demandez quel sera votre rôle et comment vous serez rémunérée.",
+   "etapes": [
+    {
+     "question": "Qui reçoit et traite les alertes médicales ?",
+     "choix": [
+      "Le médecin prescripteur ou l'IPA, selon le protocole",
+      "Vous, systématiquement",
+      "La CPTS",
+      "Le patient"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Les alertes techniques sont gérées par la plateforme ; vous êtes sollicitée pour l'évaluation au domicile."
+    },
+    {
+     "question": "Quels sont vos apports spécifiques ?",
+     "choix": [
+      "Le constat clinique au domicile (œdèmes, dyspnée, observance)",
+      "L'aide aux mesures pour les patients peu autonomes",
+      "L'éducation thérapeutique et le pilulier",
+      "La prescription de la télésurveillance"
+     ],
+     "bonnes": [
+      0,
+      1,
+      2
+     ],
+     "explication": "Votre regard de terrain complète les données à distance : c'est le « retour terrain » du circuit de l'alerte."
+    },
+    {
+     "question": "Comment êtes-vous rémunérée pour vos passages ?",
+     "choix": [
+      "Par vos actes NGAP habituels (AMI 5,8 après décompensation, BSI et AMX si dépendance, déplacements)",
+      "Par une cotation « télésurveillance »",
+      "Par le fabricant",
+      "Vous ne l'êtes pas"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Si vous faites partie de l'équipe de l'opérateur (ex. accompagnement thérapeutique), votre part relève de l'accord avec l'opérateur qui perçoit le forfait."
+    },
+    {
+     "question": "Que faire pour que ce rôle soit clair ?",
+     "choix": [
+      "Demander à la CPTS un « qui fait quoi » écrit et le circuit des alertes",
+      "Préciser par écrit les modalités de rémunération si vous intervenez pour l'opérateur",
+      "Vous former au suivi IC (prérequis de l'AMI 5,8)",
+      "Ne rien demander"
+     ],
+     "bonnes": [
+      0,
+      1,
+      2
+     ],
+     "explication": "La coordinatrice de la CPTS peut organiser cette clarification avec les cardiologues et l'IPA."
+    }
+   ],
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
    "nature": "parcours"
   },
   {

@@ -3,7 +3,7 @@ import { syncNow, scheduleSync, syncStatus, onSyncStatus, syncConfigured, testTo
 import { parseImport, csvTemplate } from './io.js';
 import { matchFilter, renderFilterPanel, describeFilter, normalizeFilter, isEmpty, emptyFilter, zoneTree, zoneLabel, NATIONAL } from './filters.js';
 
-const APP_VERSION = '1.5.0';
+const APP_VERSION = '1.6.0';
 const $ = (s, el = document) => el.querySelector(s);
 const view = () => $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -453,12 +453,12 @@ function renderResults() {
 
 // =============== QUIZ SUR UN SUJET ===============
 const norm = s => ' ' + String(s ?? '').toLowerCase().replace(/œ/g, 'oe').replace(/æ/g, 'ae').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9%]+/g, ' ').trim() + ' ';
-const STOP = new Set('le la les un une des de du d l et ou en au aux a sur pour par dans avec sans quiz quizz question questions chiffre chiffres sujet patient patients du des est ce ces qui que quoi quel quelle quels quelles son sa ses leur leurs texte textes chiffre'.split(' '));
+const STOP = new Set('le la les un une des de du d l et ou en au aux a sur pour par dans avec sans quiz quizz question questions chiffre chiffres sujet patient patients du des est ce ces qui que quoi quel quelle quels quelles son sa ses leur leurs texte textes chiffre role roles mon ma mes moi je'.split(' '));
 const SYN = { ic: ['insuffisance cardiaque', 'insuffisant cardiaque', 'insuffisants cardiaques'], irc: ['insuffisance renale', 'mrc', 'dialys'], ir: ['insuffisance renale'],
   mortalite: ['mortalite', 'deces', 'mortalit', 'surmortalite', 'mourir'], deces: ['deces', 'mortalit'], rein: ['renal', 'rein', 'dialys', 'greffe'], renal: ['renal', 'renale', 'dialys'],
   coeur: ['coeur', 'cardiaque', 'cardio'], tele: ['telesurveillance', 'telemedecine', 'teleconsultation', 'tele expertise', 'teleexpertise'], ts: ['telesurveillance'],
   prado: ['prado', 'retour a domicile'], cpts: ['cpts', 'communaute professionnelle'], ars: ['ars', 'agence regionale'], bnp: ['bnp', 'nt probnp', 'peptide'],
-  vaccin: ['vaccin', 'grippe', 'pneumoco'], sel: ['sel', 'sodium', 'sale'], coordinateur: ['coordinateur', 'coordinatrice'], coordinatrice: ['coordinateur', 'coordinatrice'], loi: ['loi', 'lfss', 'decret', 'arrete du', 'arrete ministeriel', 'code de la sante', 'legislat', 'reglementaire', 'droit commun', 'juridique'] };
+  vaccin: ['vaccin', 'grippe', 'pneumoco'], sel: ['sel', 'sodium', 'sale'], coordinateur: ['coordinateur', 'coordinatrice'], idel: ['idel', 'infirmier', 'infirmiere', 'ide '], remuneration: ['remuner', 'cotation', 'tarif', 'factur', 'forfait'], bsi: ['bsi', 'bilan de soins infirmiers'], coordinatrice: ['coordinateur', 'coordinatrice'], loi: ['loi', 'lfss', 'decret', 'arrete du', 'arrete ministeriel', 'code de la sante', 'legislat', 'reglementaire', 'droit commun', 'juridique'] };
 function topicTerms(query) {
   let n = norm(query);
   const terms = [];
@@ -496,7 +496,7 @@ export function searchTopic(query, pool = store.allQuestions()) {
 const topicState = { query: '', source: '', types: new Set(['qcm', 'vf', 'cas', 'carte']), n: 0 };
 function renderTopic() {
   const all = store.allQuestions();
-  const SUGG = ['CPTS Cœur de Moselle', 'Coordinateur', 'Rôle de la CPTS', 'Vallée de la Sarre', 'Newcard', 'Télésurveillance rénale', 'Éligibilité', 'Urgences RPU', 'CCMU', 'Moselle', 'Mortalité', 'Mortalité Grand Est', 'PRADO', 'NT-proBNP', 'NYHA', 'Télésurveillance', 'Dialyse', 'Sel', 'Vaccination', 'DAC', 'Textes de loi'];
+  const SUGG = ['IDEL', 'BSI', 'AMI 5,8', 'Rémunération', 'CPTS Cœur de Moselle', 'Coordinateur', 'Rôle de la CPTS', 'Vallée de la Sarre', 'Newcard', 'Télésurveillance rénale', 'Éligibilité', 'Urgences RPU', 'CCMU', 'Moselle', 'Mortalité', 'Mortalité Grand Est', 'PRADO', 'NT-proBNP', 'NYHA', 'Télésurveillance', 'Dialyse', 'Sel', 'Vaccination', 'DAC', 'Textes de loi'];
   const counts = new Map(); all.forEach(q => counts.set(q.source, (counts.get(q.source) || 0) + 1));
   const draw = (keepFocus) => {
     let pool = topicState.source ? all.filter(q => q.source === topicState.source) : all;
