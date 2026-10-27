@@ -3,7 +3,7 @@ import { syncNow, scheduleSync, syncStatus, onSyncStatus, syncConfigured, testTo
 import { parseImport, csvTemplate } from './io.js';
 import { matchFilter, renderFilterPanel, describeFilter, normalizeFilter, isEmpty, emptyFilter, zoneTree, zoneLabel, NATIONAL } from './filters.js';
 
-const APP_VERSION = '1.7.0';
+const APP_VERSION = '1.8.0';
 const $ = (s, el = document) => el.querySelector(s);
 const view = () => $('#view');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -496,7 +496,7 @@ export function searchTopic(query, pool = store.allQuestions()) {
 const topicState = { query: '', source: '', types: new Set(['qcm', 'vf', 'cas', 'carte']), n: 0 };
 function renderTopic() {
   const all = store.allQuestions();
-  const SUGG = ['IDEL', 'BSI', 'AMI 5,8', 'Rémunération', 'IPA', 'Asalée', 'ISPIC', 'CPTS Cœur de Moselle', 'Coordinateur', 'Rôle de la CPTS', 'Vallée de la Sarre', 'Newcard', 'Télésurveillance rénale', 'Éligibilité', 'Urgences RPU', 'CCMU', 'Moselle', 'Mortalité', 'Mortalité Grand Est', 'PRADO', 'NT-proBNP', 'NYHA', 'Télésurveillance', 'Dialyse', 'Sel', 'Vaccination', 'DAC', 'Textes de loi'];
+  const SUGG = ['IDEL', 'BSI', 'AMI 5,8', 'Rémunération', 'Médecin traitant', 'ALD', 'Téléconsultation', 'IPA', 'Asalée', 'ISPIC', 'CPTS Cœur de Moselle', 'Coordinateur', 'Rôle de la CPTS', 'Vallée de la Sarre', 'Newcard', 'Télésurveillance rénale', 'Éligibilité', 'Urgences RPU', 'CCMU', 'Moselle', 'Mortalité', 'Mortalité Grand Est', 'PRADO', 'NT-proBNP', 'NYHA', 'Télésurveillance', 'Dialyse', 'Sel', 'Vaccination', 'DAC', 'Textes de loi'];
   const counts = new Map(); all.forEach(q => counts.set(q.source, (counts.get(q.source) || 0) + 1));
   const draw = (keepFocus) => {
     let pool = topicState.source ? all.filter(q => q.source === topicState.source) : all;

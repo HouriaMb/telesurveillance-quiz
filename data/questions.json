@@ -1,5 +1,5 @@
 {
- "version": 8,
+ "version": 9,
  "maj": "2026-10-26",
  "themes": [
   {
@@ -76,6 +76,16 @@
    "id": "infirmiers",
    "nom": "Infirmiers : statuts, rôles et missions",
    "couleur": "#be123c"
+  },
+  {
+   "id": "mg",
+   "nom": "Médecin généraliste & médecin traitant",
+   "couleur": "#1d4ed8"
+  },
+  {
+   "id": "chronique",
+   "nom": "Maladies chroniques & suivi au long cours",
+   "couleur": "#0f766e"
   }
  ],
  "pathos": [
@@ -257,6 +267,28 @@
     "cpts": "Vallée de la Sarre",
     "region": "Grand Est",
     "dept": "Moselle"
+   }
+  },
+  {
+   "id": "d-mg",
+   "nom": "Médecin généraliste",
+   "desc": "Médecin traitant, parcours coordonné, rôle dans l'IC et la télésurveillance",
+   "couleur": "#1d4ed8",
+   "filtre": {
+    "themes": [
+     "mg"
+    ]
+   }
+  },
+  {
+   "id": "d-chron",
+   "nom": "Maladies chroniques",
+   "desc": "ALD, suivi au long cours, téléconsultation, ETP, observance",
+   "couleur": "#0f766e",
+   "filtre": {
+    "themes": [
+     "chronique"
+    ]
    }
   },
   {
@@ -539,6 +571,24 @@
    "titre": "Société française de cardiologie – Les paramédicaux en cardiologie (2025)",
    "type": "web",
    "url": "https://sfcardio.fr/wp-content/uploads/2025/01/Paramedicaux-Article-2401.pdf"
+  },
+  {
+   "id": "avident",
+   "titre": "Avident – Gestion des maladies chroniques : le rôle du médecin généraliste",
+   "type": "web",
+   "url": "https://avident.fr/gestion-maladies-chroniques-role-medecin-generaliste/"
+  },
+  {
+   "id": "fedmed",
+   "titre": "Fédération médicale – Le rôle clé du médecin généraliste dans le parcours de soins",
+   "type": "web",
+   "url": "https://www.federationmedical.com/quel-est-le-role-cle-du-medecin-generaliste-dans-le-parcours-de-soins/"
+  },
+  {
+   "id": "medecindirect",
+   "titre": "MedecinDirect – J'ai une maladie chronique et j'ai besoin d'un suivi régulier",
+   "type": "web",
+   "url": "https://www.medecindirect.fr/blog/jai-une-maladie-chronique-et-jai-besoin-dun-suivi-regulier"
   }
  ],
  "questions": [
@@ -8358,6 +8408,605 @@
    "patho": [
     "IC",
     "Diabète"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "mg01",
+   "theme": "mg",
+   "type": "carte",
+   "question": "« Et moi, médecin généraliste, quel est mon rôle dans le parcours du patient IC ? »",
+   "reponse": "• Penser à l'IC (même devant des signes peu spécifiques), dépister les patients à risque, questionner sur EPOF\n• Prescrire BNP / NT-proBNP, ECG, bilan ; adresser au cardiologue (ou télé-expertise)\n• Coordonner le suivi : comorbidités, biologie (NT-proBNP, DFG, K), vaccinations, observance\n• Revoir le patient dans la semaine (HAS) ou les 7 jours (Prado) après une hospitalisation\n• Mobiliser IDEL, pharmacien, IPA, diététicien, kiné ; recourir au DAC si situation complexe\n• En télésurveillance : coordonner le suivi, adapter, gérer les comorbidités, agir sur le terrain après une alerte ; primo-prescription possible avec un DU d'IC",
+   "source": "proto",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "mg02",
+   "theme": "mg",
+   "type": "qcm",
+   "question": "Quelle réforme a institué le parcours de soins coordonnés autour du médecin traitant ?",
+   "choix": [
+    "La réforme de l'Assurance Maladie de 2004",
+    "La loi HPST de 2009",
+    "La loi de 2016 créant les CPTS",
+    "L'avenant 11 de 2026"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le médecin traitant est placé au centre du dispositif ; selon la Fédération médicale, 98 % des assurés en ont déclaré un.",
+   "source": "fedmed",
+   "niveau": 1,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "mg03",
+   "theme": "mg",
+   "type": "qcm",
+   "question": "Pourquoi le médecin généraliste est-il décrit comme un « chef d'orchestre » ?",
+   "choix": [
+    "Il synchronise les interventions des différents professionnels autour du patient",
+    "Il dirige l'hôpital",
+    "Il remplace tous les spécialistes",
+    "Il gère la CPTS"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Il oriente vers les spécialistes en s'appuyant sur les recommandations de la HAS, alimente le DMP et assure la continuité des soins après une hospitalisation.",
+   "source": "fedmed",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "mg04",
+   "theme": "mg",
+   "type": "qcm",
+   "question": "Quelles missions le médecin généraliste assure-t-il dans le suivi des maladies chroniques ?",
+   "choix": [
+    "Dépistage et diagnostic précoce",
+    "Suivi personnalisé et adaptation des traitements",
+    "Éducation thérapeutique et automesure (ex. tension à domicile)",
+    "Chirurgie cardiaque"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Il aide aussi le patient à surmonter les obstacles à l'observance, enjeu majeur des traitements au long cours.",
+   "source": "avident",
+   "niveau": 1,
+   "patho": [
+    "Transversal",
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "mg05",
+   "theme": "mg",
+   "type": "qcm",
+   "question": "Quel outil le médecin généraliste alimente-t-il pour partager prescriptions, résultats et comptes rendus d'hospitalisation ?",
+   "choix": [
+    "Le DMP (Mon espace santé)",
+    "Le carnet de vaccination papier uniquement",
+    "Les réseaux sociaux",
+    "Rien"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le DMP et la messagerie sécurisée de santé sont les services socles cités par le PRS Grand Est.",
+   "source": "fedmed",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "mg06",
+   "theme": "mg",
+   "type": "qcm",
+   "question": "Quelle règle d'automesure tensionnelle est rappelée pour le suivi des patients hypertendus ?",
+   "choix": [
+    "La règle des 3 : 3 mesures le matin et le soir, 3 jours de suite",
+    "Une mesure par mois",
+    "Une mesure après chaque repas",
+    "Aucune"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "L'automesure s'intègre à l'éducation thérapeutique ; dans l'IC, la pesée quotidienne joue un rôle comparable.",
+   "source": "fedmed",
+   "niveau": 2,
+   "patho": [
+    "Cardiovasculaire"
+   ],
+   "nature": "education"
+  },
+  {
+   "id": "mg07",
+   "theme": "mg",
+   "type": "qcm",
+   "question": "Après une hospitalisation pour décompensation cardiaque, dans quel délai le médecin traitant revoit-il le patient ?",
+   "choix": [
+    "Dans la semaine (HAS 2014) ; dans les 7 jours avec Prado",
+    "Dans les 6 mois",
+    "Seulement si le patient appelle",
+    "Dans l'année"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le diagnostic territorial de Cœur de Moselle montre que seuls 51 % des patients le voient dans les 14 jours : c'est un axe d'amélioration majeur.",
+   "source": "proto",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "mg08",
+   "theme": "mg",
+   "type": "qcm",
+   "question": "En télésurveillance IC, quel est le rôle du médecin traitant dans le cercle de soins de la CPTS ?",
+   "choix": [
+    "Coordonner le suivi, adapter, gérer les comorbidités",
+    "Livrer le matériel",
+    "Préfiltrer les alertes techniques",
+    "Facturer le forfait technique"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le cardiologue prescrit et décide de la conduite à tenir ; l'équipe de terrain (MT, IDEL, IPA) intervient après une alerte qualifiée.",
+   "source": "webinaire",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "mg09",
+   "theme": "mg",
+   "type": "qcm",
+   "question": "Un médecin généraliste peut-il primo-prescrire une télésurveillance IC ?",
+   "choix": [
+    "Oui, s'il est titulaire d'un DU d'insuffisance cardiaque (ou en lien avec le médecin télésurveillant)",
+    "Non, jamais",
+    "Oui, sans condition",
+    "Seulement l'IPA le peut"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le plus souvent, c'est le cardiologue qui prescrit ; l'IPA peut renouveler.",
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "mg10",
+   "theme": "mg",
+   "type": "qcm",
+   "question": "Quel rôle le médecin généraliste joue-t-il dans les soins non programmés ?",
+   "choix": [
+    "Participation à la permanence des soins ambulatoires (PDSA) et à la régulation avec le 15",
+    "Aucun",
+    "Uniquement aux urgences hospitalières",
+    "Seulement le week-end"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Les données RPU d'Est-Rescue montrent qu'environ 44 % des arrivées aux urgences ont lieu aux horaires de PDS en Grand Est.",
+   "source": "fedmed",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "mg11",
+   "theme": "mg",
+   "type": "qcm",
+   "question": "Quelle obligation de formation continue s'applique au médecin généraliste selon la Fédération médicale ?",
+   "choix": [
+    "Au moins 21 heures par an de DPC",
+    "Aucune",
+    "Une semaine tous les 10 ans",
+    "Un master tous les 5 ans"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Le DPC (développement professionnel continu) permet d'actualiser les pratiques ; la formation EPOF de la CPTS Cœur de Moselle s'inscrit dans cette logique.",
+   "source": "fedmed",
+   "niveau": 3,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "mg12",
+   "theme": "mg",
+   "type": "qcm",
+   "question": "Dans le protocole IC de la MSP, lesquelles sont des missions du médecin traitant ?",
+   "choix": [
+    "Dépister, suspecter le diagnostic, évaluer et organiser le suivi",
+    "Prévenir les décompensations et la iatrogénie",
+    "Hospitaliser et aider au retour à domicile",
+    "Poser un défibrillateur"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Il centralise les données, adresse au cardiologue, explique la maladie, aide à l'optimisation thérapeutique et suit les vaccinations.",
+   "source": "proto",
+   "niveau": 1,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "mg13",
+   "theme": "mg",
+   "type": "cas",
+   "question": "Mise en situation : le médecin traitant reçoit une alerte de télésurveillance",
+   "contexte": "Vous êtes médecin traitant. L'équipe de télésurveillance vous signale que M. P., 82 ans, IC à FE réduite, a pris 2,5 kg en 3 jours avec une majoration de l'essoufflement. Le cardiologue est joignable par messagerie sécurisée.",
+   "etapes": [
+    {
+     "question": "Que faites-vous en premier ?",
+     "choix": [
+      "Évaluer cliniquement le patient (visite, ou passage de l'IDEL) et rechercher des signes de gravité",
+      "Ignorer l'alerte",
+      "Arrêter tous les traitements",
+      "Attendre la consultation trimestrielle"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Signes de gravité (critères d'hospitalisation) : dyspnée de repos, PAS < 90, troubles du rythme, douleur thoracique, hyponatrémie, hyperkaliémie…"
+    },
+    {
+     "question": "En l'absence de gravité, quelle conduite est possible ?",
+     "choix": [
+      "Adapter le diurétique en lien avec le cardiologue et prescrire ionogramme et créatinine",
+      "Hospitalisation systématique",
+      "Prescrire un AINS",
+      "Supprimer le régime sans sel"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "C'est le scénario du « patient A » de la présentation Newcard : la décompensation a été désamorcée en ambulatoire."
+    },
+    {
+     "question": "Qui informez-vous ensuite ?",
+     "choix": [
+      "L'équipe de télésurveillance (retour d'information) et l'IDEL",
+      "Personne",
+      "Uniquement la CPAM",
+      "La presse"
+     ],
+     "bonnes": [
+      0
+     ],
+     "explication": "Le retour d'information boucle le circuit de l'alerte et renforce la surveillance les jours suivants."
+    }
+   ],
+   "source": "webinaire",
+   "niveau": 2,
+   "patho": [
+    "IC"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "chr01",
+   "theme": "chronique",
+   "type": "qcm",
+   "question": "Combien de personnes bénéficient d'une ALD en France, selon MedecinDirect (source Assemblée nationale) ?",
+   "choix": [
+    "Environ 1,4 million",
+    "Environ 14 millions (≈ 20 % de la population)",
+    "Environ 40 millions",
+    "Moins de 500 000"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "La Fédération médicale évoque plus de 20 millions de personnes vivant avec une maladie chronique.",
+   "source": "medecindirect",
+   "niveau": 1,
+   "nature": "chiffres",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "chr02",
+   "theme": "chronique",
+   "type": "qcm",
+   "question": "Que garantit le statut d'ALD (affection de longue durée) ?",
+   "choix": [
+    "La prise en charge à 100 % des soins liés à la maladie, sans avance de frais",
+    "Une consultation gratuite par an",
+    "Le remboursement de tous les soins, même sans lien",
+    "Un arrêt de travail automatique"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Les téléconsultations liées à l'ALD sont remboursées dans les mêmes conditions qu'en présentiel, dans le parcours de soins coordonnés. La télésurveillance IC est prise en charge à 100 % pour les patients en ALD.",
+   "source": "medecindirect",
+   "niveau": 1,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "chr03",
+   "theme": "chronique",
+   "type": "qcm",
+   "question": "À quel rythme un patient atteint de maladie chronique stable est-il suivi ?",
+   "choix": [
+    "Selon les cas : mensuel, trimestriel ou semestriel",
+    "Une fois tous les 5 ans",
+    "Uniquement en cas de crise",
+    "Tous les jours chez le médecin"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Pour l'IC, la HAS (2014) précise : médecin traitant au moins 2 fois/an (NYHA I), 4 fois/an (NYHA II), 4 à 12 fois/an (NYHA III).",
+   "source": "medecindirect",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "chr04",
+   "theme": "chronique",
+   "type": "qcm",
+   "question": "Que permet la téléconsultation dans le suivi d'une maladie chronique ?",
+   "choix": [
+    "Commenter des résultats d'analyses",
+    "Ajuster un traitement et évaluer les effets secondaires",
+    "Aborder le vécu de la maladie",
+    "Réaliser un ECG ou un fond d'œil"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Les examens techniques (ECG, spirométrie, fond d'œil), l'examen clinique et le bilan initial d'ALD se font en présentiel.",
+   "source": "medecindirect",
+   "niveau": 1,
+   "nature": "parcours",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "chr05",
+   "theme": "chronique",
+   "type": "qcm",
+   "question": "Quelles sont les limites de la téléconsultation pour un patient chronique ?",
+   "choix": [
+    "Elle ne remplace ni les bilans cliniques complets ni les examens techniques",
+    "Elle ne prend pas en charge les décompensations aiguës",
+    "La réglementation impose une alternance avec des consultations en présentiel",
+    "Elle est interdite aux patients en ALD"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "Une décompensation aiguë (ex. IC avec dyspnée de repos) relève d'une évaluation en présentiel, voire du 15.",
+   "source": "medecindirect",
+   "niveau": 2,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "chr06",
+   "theme": "chronique",
+   "type": "qcm",
+   "question": "Une ordonnance de traitement au long cours peut-elle être renouvelée à distance ?",
+   "choix": [
+    "Oui, si la situation est stable, selon le traitement et l'appréciation du médecin ; un bilan biologique récent aide",
+    "Non, jamais",
+    "Oui, sans aucun contrôle",
+    "Seulement par le pharmacien"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Dans l'IC, un bilan récent (ionogramme, créatinine) est indispensable avant d'adapter diurétiques, IEC ou antialdostérone.",
+   "source": "medecindirect",
+   "niveau": 2,
+   "patho": [
+    "Transversal"
+   ],
+   "nature": "parcours"
+  },
+  {
+   "id": "chr07",
+   "theme": "chronique",
+   "type": "vf",
+   "question": "Télésurveillance et téléconsultation désignent la même chose.",
+   "choix": [
+    "Vrai",
+    "Faux"
+   ],
+   "bonnes": [
+    1
+   ],
+   "explication": "Faux : la téléconsultation est une consultation à distance ; la télésurveillance est l'interprétation à distance de données recueillies par un dispositif médical numérique (5 pathologies : diabète, IC, IR, insuffisance respiratoire, prothèses cardiaques implantables).",
+   "source": "medecindirect",
+   "niveau": 1,
+   "nature": "reglementation",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "chr08",
+   "theme": "chronique",
+   "type": "qcm",
+   "question": "Selon la HAS (juillet 2025), quelle place pour la télésanté dans le parcours du diabète de type 2 ?",
+   "choix": [
+    "Possible tout au long du parcours, en complément des consultations physiques",
+    "Elle remplace les consultations",
+    "Elle est interdite",
+    "Uniquement pour les enfants"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Les téléconsultations ALD doivent passer par le médecin traitant ou un médecin correspondant.",
+   "source": "medecindirect",
+   "niveau": 2,
+   "patho": [
+    "Diabète"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "chr09",
+   "theme": "chronique",
+   "type": "qcm",
+   "question": "Pourquoi l'éducation thérapeutique (ETP) est-elle centrale dans les maladies chroniques ?",
+   "choix": [
+    "Elle rend le patient plus autonome et acteur de sa santé",
+    "Elle prévient les complications (alimentation, activité physique, observance)",
+    "Elle remplace les médicaments",
+    "Elle est réservée aux médecins"
+   ],
+   "bonnes": [
+    0,
+    1
+   ],
+   "explication": "Formats : ateliers, séances collectives, consultations individuelles. Exemples locaux : ET3P (MSA), Pôle APSA, Je t'aime mon cœur.",
+   "source": "avident",
+   "niveau": 1,
+   "nature": "education",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "chr10",
+   "theme": "chronique",
+   "type": "qcm",
+   "question": "Quel est le principal défi des traitements au long cours ?",
+   "choix": [
+    "L'observance médicamenteuse",
+    "Le prix des consultations",
+    "Le manque de médicaments",
+    "La météo"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Dans l'IC, la mauvaise observance est l'une des premières causes de décompensation ; pilulier, IDEL, pharmacien et télésurveillance aident à la maintenir.",
+   "source": "avident",
+   "niveau": 1,
+   "patho": [
+    "IC",
+    "Transversal"
+   ],
+   "nature": "education"
+  },
+  {
+   "id": "chr11",
+   "theme": "chronique",
+   "type": "qcm",
+   "question": "Lesquelles sont des maladies chroniques concernées par la télésurveillance médicale dans le droit commun ?",
+   "choix": [
+    "Insuffisance cardiaque",
+    "Insuffisance rénale chronique",
+    "Insuffisance respiratoire chronique et diabète",
+    "Grippe saisonnière"
+   ],
+   "bonnes": [
+    0,
+    1,
+    2
+   ],
+   "explication": "S'y ajoutent les porteurs de prothèses cardiaques implantables.",
+   "source": "medecindirect",
+   "niveau": 1,
+   "patho": [
+    "IC",
+    "IR",
+    "Diabète"
+   ],
+   "nature": "reglementation"
+  },
+  {
+   "id": "chr12",
+   "theme": "chronique",
+   "type": "qcm",
+   "question": "Selon la Fédération médicale, combien rapporte 1 € investi en prévention ?",
+   "choix": [
+    "3 à 7 € économisés en soins curatifs",
+    "Rien",
+    "0,50 €",
+    "100 €"
+   ],
+   "bonnes": [
+    0
+   ],
+   "explication": "Chiffre cité par la source, à prendre comme ordre de grandeur. Dans l'IC, la vaccination (grippe, pneumocoque) et l'éducation EPOF sont des leviers de prévention.",
+   "source": "fedmed",
+   "niveau": 2,
+   "nature": "chiffres",
+   "patho": [
+    "Transversal"
+   ]
+  },
+  {
+   "id": "chr13",
+   "theme": "chronique",
+   "type": "carte",
+   "question": "Maladie chronique : les piliers du suivi au long cours",
+   "reponse": "• Un médecin traitant coordinateur (parcours de soins coordonnés)\n• Des consultations régulières, à un rythme adapté (mensuel à semestriel)\n• La prise en charge à 100 % en ALD\n• L'éducation thérapeutique et l'automesure (poids, tension, glycémie)\n• L'observance du traitement, le renouvellement anticipé des ordonnances\n• Une équipe : IDEL, pharmacien, spécialistes, IPA, diététicien, kiné/APA\n• La télésanté en complément : téléconsultation, télésoin, télésurveillance\n• La prévention : vaccins, dépistages, hygiène de vie",
+   "source": "medecindirect",
+   "niveau": 1,
+   "patho": [
+    "Transversal"
    ],
    "nature": "parcours"
   },
